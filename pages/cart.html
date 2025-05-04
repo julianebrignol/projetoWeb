@@ -1,77 +1,27 @@
-<h1 class="page-title">carrinho de compras</h1>
+<!-- pages/cart.html -->
+<h1 class="page-title">Carrinho de Compras</h1>
 
 <div class="shopping-cart">
-
-  <div class="cart-products">
-
-	<div class="product">
-		<div class="product-image">
-		  <img src="/images/imagensTeste/img1.png">
-		</div>
-	  
-		<div class="product-details">
-		  <div class="product-title">t-shirt regular fit</div>
-		  <p class="product-description">tamanho: s</p>
-		  <div class="product-actions">
-			<div class="quantity-selector">
-			  <button class="qty-btn decrease">-</button>
-			  <span class="qty-value">1</span>
-			  <button class="qty-btn increase">+</button>
-			</div>
-		  </div>
-		</div>
-	  
-		<div class="product-price" style="display: none;">19.99</div>
-		<div class="product-line-price"></div>
-		<button class="remove-product" title="Remover produto">
-			<img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
-		  </button>
-	  </div>
-
-	  <div class="product">
-		<div class="product-image">
-		  <img src="/images/imagensTeste/img2.png">
-		</div>
-	  
-		<div class="product-details">
-		  <div class="product-title">t-shirt loose fit</div>
-		  <p class="product-description">tamanho: m</p>
-		  <div class="product-actions">
-			<div class="quantity-selector">
-			  <button class="qty-btn decrease">-</button>
-			  <span class="qty-value">1</span>
-			  <button class="qty-btn increase">+</button>
-			</div>
-		  </div>
-		</div>
-	  
-		<div class="product-price" style="display: none;">19.99</div>
-		<div class="product-line-price"></div>
-		<button class="remove-product" title="Remover produto">
-			<img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
-		  </button>
-	  </div>
-
-  </div>
+  <!-- container vazio, será preenchido por renderCart() -->
+  <div class="cart-products"></div>
 
   <div class="totals">
-	<div class="totals-item">
-		<label>Subtotal</label>
-		<div class="totals-value" id="cart-subtotal"></div>
-	  </div>
-	  <div class="totals-item">
-		<label>IVA (23%)</label>
-		<div class="totals-value" id="cart-ivaValue"></div>
-	  </div>
-	  <div class="totals-item">
-		<label>envio</label>
-		<div class="totals-value" id="cart-shipping"></div>
-	  </div>
-	  <div class="totals-item totals-item-total">
-		<label>total</label>
-		<div class="totals-value" id="cart-total"></div>
-	  </div>
-    <button class="checkout">finalizar compra</button>
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">0.00</div>
+    </div>
+    <div class="totals-item">
+      <label>IVA (23%)</label>
+      <div class="totals-value" id="cart-ivaValue">0.00</div>
+    </div>
+    <div class="totals-item">
+      <label>Envio</label>
+      <div class="totals-value" id="cart-shipping">0.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Total</label>
+      <div class="totals-value" id="cart-total">0.00</div>
+    </div>
+    <button class="checkout btn btn-success mt-3">Finalizar Compra</button>
   </div>
-
 </div>

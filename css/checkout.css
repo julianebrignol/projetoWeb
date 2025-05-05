@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-	max-width: 100%;
+	max-width: 1920px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
@@ -52,6 +52,7 @@ body {
 .checkout-sidebar {
 	flex: 1;
 	min-width: 300px;
+    max-width: 540px;
     margin-top: 50px;
 }
 
@@ -85,9 +86,8 @@ textarea {
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #ccc;
-	border-radius: 4px;
 	font-size: 14px;
-	background-color: #f9f9f9;
+	background-color: #f9f9f900;
 }
 
 textarea {
@@ -123,8 +123,7 @@ input[type="submit"]:hover {
 .totals {
 	padding: 20px;
 	border: 1px solid #ccc;
-	border-radius: 6px;
-	background-color: #fafafa;
+	background-color: #fafafa00;
 }
 
 .totals-item {
@@ -150,6 +149,41 @@ input[type="submit"]:hover {
 	font-weight: bold;
 	color: #000;
 }
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .form-buttons button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    min-width: 120px;
+  }
+  
+  #btn-back-to-cart {
+    background-color: #ffffff00;
+    color: #000;
+    border: #000 solid 1px;
+  }
+  
+  #btn-back-to-cart:hover {
+    background-color: #d3d3d333;
+  }
+  
+  #btn-finish-order {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  #btn-finish-order:hover {
+    background-color: #444;
+  }
 
 /* Responsivo */
 @media screen and (max-width: 768px) {

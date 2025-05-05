@@ -21,8 +21,7 @@ $(document).ready(function () {
   // Nav buttons
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));
   $('#btn-cart').on('click',     () => loadPage('pages/cart.html', initCart));
-  $('#btn-checkout').on('click', () => loadPage('pages/checkout.html', initCheckout));
-
+  $(document).on('click', '#btn-checkout', () => loadPage('pages/checkout.html', initCheckout));
   function initProducts() {
     // Lógica dos produtos aqui, se necessário
   }

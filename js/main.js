@@ -1,11 +1,8 @@
-// main.js (ES Module)
-
 import { addToCart, renderCart } from './cart.js';
 
 $(document).ready(function () {
   const mainContent = $('#main');
 
-  // Fade-out, load html fragment, fade-in
   function loadPage(url, callback) {
     mainContent.fadeOut(200, function () {
       mainContent.load(url, function (response, status) {
@@ -18,20 +15,23 @@ $(document).ready(function () {
     });
   }
 
-  // Initial load: products page
-  loadPage('pages/product.html', initProducts);
+  // Initial load
+  loadPage('pages/checkout.html', initCheckout);
 
   // Nav buttons
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));
-  $('#btn-cart').on('click',     () => loadPage('pages/cart.html',     initCart));
+  $('#btn-cart').on('click',     () => loadPage('pages/cart.html', initCart));
+  $('#btn-checkout').on('click', () => loadPage('pages/checkout.html', initCheckout));
 
   function initProducts() {
-    // nothing more to bind here: 
-    // product.html should put all data-* on the “Escolher Tamanho” button,
-    // and cart.js will handle show.bs.modal + add-to-cart-btn inside the modal.
+    // Lógica dos produtos aqui, se necessário
   }
 
   function initCart() {
     renderCart();
+  }
+
+  function initCheckout() {
+    renderCart(); // Atualiza os valores do resumo do pedido
   }
 });

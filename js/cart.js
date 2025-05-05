@@ -19,7 +19,7 @@ function recalculateCart() {
 
   const ivaValue = subtotal * iva;
   const shipping = subtotal > 0 ? shippingRate : 0;
-  const total = subtotal + ivaValue + shipping;
+  const total = subtotal + shipping;
 
   $('.totals-value').fadeOut(fadeTime, function () {
     $('#cart-subtotal').text(subtotal.toFixed(2));

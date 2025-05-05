@@ -56,17 +56,23 @@ $(document).ready(function () {
   }
 
   function initCheckout() {
-    renderCart(); // Mostra resumo do carrinho na sidebar da finalização
-
-    // Botão para continuar a comprar (limpa o carrinho e vai para produtos)
+    renderCart();
+  
+    // Botão "Continuar a comprar" — APENAS navega de volta para os produtos
     $(document).off('click', '#btn-continue-shopping').on('click', '#btn-continue-shopping', () => {
-      clearCart();
       loadPage('pages/product.html', initProducts);
     });
-
-    // Botão para voltar ao carrinho
+  
+    // Botão "Voltar ao Carrinho"
     $(document).off('click', '#btn-cart').on('click', '#btn-cart', () => {
       loadPage('pages/cart.html', initCart);
+    });
+  
+    // Botão "Finalizar Pedido" — LIMPA o carrinho e vai para confirmação
+    $(document).off('click', '#btn-finish-order').on('click', '#btn-finish-order', (e) => {
+      e.preventDefault(); // Evita envio real do formulário, se for necessário
+      clearCart();
+      loadPage('pages/confirmation.html', initCheckout);
     });
   }
 });

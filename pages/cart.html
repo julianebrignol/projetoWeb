@@ -1,0 +1,27 @@
+<!-- pages/cart.html -->
+<h1 class="page-title">Carrinho de Compras</h1>
+
+<div class="shopping-cart">
+  <!-- container vazio, será preenchido por renderCart() -->
+  <div class="cart-products"></div>
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">0.00</div>
+    </div>
+    <div class="totals-item">
+      <label>IVA (23%)</label>
+      <div class="totals-value" id="cart-ivaValue">0.00</div>
+    </div>
+    <div class="totals-item">
+      <label>Envio</label>
+      <div class="totals-value" id="cart-shipping">0.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Total</label>
+      <div class="totals-value" id="cart-total">0.00</div>
+    </div>
+    <button class="checkout btn btn-success mt-3">Finalizar Compra</button>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="container">
+    <form action="">
+        <h1>Payment form</h1>
+        <p>Required fileds are followed by *</p>
+        <h2>Contact Information</h2>
+        <p>First Name: *<input type="text" placeholder="Leo" name="First Name"required></p>
+        <p>Last Name: <input type="text" placeholder="Messi" name="Last Name"></p>
+        <p>Email: * <input type="email" placeholder="abc@gmail.com" name="email" id="email"required></p>
+        <p>Country: *
+            <select name="Country" id="Country" required>
+                <option value="">--Select Your Country--</option>
+                <option value="">Afghanistan</option>
+                <option value="">Bangladesh</option>
+                <option value="">Canada</option>
+                <option value="">Denmark</option>
+                <option value="">Egypt</option>
+                <option value="">Germany</option>
+                <option value="">Hungary</option>
+                <option value="">India</option>
+                <option value="">Japan</option>
+                <option value="">Kazakhstan</option>
+                <option value="">Libya</option>
+                <option value="">Malaysia</option>
+                <option value="">New Zealand</option>
+                <option value="">Oman</option>
+                <option value="">Pakistan</option>
+                <option value="">Russia</option>
+                <option value="">Saudi Arabia</option>
+                <option value="">Turkey</option>
+                <option value="">United States of America</option>
+                <option value="">Vietnam</option>
+                <option value="">Yemen</option>
+                <option value="">Zimbabwe</option>               
+            </select>
+            
+            <p>Phone No:  *<input type="number" placeholder="+1 2409721857" name="number" id="number"required></p>
+
+        <fieldset>
+            <legend> <b>Gender  *</b> </legend>
+             <p> 
+              Male: <input type="radio" name="gender" id="gender"required> Female: <input type="radio" name="gender" id="gender"required>  
+             </p>
+        </fieldset>  
+        <p>Address: 
+            <textarea name="Address" placeholder="Enter Your Address" id="Address" cols="40" rows="5"></textarea></p>  
+        <p>
+            Postal Code:  *<input type="number" placeholder="40429" name="Code" id="Code">
+        </p>
+        <h2>Payment Information</h2> 
+        <p> Card Type: *
+            <select name="Card_Type" id="Card_Type" required>
+                <option value="">--Select Your Card Type--</option>
+                <option value="Master Card">MasterCard</option>
+                <option value="VISA ">VISA</option>
+                <option value="Pay Pal">Pay Pal</option>
+            </select>   
+        </p>
+        <p>
+            Card number: *<input type="number" placeholder="1111-2222-3333-4444" name="Card number" id="Card number"required>
+        </p>
+        <p>
+            CVV: *<input type="password" placeholder="123" name="CVV " id="CVV" required>
+        </p>
+        <p>
+            Expiration Date: *<input type="date" name="Exp_Date" id="Exp_Date" required>
+        </p>
+        <input type="Submit" value="Pay Now">
+      </form>
+    </div>

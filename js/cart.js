@@ -1,14 +1,20 @@
-/* cart.js (ES Module) */
+// cart.js (ES Module)
 
 const iva = 0.23;
 const shippingRate = 3.95;
 const fadeTime = 300;
 
-// Load cart from localStorage or initialize empty
+// Estado do carrinho
 let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
 function saveCart() {
   localStorage.setItem('cart', JSON.stringify(cartItems));
+}
+
+function clearCart() {
+  cartItems = [];
+  saveCart();
+  renderCart(); // Atualiza o interface se necessário
 }
 
 function recalculateCart() {
@@ -82,7 +88,6 @@ function renderCart() {
 }
 
 function addToCart(item) {
-  // include size in identity so same product with different size are separate
   const existing = cartItems.find(p => p.id === item.id && p.size === item.size);
   if (existing) {
     existing.quantity += item.quantity;
@@ -109,52 +114,42 @@ function updateLineTotal(productRow, quantity) {
   });
 }
 
-// 1) When the size-modal is about to show, grab all product data from the button/card
+// Eventos existentes
 $(document).on('show.bs.modal', '#sizeModal', function(event) {
   const triggerBtn = $(event.relatedTarget);
   const modal = $(this);
 
   const productData = {
-    id:          triggerBtn.data('id'),
-    title:       triggerBtn.data('title'),
+    id: triggerBtn.data('id'),
+    title: triggerBtn.data('title'),
     description: triggerBtn.data('description'),
-    price:       parseFloat(triggerBtn.data('price')),
-    image:       triggerBtn.data('image')
+    price: parseFloat(triggerBtn.data('price')),
+    image: triggerBtn.data('image')
   };
 
   modal.find('#modal-product-title').text(productData.title);
-  // stash the rest of the product info on the modal element
   modal.data('product', productData);
 });
 
-// 2) When “Adicionar ao Carrinho” inside the modal is clicked, read only the size from the modal, 
-//    then merge it with the rest of the product data you previously stored:
-$(document).on('click', '.add-to-cart-btn', function(){
-  const btn   = $(this);
-  const modal = btn.closest('.modal');
+$(document).on('click', '.add-to-cart-btn', function() {
+  const modal = $(this).closest('.modal');
   const product = modal.data('product');
-  const size    = modal.find('input[name="sizeOptions"]:checked').val();
+  const size = modal.find('input[name="sizeOptions"]:checked').val();
 
   const newItem = {
-    id:          product.id,
-    title:       product.title,
-    description: product.description,
-    price:       product.price,
-    image:       product.image,
-    quantity:    1,
-    size:        size
+    ...product,
+    quantity: 1,
+    size
   };
 
   addToCart(newItem);
   modal.modal('hide');
 });
 
-// qty buttons (+/–) in cart
 $(document).on('click', '.qty-btn', function () {
   const btn = $(this);
   const row = btn.closest('.product');
   const id = row.data('id');
-  // parse size out of the description text
   const desc = row.find('.product-description').text();
   const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
   const item = cartItems.find(p => p.id === id && p.size === size);
@@ -168,7 +163,6 @@ $(document).on('click', '.qty-btn', function () {
   updateLineTotal(row, item.quantity);
 });
 
-// remove button in cart
 $(document).on('click', '.remove-product', function () {
   const row = $(this).closest('.product');
   const id = row.data('id');
@@ -184,4 +178,5 @@ window.addEventListener('load', () => {
   renderCart();
 });
 
-export { addToCart, renderCart };
+// Exportações finais
+export { addToCart, renderCart, clearCart };

@@ -1,4 +1,4 @@
-import { addToCart, renderCart } from './cart.js';
+import { addToCart, renderCart, clearCart } from './cart.js';
 
 $(document).ready(function () {
   const mainContent = $('#main');
@@ -20,8 +20,9 @@ $(document).ready(function () {
 
   // Nav buttons
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));
-  $('#btn-cart').on('click',     () => loadPage('pages/cart.html', initCart));
+  $('#btn-cart').on('click', () => loadPage('pages/cart.html', initCart));
   $(document).on('click', '#btn-checkout', () => loadPage('pages/checkout.html', initCheckout));
+
   function initProducts() {
     // Lógica dos produtos aqui, se necessário
   }
@@ -31,6 +32,14 @@ $(document).ready(function () {
   }
 
   function initCheckout() {
-    renderCart(); // Atualiza os valores do resumo do pedido
+    renderCart();
+  
+    $(document).off('click', '#btn-continue-shopping').on('click', '#btn-continue-shopping', () => {
+      console.log('Botão clicado!');
+      clearCart();
+  
+      // Volta para a página dos produtos
+      loadPage('pages/product.html', initProducts);
+    });
   }
 });

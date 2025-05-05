@@ -10,56 +10,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/contact.css">
 </head>
 <body>
     <header class="">
     </header>
         <!-- Contact Form -->
-    <form>
-        <div class="row g-2">
-            <div class="col-md">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="nome@email.com">
-              </div>
-              <div class="form-floating">
-                <input type="phone" class="form-control" id="floatingInputGrid" placeholder="Telemóvel" value="Telemóvel">
-              </div>
-            </div>
-        <div class="form-floating mb-3">
-            <textarea class="form-control" placeholder="Deixe a sua mensagem" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Mensagem</label>
+    <section class="contact-section">
+      <div class="text-center mb-4">
+        <h2 class="text-lowercase">contacto</h2>
+        <p class="text-muted">
+          em caso de dúvida, não hesite em contactar-nos para
+          <strong>ajuda@rahe.com</strong>
+        </p>
+      </div>
+      <form class="mb-5">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="o seu nome" required>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" placeholder="o seu email" required>
           </div>
-        <button type="submit" button class="Enviar-btn">Enviar mensagem</button>
+          <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" placeholder="o seu telemóvel (opcional)">
+          </div>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" rows="6" placeholder="a sua mensagem" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark text-lowercase px-4 mb-4">
+            enviar mensagem
+          </button>
+        </div>
       </form>
+    </section>
 
 <!-- Footer -->
-    <footer class="footer-container">
-                <div class="newsletter">
-                    <h2>junte-se à nossa newsletter</h2>
-                    <div class="newsletter-form">
-                        <input class="email-input" placeholder="email aqui">
-                        <button class="newsletter-btn">Subscrever</button>
-                    </div>
-                </div>
-                <div class="footer-row">
-                        <div class="footer-left">
-                            <p>&copy;2025 rhae. All rights reserved</p>
-                            <a href="instagram">instagram</a>
-                            <a href="tiktok">tiktok</a>
-                            <a href="x">x</a>
-                            <a href="pinterest">pinterest</a>
-                        </div>
-                        <button class="contact-btn">Contact</button>
-                </div>
-    </footer>
+<footer class="footer-container">
+  <div class="newsletter">
+      <h2>junte-se à nossa newsletter</h2>
+      <div class="newsletter-form">
+          <input class="email-input" placeholder="">
+          <button class="newsletter-btn">Subscrever</button>
+      </div>
+  </div>
+  <div class="footer-row">
+          <div class="footer-left">
+              <span>&copy;2025 rhae. All rights reserved</span>
+              <a href="instagram">instagram</a>
+              <a href="tiktok">tiktok</a>
+              <a href="x">x</a>
+              <a href="pinterest">pinterest</a>
+          </div>
+          <button class="contact-btn">Contact</button>
+  </div>
+</footer>
 
-    <!-- Bootstrap JS e dependências -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    
-    <!-- JavaScript Personalizado -->
-    <script src="/js/main.js"></script>
+<!-- Bootstrap JS e dependências -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- JavaScript Personalizado -->
+<script src="/js/main.js"></script>
 </body>
 </html>

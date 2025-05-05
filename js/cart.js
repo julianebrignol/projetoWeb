@@ -24,7 +24,7 @@ function recalculateCart() {
   });
 
   const ivaValue = subtotal * iva;
-  const shipping = subtotal > 0 ? shippingRate : 0;
+  const shipping = subtotal >= 50 ? 0 : (subtotal > 0 ? shippingRate : 0);
   const total = subtotal + shipping;
 
   $('.totals-value').fadeOut(fadeTime, function () {
@@ -178,5 +178,8 @@ window.addEventListener('load', () => {
   renderCart();
 });
 
-// Exportações finais
-export { addToCart, renderCart, clearCart };
+function isCartEmpty() {
+  return cartItems.length === 0;
+}
+
+export { addToCart, renderCart, clearCart, isCartEmpty };

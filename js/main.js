@@ -1,4 +1,4 @@
-import { addToCart, renderCart, clearCart } from './cart.js';
+import { addToCart, renderCart, clearCart, isCartEmpty } from './cart.js';
 
 $(document).ready(function () {
   const mainContent = $('#main');
@@ -21,7 +21,13 @@ $(document).ready(function () {
   // Nav buttons
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));
   $('#btn-cart').on('click', () => loadPage('pages/cart.html', initCart));
-  $(document).on('click', '#btn-checkout', () => loadPage('pages/checkout.html', initCheckout));
+  $(document).on('click', '#btn-checkout', () => {
+    if (isCartEmpty()) {
+      alert('O carrinho está vazio. Adicione produtos antes de finalizar a compra.');
+      return;
+    }
+    loadPage('pages/checkout.html', initCheckout);
+  });
 
   function initProducts() {
     // Lógica dos produtos aqui, se necessário
@@ -34,12 +40,15 @@ $(document).ready(function () {
   function initCheckout() {
     renderCart();
   
+    // Botão "Continuar a comprar"
     $(document).off('click', '#btn-continue-shopping').on('click', '#btn-continue-shopping', () => {
-      console.log('Botão clicado!');
       clearCart();
-  
-      // Volta para a página dos produtos
       loadPage('pages/product.html', initProducts);
+    });
+  
+    // Botão "Voltar ao Carrinho"
+    $(document).off('click', '#btn-cart').on('click', '#btn-cart', () => {
+      loadPage('pages/cart.html', initCart);
     });
   }
 });

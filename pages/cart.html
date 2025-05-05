@@ -5,25 +5,32 @@
   <!-- container vazio, será preenchido por renderCart() -->
   <div class="cart-products"></div>
 
-  <div class="totals">
-    <div class="totals-item">
-      <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal">0.00</div>
+  <!-- Novo contêiner para agrupar totals + note -->
+  <div class="totals-wrapper">
+    <div class="totals">
+      <div class="totals-item">
+        <label>Subtotal</label>
+        <div class="totals-value" id="cart-subtotal">0.00</div>
+      </div>
+      <div class="totals-item">
+        <label>IVA (23%)</label>
+        <div class="totals-value" id="cart-ivaValue">0.00</div>
+      </div>
+      <div class="totals-item">
+        <label>Envio</label>
+        <div class="totals-value" id="cart-shipping">0.00</div>
+      </div>
+      <div class="totals-separator"></div>
+      <div class="totals-item totals-item-total">
+        <label>Total</label>
+        <div class="totals-value" id="cart-total">0.00</div>
+      </div>
+      <button id="btn-checkout" class="btn btn-outline-primary mt-3">
+        Finalizar Compra
+      </button>
     </div>
-    <div class="totals-item">
-      <label>IVA (23%)</label>
-      <div class="totals-value" id="cart-ivaValue">0.00</div>
-    </div>
-    <div class="totals-item">
-      <label>Envio</label>
-      <div class="totals-value" id="cart-shipping">0.00</div>
-    </div>
-    <div class="totals-item totals-item-total">
-      <label>Total</label>
-      <div class="totals-value" id="cart-total">0.00</div>
-    </div>
-    <button id="btn-checkout" class="btn btn-outline-primary mt-3">
-      Finalizar Compra
-    </button>
+
+    <!-- Agora está logo abaixo -->
+    <p class="shipping-note">* Portes grátis em compras iguais ou superiores a 50€.</p>
   </div>
 </div>

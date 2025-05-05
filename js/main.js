@@ -16,7 +16,7 @@ $(document).ready(function () {
   }
 
   // Initial load
-  loadPage('pages/checkout.html', initCheckout);
+  loadPage('pages/confirmation.html', initCheckout);
 
   // Nav buttons
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));

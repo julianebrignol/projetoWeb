@@ -19,7 +19,7 @@ $(document).ready(function () {
   }
 
   // Initial load: products page
-  loadPage('pages/woman.html', initProducts);
+  loadPage('pages/women.html', initProducts);
 
   // Nav buttons
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));

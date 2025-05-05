@@ -61,7 +61,6 @@ body {
     font-size: 12px;
 }
 
-
 .footer-row {
     display: flex;
     align-items: center;
@@ -71,6 +70,13 @@ body {
     border-top: 1px solid #eeeeee;
 }
 
+.footer-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
 .footer-left a {
     display: flex;
     flex-wrap: wrap;
@@ -78,7 +84,7 @@ body {
     text-decoration: none;
     text-transform: lowercase;
 }
-    
+
 .contact-btn{
     background: #ffffff;
     border: none;
@@ -88,4 +94,8 @@ body {
     text-decoration: none;
     padding: 0;
     font-size: 13px;
+}
+
+.footer-left.contact-btn{
+    margin-left:auto;
 }

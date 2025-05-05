@@ -34,7 +34,7 @@ $(document).ready(function () {
   // -----------------------------
   $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));
   $('#btn-cart').on('click', () => loadPage('pages/cart.html', initCart));
-
+  $(document).on('click', '#btn-contacts', () => loadPage('pages/contact.html', initContacts));
   // Botão para finalizar compra
   $(document).on('click', '#btn-checkout', () => {
     if (isCartEmpty()) {
@@ -49,6 +49,11 @@ $(document).ready(function () {
   // -----------------------------
   function initProducts() {
     // Aqui podes carregar produtos via AJAX ou aplicar eventos
+  }
+
+  function initContacts() {
+    console.log('Página de contatos carregada.');
+    // Aqui pode ir qualquer código específico da página de contatos
   }
 
   function initCart() {

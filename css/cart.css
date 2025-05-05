@@ -1,3 +1,6 @@
+/* -----------------------------
+   RESET E CONFIGURAÇÕES GERAIS
+----------------------------- */
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -18,6 +21,9 @@ body {
 	padding: 0 20px;
 }
 
+/* -----------------------------
+   TÍTULOS E CABEÇALHOS
+----------------------------- */
 .page-title {
 	text-align: center;
 	font-size: 32px;
@@ -28,6 +34,9 @@ body {
 	letter-spacing: 1px;
 }
 
+/* -----------------------------
+   CARRINHO DE COMPRAS
+----------------------------- */
 .shopping-cart {
 	display: flex;
 	justify-content: space-between;
@@ -43,6 +52,9 @@ body {
 	min-width: 40%;
 }
 
+/* -----------------------------
+   PRODUTOS NO CARRINHO
+----------------------------- */
 .product {
 	position: relative;
 	display: flex;
@@ -85,6 +97,9 @@ body {
 	margin-left: 4px;
 }
 
+/* -----------------------------
+   SELEÇÃO DE QUANTIDADE
+----------------------------- */
 .quantity-selector {
 	display: flex;
 	align-items: center;
@@ -116,13 +131,9 @@ body {
 	font-size: 16px;
 }
 
-.product-line-price {
-	width: 20%;
-	text-align: right;
-	font-size: 18px;
-	font-weight: bold;
-}
-
+/* -----------------------------
+   REMOVER PRODUTO
+----------------------------- */
 .remove-product {
 	position: absolute;
 	bottom: 10px;
@@ -151,15 +162,25 @@ body {
 	pointer-events: none;
 }
 
+/* -----------------------------
+   TOTAIS DO CARRINHO
+----------------------------- */
+.totals-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 440px;
+	padding: 0 20px;
+}
+
 .totals {
 	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
-	gap: 10px; /* controla o espaçamento interno */
+	gap: 10px;
 	padding: 15px;
 	border: 1px solid #aaaaaa85;
 	box-sizing: border-box;
-  }
+}
 
 .totals-item {
 	display: flex;
@@ -186,6 +207,14 @@ body {
 	color: #000;
 }
 
+.totals-separator {
+	border-top: 1px solid #ccc;
+	margin: 10px 0;
+}
+
+/* -----------------------------
+   BOTÕES DE FINALIZAÇÃO
+----------------------------- */
 .checkout {
 	width: 100%;
 	margin-top: 20px;
@@ -201,11 +230,6 @@ body {
 	background-color: #4d4d4d;
 }
 
-.totals-separator {
-	border-top: 1px solid #ccc;
-	margin: 10px 0;
-  }
-
 #btn-checkout {
 	background-color: black;
 	color: white;
@@ -216,29 +240,27 @@ body {
 	border-radius: 4px;
 	cursor: pointer;
 	margin-bottom: 0;
-  }
-  
-  #btn-checkout:hover {
-	background-color: #333;
-  }
+}
 
-  .shipping-note {
+#btn-checkout:hover {
+	background-color: #333;
+}
+
+/* -----------------------------
+   NOTA DE PORTES GRÁTIS
+----------------------------- */
+.shipping-note {
 	margin-top: 5px;
 	padding-top: 0;
 	font-size: 0.9rem;
 	color: #666;
 	text-align: right;
 	max-width: 100%;
-  }
+}
 
-  .totals-wrapper {
-	display: flex;
-	flex-direction: column;
-	flex: 0 0 440px;
-	padding: 0 20px;
-  }
-
-/* Responsividade */
+/* -----------------------------
+   RESPONSIVIDADE
+----------------------------- */
 @media screen and (max-width: 768px) {
 	.shopping-cart {
 		flex-direction: column;
@@ -271,5 +293,5 @@ body {
 		flex: 1 1 auto;
 		width: 100%;
 		max-width: 100%;
-	  }
+	}
 }

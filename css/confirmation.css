@@ -1,36 +1,51 @@
+/* -----------------------------
+   LAYOUT DO CONTÊINER PRINCIPAL
+----------------------------- */
 .confirmation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .confirmation-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .confirmation-content img {
-    width: 64px;
-    height: 64px;
-  }
-  
-  .confirmation-content button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .confirmation-content button:hover {
-    background-color: #444;
-  }
+  display: flex;                    /* Centraliza horizontalmente o conteúdo */
+  justify-content: center;
+  align-items: center;             /* Centraliza verticalmente */
+  text-align: center;              /* Centraliza o texto dentro do conteúdo */
+}
 
-  .thx-quote {
-    font-weight: bold;
-  }
+/* -----------------------------
+ CONTEÚDO DA CONFIRMAÇÃO
+----------------------------- */
+.confirmation-content {
+  display: flex;                   /* Layout em coluna para os elementos */
+  flex-direction: column;
+  align-items: center;             /* Centraliza horizontalmente os elementos */
+  gap: 16px;                       /* Espaçamento entre os elementos */
+}
+
+/* -----------------------------
+ IMAGEM DE CONFIRMAÇÃO
+----------------------------- */
+.confirmation-content img {
+  width: 64px;
+  height: 64px;                    /* Tamanho fixo para o ícone de check */
+}
+
+/* -----------------------------
+ BOTÃO "CONTINUAR A COMPRAR"
+----------------------------- */
+.confirmation-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmation-content button:hover {
+  background-color: #444;         /* Escurece o botão no hover */
+}
+
+/* -----------------------------
+ FRASE DE AGRADECIMENTO
+----------------------------- */
+.thx-quote {
+  font-weight: bold;              /* Destaque no texto de agradecimento */
+}

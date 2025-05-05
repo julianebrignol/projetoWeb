@@ -1,22 +1,30 @@
-// cart.js (ES Module)
-
+// -----------------------------
+// CONFIGURAÇÕES INICIAIS
+// -----------------------------
 const iva = 0.23;
 const shippingRate = 3.95;
 const fadeTime = 300;
 
-// Estado do carrinho
+// Estado atual do carrinho (carregado do localStorage)
 let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
+// -----------------------------
+// FUNÇÕES DE UTILIDADE
+// -----------------------------
+
+// Guarda o carrinho no localStorage
 function saveCart() {
   localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
+// Limpa o carrinho e atualiza o ecrã
 function clearCart() {
   cartItems = [];
   saveCart();
-  renderCart(); // Atualiza o interface se necessário
+  renderCart();
 }
 
+// Calcula subtotal, IVA, envio e total
 function recalculateCart() {
   let subtotal = 0;
   cartItems.forEach(item => {
@@ -33,6 +41,7 @@ function recalculateCart() {
     $('#cart-shipping').text(shipping.toFixed(2));
     $('#cart-total').text(total.toFixed(2));
 
+    // Mostra ou esconde o botão de checkout
     if (total === 0) {
       $('.checkout').fadeOut(fadeTime);
     } else {
@@ -43,6 +52,9 @@ function recalculateCart() {
   });
 }
 
+// -----------------------------
+// RENDERIZAÇÃO DO CARRINHO
+// -----------------------------
 function renderCart() {
   const container = $('.cart-products');
   container.empty();
@@ -76,6 +88,7 @@ function renderCart() {
     container.append(productRow);
   });
 
+  // Atualiza os preços por linha
   container.find('.product').each(function () {
     const row = $(this);
     const price = parseFloat(row.find('.product-price').text());
@@ -87,6 +100,11 @@ function renderCart() {
   recalculateCart();
 }
 
+// -----------------------------
+// AÇÕES NO CARRINHO
+// -----------------------------
+
+// Adiciona produto ao carrinho
 function addToCart(item) {
   const existing = cartItems.find(p => p.id === item.id && p.size === item.size);
   if (existing) {
@@ -98,12 +116,14 @@ function addToCart(item) {
   renderCart();
 }
 
+// Remove produto do carrinho
 function removeFromCart(id, size) {
   cartItems = cartItems.filter(item => !(item.id === id && item.size === size));
   saveCart();
   renderCart();
 }
 
+// Atualiza o preço da linha de um produto
 function updateLineTotal(productRow, quantity) {
   const price = parseFloat(productRow.find('.product-price').text());
   const linePrice = price * quantity;
@@ -114,7 +134,11 @@ function updateLineTotal(productRow, quantity) {
   });
 }
 
-// Eventos existentes
+// -----------------------------
+// EVENTOS DOM E MODAL
+// -----------------------------
+
+// Modal: abre e carrega dados do produto
 $(document).on('show.bs.modal', '#sizeModal', function(event) {
   const triggerBtn = $(event.relatedTarget);
   const modal = $(this);
@@ -131,6 +155,7 @@ $(document).on('show.bs.modal', '#sizeModal', function(event) {
   modal.data('product', productData);
 });
 
+// Adiciona ao carrinho a partir do modal
 $(document).on('click', '.add-to-cart-btn', function() {
   const modal = $(this).closest('.modal');
   const product = modal.data('product');
@@ -146,6 +171,7 @@ $(document).on('click', '.add-to-cart-btn', function() {
   modal.modal('hide');
 });
 
+// Altera a quantidade de um produto
 $(document).on('click', '.qty-btn', function () {
   const btn = $(this);
   const row = btn.closest('.product');
@@ -163,6 +189,7 @@ $(document).on('click', '.qty-btn', function () {
   updateLineTotal(row, item.quantity);
 });
 
+// Remove produto ao clicar no botão de remoção
 $(document).on('click', '.remove-product', function () {
   const row = $(this).closest('.product');
   const id = row.data('id');
@@ -174,12 +201,16 @@ $(document).on('click', '.remove-product', function () {
   });
 });
 
+// Carrega o carrinho ao carregar a página
 window.addEventListener('load', () => {
   renderCart();
 });
 
+// Verifica se o carrinho está vazio
 function isCartEmpty() {
   return cartItems.length === 0;
 }
 
+// -----------------------------
+// EXPORTAÇÃO (ES MODULE)
 export { addToCart, renderCart, clearCart, isCartEmpty };

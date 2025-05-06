@@ -1,0 +1,7 @@
+.main-product {
+  background-image: url("../assets/images/carousel1.jpg");
+  height: 85vh;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 10%;
+}

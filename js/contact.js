@@ -1,34 +1,23 @@
-emailjs.init("public_KiZyDyuKTuBpqGVR5");
-
-const form = document.getElementById("form-contacto");
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const nome = form.querySelector('[name="user-name"]').value;
-    const email = form.querySelector('[name="user-email"]').value;
-    const mensagem = form.querySelector('[name="message"]').value;
-
-    if (nome === "" || email === "" || mensagem === "") {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
-
-    if (!email.includes("@") || !email.includes(".")) {
-        alert("Email inválido.");
-        return;
-    }
-
-    emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", {
-        from_name: nome,
-        from_email: email,
-        message: mensagem
-    }).then(function () {
-        alert("Mensagem enviada com sucesso!");
-        form.reset();
-    }, function (error) {
-        alert("Erro ao enviar. Tente novamente.");
-        console.error("Erro:", error);
-    });
-});
-
+document.addEventListener('submit', function (e) {
+	if (e.target && e.target.id === "form-contacto") {
+	  e.preventDefault();
+  
+	  const form = e.target;
+	  const nome = form.querySelector('[name="user_name"]').value;
+	  const email = form.querySelector('[name="user_email"]').value;
+	  const mensagem = form.querySelector('[name="message"]').value;
+  
+	  if (nome === "" || email === "" || mensagem === "") {
+		alert("Por favor, preencha todos os campos.");
+		return;
+	  }
+  
+	  if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+		alert("Email inválido.");
+		return;
+	  }
+  
+	  alert("Mensagem registada com sucesso!");
+	  form.reset();
+	}
+  });

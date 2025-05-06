@@ -39,6 +39,13 @@ body {
     margin-bottom: 24px;
 }
 
+.contact-section p.text-muted {
+	white-space: nowrap;
+	overflow: auto;
+	width: 100%;
+	display: block;
+  }
+  
 .form-control{
     border: 1px solid #cccccc;
     border-radius: 0;
@@ -72,8 +79,9 @@ form {
 }
 
 .newsletter {
-    text-align: center;
+    text-align: center !important;
     margin-bottom: 32px;
+	width: 100%;
 }
 
 .newsletter-h2 {
@@ -84,9 +92,13 @@ form {
 }
 
 .newsletter-form {
-    display: flex;
-    justify-content: center;
-}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	max-width: 400px;  /* ou 100% se preferires responsivo total */
+	margin: 0 auto;    /* centraliza horizontalmente */
+  }
 
 .email-input {
     border: 1px solid #eeeeee;

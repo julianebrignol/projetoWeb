@@ -1,0 +1,253 @@
+<!-- Título da página de checkout -->
+<h1 class="checkout-title">Finalizar Compra</h1>
+
+<!-- Contêiner geral da página -->
+<div class="container">
+  <!-- Layout principal dividido em duas partes: formulário (esquerda) e resumo (direita) -->
+  <div class="checkout-layout">
+    <!-- Bloco do formulário de checkout -->
+    <div class="checkout-form">
+      <form action="">
+        <!-- Nota sobre campos obrigatórios -->
+        <p>Campos de preenchimento obrigatório *</p>
+
+        <!-- Bloco: Informações de contacto -->
+        <h4>Informações de Contacto</h4>
+        <div class="form-row-2">
+          <p>
+            Email: *
+            <input
+              type="email"
+              placeholder="abc@gmail.com"
+              name="email"
+              id="email"
+              required
+            />
+          </p>
+          <p>
+            Telemóvel: *
+            <input
+              type="number"
+              placeholder="123456789"
+              name="number"
+              id="number"
+              required
+            />
+          </p>
+        </div>
+
+        <!-- Bloco: Morada de envio -->
+        <h4>Morada de envio</h4>
+        <div class="form-row-2">
+          <p>
+            Nome: *
+            <input type="text" placeholder="Nome" name="First Name" required />
+          </p>
+          <p>
+            Apelido:
+            <input type="text" placeholder="Apelido" name="Last Name" />
+          </p>
+        </div>
+
+        <div class="form-row-2">
+          <p>
+            Morada:
+            <textarea
+              name="Morada"
+              placeholder="Insira a sua morada"
+              id="Address"
+              cols="40"
+              rows="1"
+            ></textarea>
+          </p>
+          <p>
+            Apartamento, andar, etc. (opcional):
+            <textarea
+              name="MoradaPlus"
+              placeholder="Insira o seu apartamento, andar, etc."
+              id="Addressplus"
+              cols="40"
+              rows="1"
+            ></textarea>
+          </p>
+        </div>
+
+        <div class="form-row-2">
+          <p>
+            Código Postal: *
+            <input
+              type="text"
+              placeholder="0000-000"
+              name="Code"
+              id="Code"
+              required
+            />
+          </p>
+          <p>
+            Distrito: *
+            <select name="City" id="City" required>
+              <option value="">--Selecione o seu distrito--</option>
+              <!-- Lista completa de distritos -->
+              <option value="Aveiro">Aveiro</option>
+              <option value="Beja">Beja</option>
+              <option value="Braga">Braga</option>
+              <option value="Bragança">Bragança</option>
+              <option value="Castelo Branco">Castelo Branco</option>
+              <option value="Coimbra">Coimbra</option>
+              <option value="Évora">Évora</option>
+              <option value="Faro">Faro</option>
+              <option value="Guarda">Guarda</option>
+              <option value="Leiria">Leiria</option>
+              <option value="Lisboa">Lisboa</option>
+              <option value="Portalegre">Portalegre</option>
+              <option value="Porto">Porto</option>
+              <option value="Santarém">Santarém</option>
+              <option value="Setúbal">Setúbal</option>
+              <option value="Viana do Castelo">Viana do Castelo</option>
+              <option value="Vila Real">Vila Real</option>
+              <option value="Viseu">Viseu</option>
+              <option value="Açores">Açores</option>
+              <option value="Madeira">Madeira</option>
+            </select>
+          </p>
+        </div>
+
+        <!-- Bloco: Informações de pagamento -->
+        <h4>Informações de Pagamento</h4>
+        <div class="form-row-2">
+          <p>
+            Tipo de Cartão: *
+            <select name="Card_Type" id="Card_Type" required>
+              <option value="">--Selecione o tipo de cartão--</option>
+              <option value="Master Card">MasterCard</option>
+              <option value="VISA">VISA</option>
+            </select>
+          </p>
+          <p>
+            Número do Cartão: *
+            <input
+              type="text"
+              placeholder="1111-2222-3333-4444"
+              name="Card number"
+              id="Card number"
+              required
+            />
+          </p>
+        </div>
+
+        <div class="form-row-2">
+          <p>
+            CVV: *
+            <input
+              type="password"
+              placeholder="123"
+              name="CVV"
+              id="CVV"
+              required
+            />
+          </p>
+          <p>
+            Data de Validade: *
+            <input type="date" name="Exp_Date" id="Exp_Date" required />
+          </p>
+        </div>
+
+        <!-- Bloco: Morada de faturação -->
+        <div class="form-row-2">
+          <p>
+            Morada e Faturação:
+            <textarea
+              name="Morada"
+              placeholder="Insira a sua morada de faturacao"
+              id="Address"
+              cols="40"
+              rows="1"
+            ></textarea>
+          </p>
+          <p>
+            Apartamento, andar, etc. (opcional):
+            <textarea
+              name="MoradaPlus"
+              placeholder="Insira o seu apartamento, andar, etc."
+              id="Addressplus"
+              cols="40"
+              rows="1"
+            ></textarea>
+          </p>
+        </div>
+
+        <div class="form-row-2">
+          <p>
+            Código Postal: *
+            <input
+              type="text"
+              placeholder="0000-000"
+              name="BillingCode"
+              id="BillingCode"
+              required
+            />
+          </p>
+          <p>
+            Distrito: *
+            <select name="City" id="City" required>
+              <option value="">--Selecione o seu distrito--</option>
+              <!-- Lista completa de distritos -->
+              <option value="Aveiro">Aveiro</option>
+              <option value="Beja">Beja</option>
+              <option value="Braga">Braga</option>
+              <option value="Bragança">Bragança</option>
+              <option value="Castelo Branco">Castelo Branco</option>
+              <option value="Coimbra">Coimbra</option>
+              <option value="Évora">Évora</option>
+              <option value="Faro">Faro</option>
+              <option value="Guarda">Guarda</option>
+              <option value="Leiria">Leiria</option>
+              <option value="Lisboa">Lisboa</option>
+              <option value="Portalegre">Portalegre</option>
+              <option value="Porto">Porto</option>
+              <option value="Santarém">Santarém</option>
+              <option value="Setúbal">Setúbal</option>
+              <option value="Viana do Castelo">Viana do Castelo</option>
+              <option value="Vila Real">Vila Real</option>
+              <option value="Viseu">Viseu</option>
+              <option value="Açores">Açores</option>
+              <option value="Madeira">Madeira</option>
+            </select>
+          </p>
+        </div>
+
+        <!-- Botões de ação do formulário -->
+        <div class="form-buttons">
+          <button id="btn-cart" type="button">Voltar ao Carrinho</button>
+          <button type="submit" id="btn-finish-order">Finalizar Pedido</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sidebar: Resumo da compra (lado direito) -->
+    <div class="checkout-sidebar">
+      <div class="totals">
+        <div class="totals-item">
+          <label>Resumo do pedido</label>
+        </div>
+        <div class="totals-item">
+          <label>Subtotal</label>
+          <div class="totals-value" id="cart-subtotal">0.00</div>
+        </div>
+        <div class="totals-item">
+          <label>IVA (23%)</label>
+          <div class="totals-value" id="cart-ivaValue">0.00</div>
+        </div>
+        <div class="totals-item">
+          <label>Envio</label>
+          <div class="totals-value" id="cart-shipping">0.00</div>
+        </div>
+        <div class="totals-separator"></div>
+        <div class="totals-item totals-item-total">
+          <label>Total</label>
+          <div class="totals-value" id="cart-total">0.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

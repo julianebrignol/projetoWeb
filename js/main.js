@@ -16,8 +16,13 @@ form.addEventListener('submit', function (e) {
         alert("Email inválido.");
         return;
     }
-    // Process the form data
-    console.log("Nome:", nome);
-    console.log("Email:", email);
-    console.log("Mensagem:", mensagem);
+    // Enviar email com EmailJS
+    emailjs.sendForm('service_vlyrazd', 'template_7850ewq', form)
+        .then(function () {
+            alert("Mensagem enviada com sucesso!");
+            form.reset();
+        }, function (erro) {
+            console.log("Erro:", erro);
+            alert("Erro ao enviar a mensagem.");
+        });
 });

@@ -68,7 +68,7 @@ $(document).ready(function () {
   function initCheckout() {
     renderCart();
   
-    // Botão "Continuar a comprar" — APENAS navega de volta para os produtos
+    // Botão "Continuar a comprar" — APENAS navega de volta para a home
     $(document).off('click', '#btn-continue-shopping').on('click', '#btn-continue-shopping', () => {
       loadPage('pages/home.html', initProducts);
     });

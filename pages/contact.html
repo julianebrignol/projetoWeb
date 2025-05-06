@@ -1,16 +1,30 @@
-<form>
-    <div class="row g-2">
-        <div class="col-md">
-          <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="nome@email.com">
-          </div>
-          <div class="form-floating">
-            <input type="phone" class="form-control" id="floatingInputGrid" placeholder="Telemóvel" value="Telemóvel">
-          </div>
-        </div>
-    <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Deixe a sua mensagem" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Mensagem</label>
+<section class="contact-section">
+  <div class="text-center mb-4">
+    <h2 class="text-lowercase">contacto</h2>
+    <p class="text-muted">
+      em caso de dúvida, não hesite em contactar-nos para
+      <strong>ajuda@rahe.com</strong>
+    </p>
+  </div>
+  <form id="form-contacto" class="mb-5">
+    <div class="mb-3">
+      <input type="text" class="form-control" name="user-name" placeholder="o seu nome" required>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <input type="text" class="form-control" name="user-email" placeholder="o seu email" required>
       </div>
-    <button type="submit" button class="Enviar-btn">Enviar mensagem</button>
-</form>
+      <div class="col-md-6 mb-3">
+        <input type="text" class="form-control" name="user-phone" placeholder="o seu telemóvel (opcional)">
+      </div>
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" name="message" rows="6" placeholder="a sua mensagem" required></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-dark text-lowercase px-4 mb-4">
+        enviar mensagem
+      </button>
+    </div>
+  </form>
+</section>

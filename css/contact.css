@@ -17,6 +17,53 @@ body {
     color: var(--text-color);
 }
 
+.contact-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    text-transform: lowercase;
+    font-size: 14px;
+    color: var(--text-color);
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.contact-section p {
+    margin-bottom: 24px;
+}
+
+.form-control{
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 14px;
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: none;
+}
+
+.btn-dark {
+    color:#ffffff;
+    border: none;
+    border-radius: 0;
+    font-size: 12px;
+    padding: 10px 32px;
+    text-transform: lowercase;
+    margin-bottom: 40px;
+}
+
+form {
+    margin-bottom: 80px;
+}
 .footer-container {
     padding: 32px 0;
     font-family: Arial, sans-serif;
@@ -37,15 +84,14 @@ body {
 }
 
 .newsletter-form {
-    margin-top: 10px;
-    gap: 5px;
-    max-width: 600px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 .email-input {
+    border: 1px solid #eeeeee;
     height: 30px;
-    outline: none;
+    outline:none;
     padding: 8px;
     width: 250px;
 }
@@ -57,45 +103,54 @@ body {
     color: #ffffff;
     cursor: pointer;
     transition: 0.3s;
-    border: none;
+    border-left: none;
     font-size: 12px;
+    border: 1px solid #cccccc;
+    border-left: none;
+    text-transform: lowercase;
+    margin-left: 6px;
 }
 
 .footer-row {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 16px;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 60px;
+    padding: 0 32px;
     border-top: 1px solid #eeeeee;
+    font-size: 12px;
 }
 
 .footer-left {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 16px;
-}
-
-.footer-left a {
-    display: flex;
     flex-wrap: wrap;
+    text-transform: lowercase;
     color: #333333;
     text-decoration: none;
+}
+
+.footer-left span {
+    margin-right: 32px;
+}
+.footer-left a {
+    vertical-align: middle;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text-color);
     text-transform: lowercase;
 }
 
 .contact-btn{
-    background: #ffffff;
+    background: none;
     border: none;
     color:#333333;
     cursor: pointer;
     transition: 0.3s;
     text-decoration: none;
-    padding: 0;
-    font-size: 13px;
-}
-
-.footer-left.contact-btn{
-    margin-left:auto;
+    text-transform: lowercase;
+    font-size: 12px;
 }

@@ -27,14 +27,19 @@ $(document).ready(function () {
   // -----------------------------
   // CARREGAMENTO INICIAL (Página de Confirmação como default)
   // -----------------------------
-  loadPage('pages/confirmation.html', initCheckout);
+  loadPage('pages/home.html', initCheckout);
 
   // -----------------------------
   // EVENTOS DE NAVEGAÇÃO (Botões de topo/menu)
   // -----------------------------
-  $('#btn-products').on('click', () => loadPage('pages/product.html', initProducts));
-  $('#btn-cart').on('click', () => loadPage('pages/cart.html', initCart));
+  $('#header-cart').on('click', () => loadPage('pages/cart.html', initCart));
   $(document).on('click', '#btn-contacts', () => loadPage('pages/contact.html', initContacts));
+  $(document).on('click', '#category-women', () => loadPage('pages/women.html', initContacts));
+  $(document).on('click', '#category-men', () => loadPage('pages/men.html', initContacts));
+  $(document).on('click', '#category-kids', () => loadPage('pages/product.html', initContacts));
+  $(document).on('click', '#header-logo', () => loadPage('pages/home.html', initContacts));
+
+
   // Botão para finalizar compra
   $(document).on('click', '#btn-checkout', () => {
     if (isCartEmpty()) {
@@ -65,7 +70,7 @@ $(document).ready(function () {
   
     // Botão "Continuar a comprar" — APENAS navega de volta para os produtos
     $(document).off('click', '#btn-continue-shopping').on('click', '#btn-continue-shopping', () => {
-      loadPage('pages/product.html', initProducts);
+      loadPage('pages/home.html', initProducts);
     });
   
     // Botão "Voltar ao Carrinho"

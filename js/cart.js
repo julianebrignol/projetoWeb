@@ -17,11 +17,18 @@ function saveCart() {
   localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
+// Atualiza o número de itens no ícone do carrinho
+function updateCartCount() {
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  $('#header-cart span').text(totalItems);
+}
+
 // Limpa o carrinho e atualiza o ecrã
 function clearCart() {
   cartItems = [];
   saveCart();
   renderCart();
+  updateCartCount();
 }
 
 // Calcula subtotal, IVA, envio e total
@@ -41,7 +48,6 @@ function recalculateCart() {
     $('#cart-shipping').text(shipping.toFixed(2));
     $('#cart-total').text(total.toFixed(2));
 
-    // Mostra ou esconde o botão de checkout
     if (total === 0) {
       $('.checkout').fadeOut(fadeTime);
     } else {
@@ -88,7 +94,6 @@ function renderCart() {
     container.append(productRow);
   });
 
-  // Atualiza os preços por linha
   container.find('.product').each(function () {
     const row = $(this);
     const price = parseFloat(row.find('.product-price').text());
@@ -98,13 +103,12 @@ function renderCart() {
   });
 
   recalculateCart();
+  updateCartCount();
 }
 
 // -----------------------------
 // AÇÕES NO CARRINHO
 // -----------------------------
-
-// Adiciona produto ao carrinho
 function addToCart(item) {
   const existing = cartItems.find(p => p.id === item.id && p.size === item.size);
   if (existing) {
@@ -114,16 +118,16 @@ function addToCart(item) {
   }
   saveCart();
   renderCart();
+  updateCartCount();
 }
 
-// Remove produto do carrinho
 function removeFromCart(id, size) {
   cartItems = cartItems.filter(item => !(item.id === id && item.size === size));
   saveCart();
   renderCart();
+  updateCartCount();
 }
 
-// Atualiza o preço da linha de um produto
 function updateLineTotal(productRow, quantity) {
   const price = parseFloat(productRow.find('.product-price').text());
   const linePrice = price * quantity;
@@ -137,8 +141,6 @@ function updateLineTotal(productRow, quantity) {
 // -----------------------------
 // EVENTOS DOM E MODAL
 // -----------------------------
-
-// Modal: abre e carrega dados do produto
 $(document).on('show.bs.modal', '#sizeModal', function(event) {
   const triggerBtn = $(event.relatedTarget);
   const modal = $(this);
@@ -155,7 +157,6 @@ $(document).on('show.bs.modal', '#sizeModal', function(event) {
   modal.data('product', productData);
 });
 
-// Adiciona ao carrinho a partir do modal
 $(document).on('click', '.add-to-cart-btn', function() {
   const modal = $(this).closest('.modal');
   const product = modal.data('product');
@@ -171,7 +172,6 @@ $(document).on('click', '.add-to-cart-btn', function() {
   modal.modal('hide');
 });
 
-// Altera a quantidade de um produto
 $(document).on('click', '.qty-btn', function () {
   const btn = $(this);
   const row = btn.closest('.product');
@@ -189,7 +189,6 @@ $(document).on('click', '.qty-btn', function () {
   updateLineTotal(row, item.quantity);
 });
 
-// Remove produto ao clicar no botão de remoção
 $(document).on('click', '.remove-product', function () {
   const row = $(this).closest('.product');
   const id = row.data('id');
@@ -201,16 +200,22 @@ $(document).on('click', '.remove-product', function () {
   });
 });
 
-// Carrega o carrinho ao carregar a página
+// -----------------------------
+// LOAD INICIAL
+// -----------------------------
 window.addEventListener('load', () => {
   renderCart();
+  updateCartCount();
 });
 
-// Verifica se o carrinho está vazio
+// -----------------------------
+// UTILITÁRIO
+// -----------------------------
 function isCartEmpty() {
   return cartItems.length === 0;
 }
 
 // -----------------------------
 // EXPORTAÇÃO (ES MODULE)
+// -----------------------------
 export { addToCart, renderCart, clearCart, isCartEmpty };

@@ -1,25 +1,24 @@
 
-.gap-32{
-    gap: 32px;
-}
 img{
     height: 100%;
     width: 100%;
 }
 .desconto{
     background: black;
-    color: white;
     font-size: 0.9rem;
-    min-width: 70px;
-    min-height: 30px;
+    width: 102px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 10px;
     margin-right: 10px;
+    gap: 10px;
+    padding: 10px;
+    justify-content: top;
+    align-items: center;
 }
 h1{
-    font-family: Outfit;
+    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
@@ -28,16 +27,18 @@ h1{
     margin-bottom: 32px;
 }
 h2{
-    font-family: Outfit;
+    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
     letter-spacing: 10%;
-
+    color: white;
+    margin: 0;
+    white-space: nowrap;
 }
 h3{
     margin-top: 32px;
-    font-family: Outfit;
+    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;
@@ -46,7 +47,7 @@ h3{
 }
 h4{
     margin-top: 10px;
-    font-family: Outfit;
+    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
@@ -54,7 +55,7 @@ h4{
 }
 p{
     margin-top: 10px;
-    font-family: Outfit;
+    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;

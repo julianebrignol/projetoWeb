@@ -39,6 +39,13 @@ body {
     margin-bottom: 24px;
 }
 
+.contact-section p.text-muted {
+	white-space: nowrap;
+	overflow: auto;
+	width: 100%;
+	display: block;
+  }
+  
 .form-control{
     border: 1px solid #cccccc;
     border-radius: 0;
@@ -72,8 +79,9 @@ form {
 }
 
 .newsletter {
-    text-align: center;
+    text-align: center !important;
     margin-bottom: 32px;
+	width: 100%;
 }
 
 .newsletter-h2 {
@@ -84,9 +92,13 @@ form {
 }
 
 .newsletter-form {
-    display: flex;
-    justify-content: center;
-}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	max-width: 400px;  /* ou 100% se preferires responsivo total */
+	margin: 0 auto;    /* centraliza horizontalmente */
+  }
 
 .email-input {
     border: 1px solid #eeeeee;
@@ -154,3 +166,40 @@ form {
     text-transform: lowercase;
     font-size: 12px;
 }
+
+.modal {
+    display: none;
+  }
+
+  .modal.is-open {
+    display: block;
+  }
+
+  .modal__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .modal__container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }

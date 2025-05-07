@@ -58,7 +58,38 @@ $(document).ready(function () {
 
   function initContacts() {
     console.log('Página de contatos carregada.');
-    // Aqui pode ir qualquer código específico da página de contatos
+  
+    // Inicializa o MicroModal (só funciona após o HTML estar no DOM)
+    MicroModal.init();
+  
+    // Garante que o evento é sempre limpo e reatribuído
+    $(document).off('submit', '#form-contacto').on('submit', '#form-contacto', function (e) {
+      e.preventDefault();
+  
+      const form = this;
+      const nome = form.querySelector('[name="user_name"]').value.trim();
+      const email = form.querySelector('[name="user_email"]').value.trim();
+      const mensagem = form.querySelector('[name="message"]').value.trim();
+  
+      if (!nome || !email || !mensagem) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+  
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Email inválido.");
+        return;
+      }
+  
+      form.reset();
+  
+      console.log('Modal existe?', document.getElementById('modal-1'));
+      // Mostra o modal
+      MicroModal.show('modal-1');
+  
+      // (Opcional) Fecha automaticamente após 5 segundos
+      // setTimeout(() => MicroModal.close('modal-1'), 5000);
+    });
   }
 
   function initCart() {

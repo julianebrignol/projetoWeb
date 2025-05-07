@@ -1,8 +1,70 @@
-/* 
+
 .gap-32{
     gap: 32px;
 }
 img{
-    height: 100px;
-    width: 100px;
-} */
+    height: 100%;
+    width: 100%;
+}
+.desconto{
+    background: black;
+    color: white;
+    font-size: 0.9rem;
+    min-width: 70px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+h1{
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+h2{
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 10%;
+
+}
+h3{
+    margin-top: 32px;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 10%;
+
+}
+h4{
+    margin-top: 10px;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 10%;
+}
+p{
+    margin-top: 10px;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 10%;
+}
+.preçoNovo{
+    color: #C80000; 
+}
+.preçoOriginal{
+    text-decoration: line-through;
+    color: #4E4E4E;
+    margin-left: 10px;
+}

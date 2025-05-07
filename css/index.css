@@ -9,7 +9,7 @@
   --border-primary: #e3e3e3;
   --text-special-price: #c80000;
   --text-special-old-price: #4e4e4e;
-  --shadow-primary: 0 0 0 .25rem #00000024;
+  --shadow-primary: 0 0 0 0.25rem #00000024;
 
   /* Typography */
   --header-logo-size: 24px;

@@ -2,20 +2,20 @@
    LAYOUT DO CONTÊINER PRINCIPAL
 ----------------------------- */
 .confirmation-container {
-  display: flex;                    /* Centraliza horizontalmente o conteúdo */
+  display: flex; /* Centraliza horizontalmente o conteúdo */
   justify-content: center;
-  align-items: center;             /* Centraliza verticalmente */
-  text-align: center;              /* Centraliza o texto dentro do conteúdo */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center; /* Centraliza o texto dentro do conteúdo */
 }
 
 /* -----------------------------
  CONTEÚDO DA CONFIRMAÇÃO
 ----------------------------- */
 .confirmation-content {
-  display: flex;                   /* Layout em coluna para os elementos */
+  display: flex; /* Layout em coluna para os elementos */
   flex-direction: column;
-  align-items: center;             /* Centraliza horizontalmente os elementos */
-  gap: 16px;                       /* Espaçamento entre os elementos */
+  align-items: center; /* Centraliza horizontalmente os elementos */
+  gap: 16px; /* Espaçamento entre os elementos */
 }
 
 /* -----------------------------
@@ -23,7 +23,7 @@
 ----------------------------- */
 .confirmation-content img {
   width: 64px;
-  height: 64px;                    /* Tamanho fixo para o ícone de check */
+  height: 64px; /* Tamanho fixo para o ícone de check */
 }
 
 /* -----------------------------
@@ -41,12 +41,12 @@
 }
 
 .confirmation-content button:hover {
-  background-color: #444;         /* Escurece o botão no hover */
+  background-color: #444; /* Escurece o botão no hover */
 }
 
 /* -----------------------------
  FRASE DE AGRADECIMENTO
 ----------------------------- */
 .thx-quote {
-  font-weight: bold;              /* Destaque no texto de agradecimento */
+  font-weight: bold; /* Destaque no texto de agradecimento */
 }

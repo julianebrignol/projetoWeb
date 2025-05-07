@@ -2,7 +2,7 @@
 <div class="container my-4 products-page">
   <h1 class="page-title mb-4">Produtos</h1>
   <div class="row g-4">
-    <!-- Produto 1 -->
+    <!-- produto 1 -->
     <div class="col-md-4">
       <div class="card h-100">
         <img
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <!-- Produto 2 -->
+    <!-- produto 2 -->
     <div class="col-md-4">
       <div class="card h-100">
         <img
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <!-- Produto 3 -->
+    <!-- produto 3 -->
     <div class="col-md-4">
       <div class="card h-100">
         <img
@@ -88,7 +88,7 @@
   </div>
 </div>
 
-<!-- Modal de seleção de tamanho -->
+<!-- modal de seleção de tamanho -->
 <div
   class="modal fade"
   id="sizeModal"
@@ -108,12 +108,12 @@
         ></button>
       </div>
       <div class="modal-body">
-        <!-- Título do produto -->
+        <!-- título do produto -->
         <p id="modal-product-title" class="h5"></p>
-        <!-- Descrição vinda do data-description -->
+        <!-- descrição vinda do data-description -->
         <p id="modal-product-description" class="mb-3 text-muted"></p>
 
-        <!-- Opções de tamanho -->
+        <!-- opções de tamanho -->
         <div class="mb-3">
           <label class="form-label">Tamanho:</label>
           <div>
@@ -151,7 +151,7 @@
           </div>
         </div>
 
-        <!-- Botões de ação -->
+        <!-- botões de ação -->
         <div class="text-end">
           <button
             type="button"
@@ -169,13 +169,13 @@
   </div>
 </div>
 
-<!-- Script para preencher título e descrição -->
+<!-- script para preencher título e descrição -->
 <script>
   document.querySelectorAll(".openSizeModal").forEach((btn) => {
     btn.addEventListener("click", () => {
       const title = btn.getAttribute("data-title");
       const description = btn.getAttribute("data-description");
-      // Preenche os elementos do modal
+      // preenche os elementos do modal
       document.getElementById("modal-product-title").textContent = title;
       document.getElementById("modal-product-description").textContent =
         description;

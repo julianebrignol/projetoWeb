@@ -1,60 +1,11 @@
-.caixa1{
-    display: flex;
-    flex-direction: column;
-    width: fill;
-    width: 1472px;
-    height: 1368px;
-    gap: 32px;
-
+tbody, td, tfoot, th, thead, tr {
+    border-color: #afbfb8;
+    border-style: dotted; 
+    border-width: none;
 }
-.caixaCima{
-    display: flex;
-    flex-direction: row;
-    width: 1472px;
-    height: 884px;
-    gap: 32px;
-
-}
-.destaques{
-    display: flex;
-    width: 720;
-    height: 884;
-    gap: 10px;
-    padding: 10px;
-
-}
-.caixaBaixo{
-    display: flex;
-    width: 1472;
-    height: 442;
-    gap: 24px;
-}
-.caixa2{
-    display: flex;
-    flex-direction: column;
-    width: 1472px;
-    height: 1250px;
-    gap: 10px;
-}
-.produtos{
-    display: flex;
-    width: 1472px;
-    height: 620px;
-    gap: 16px;
-}
-.artigo{
-    width: 356px;
-    height: 620px;
-    gap: 10px;
-    padding: 10px;
-}
-.descrição{
-    width: 336px;
-    height: 17px;
-    gap: 10px;
-}
-.preço{
-    width: 336px;
-    height: 17px;
-    gap: 10px;     
+#toastBody button{
+  background:rgba(255,255,255,.85);
+  border:1px solid #257025;
+  color: #000;
+  font-weight:bold;
 }

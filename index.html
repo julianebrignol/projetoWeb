@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rhae - Loja de roupas online com as últimas tendências em moda">
-    <title>Rhae - Loja Online de Moda</title>
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/assets/bootstrap.css">
-    
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/home.css">
-	  <link rel="stylesheet" href="/css/cart.css">
-    <link rel="stylesheet" href="/css/woman.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rhae - Loja de roupas online com as últimas tendências em moda" />
+  <title>Rhae - Loja Online de Moda</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/bootstrap.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/cart.css" />
+  <link rel="stylesheet" href="/css/checkout.css" />
+  <link rel="stylesheet" href="/css/confirmation.css" />
+  <link rel="stylesheet" href="/css/woman.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
 </head>
-<body>
-    <!-- Header/Navbar -->
-    <header class="">
-<!-- header.html: insere dentro de <body> em index.html -->
-	<header class="navbar navbar-expand-lg navbar-light bg-light p-3">
-		<div class="container">
-		  <!-- Botão para carregar Products -->
-		  <button id="btn-products" class="btn btn-outline-primary me-2">
-			Produtos
-		  </button>
-	  
-		  <!-- Botão para carregar Cart -->
-		  <button id="btn-cart" class="btn btn-outline-success">
-			Carrinho
-		  </button>
+
+<body class="outfit-font color-text-primary text-spacing-primary">
+  <!-- Header/Navbar -->
+  <header class="d-flex justify-content-between align-items-center header border-bottom border-color-primary">
+    <span id="header-logo" class="sora-font header-logo fw-bold cursor-pointer">rhae</span>
+    <div class="d-flex align-items-center gap-4">
+      <span id="category-women" class="header-category cursor-pointer">mulher</span>
+      <span id="category-men" class="header-category cursor-pointer">homem</span>
+      <span id="category-kids" class="header-category cursor-pointer">criança</span>
+    </div>
+    <div id="header-cart" class="d-flex align-items-center gap-1 cursor-pointer">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.5 5H17.5" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.3333 8.33333C13.3333 9.21739 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.8841 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64297 10.6904C7.01785 10.0652 6.66666 9.21739 6.66666 8.33333" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>0</span>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="main">
+    <!-- Conteúdo principal será adicionado dinamicamente com JS -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-container">
+	<div class="newsletter">
+		<h2>junte-se à nossa newsletter</h2>
+		<div class="newsletter-form">
+		  <input class="email-input" placeholder="o seu email" />
+		  <button class="newsletter-btn">Subscrever</button>
 		</div>
-	  </header>
-    </header>
+	  </div>
+    <div class="footer-row">
+            <div class="footer-left">
+                <span>&copy;2025 rhae. All rights reserved</span>
+                <a href="instagram">instagram</a>
+                <a href="tiktok">tiktok</a>
+                <a href="x">x</a>
+                <a href="pinterest">pinterest</a>
+            </div>
+            <button id = "btn-contacts" class="contact-btn">Contact</button>
+    </div>
+  </footer>
 
-    <!-- Conteúdo Principal -->
-    <main id="main" class="">
-        <!-- Conteúdo principal será adicionado dinamicamente com JS -->
-    </main>
+  <!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <!-- Footer -->
-    <footer class="">
-        <!-- Conteúdo do footer será adicionado posteriormente -->
-    </footer>
-
-    <!-- Bootstrap JS e dependências -->
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Bootstrap Bundle (JS + Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    
-    <!-- JavaScript Personalizado -->
-	<script src="/js/product.js"></script>
-	<script src="/js/cart.js"></script>
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/product.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/contact.js"></script>
   <script type="module" src="/js/main.js"></script>
-
 </body>
 </html>

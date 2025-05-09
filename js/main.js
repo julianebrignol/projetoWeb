@@ -36,7 +36,7 @@ $(document).ready(function () {
   $(document).on('click', '#btn-contacts', () => loadPage('pages/contact.html', initContacts));
   $(document).on('click', '#category-women', () => loadPage('pages/women.html', initContacts));
   $(document).on('click', '#category-men', () => loadPage('pages/men.html', initContacts));
-  $(document).on('click', '#category-kids', () => loadPage('pages/product.html', initContacts));
+  $(document).on('click', '#category-kids', () => loadPage('pages/kids.html', initContacts));
   $(document).on('click', '#header-logo', () => loadPage('pages/home.html', initContacts));
 
 

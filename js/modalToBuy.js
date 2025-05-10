@@ -1,15 +1,23 @@
-  
-//Script para preencher título e descrição
+var sizeModal = document.getElementById('sizeModal');
+sizeModal.addEventListener('show.bs.modal', function (event) {
+  var trigger = event.relatedTarget;
 
-	document.querySelectorAll('.openSizeModal').forEach(btn => {
-	  btn.addEventListener('click', () => {
-		const title       = btn.getAttribute('data-title');
-		const description = btn.getAttribute('data-description');
-		// Preenche os elementos do modal
-		document.getElementById('modal-product-title').textContent       = title;
-		document.getElementById('modal-product-description').textContent = description;
-	  });
-	});
+  var title       = trigger.getAttribute('data-title');
+  var description = trigger.getAttribute('data-description');
+  var imageSrc    = trigger.getAttribute('data-image');
+  var price       = trigger.getAttribute('data-price');
+
+  this.querySelector('#modal-product-title').textContent       = title;
+  this.querySelector('#modal-product-description').textContent = description;
+  this.querySelector('#modal-product-price').textContent       = price + ' EUR';
+
+  var imgEl = this.querySelector('#modal-product-image');
+  imgEl.src = imageSrc;
+  imgEl.alt = title;
+
+  // → Aqui: reseta a quantidade para 1
+  this.querySelector('#modal-quantity').value = 1;
+});
 
 	// Quando clica no “−”
 $(document).on('click', '#qty-decrease', function() {

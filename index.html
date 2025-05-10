@@ -84,41 +84,61 @@
 	<div class="modal-dialog modal-dialog-centered">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="sizeModalLabel">Escolha o tamanho</h5>
+		  <h5 class="modal-title" id="sizeModalLabel">escolha o tamanho</h5>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
 		</div>
 		<div class="modal-body">
 		  <!-- Título do produto -->
 		  <p id="modal-product-title" class="h5"></p>
+		  <!-- Imagem do produto -->
+		  <img id="modal-product-image" class="img-fluid mb-3" />
+		  <!-- Preço do produto -->
+		  <p id="modal-product-price" class="h5"></p>
 		  <!-- Descrição vinda do data-description -->
 		  <p id="modal-product-description" class="mb-3 text-muted"></p>
 		  <!-- Descrição vinda do data-description -->
-		  <p id="modal-product-description" class="mb-3 text-muted"></p>
+		  <p id="modal-product-id" class="mb-3 text-muted"></p>
   
 		  <!-- Opções de tamanho -->
 		  <div class="mb-3">
-			<label class="form-label">Tamanho:</label>
+			<label class="form-label">tamanho:</label>
 			<div>
 			  <div class="form-check form-check-inline">
 				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeS" value="S" checked>
-				<label class="form-check-label" for="sizeS">S</label>
+				<label class="form-check-label" for="sizeS">s</label>
 			  </div>
 			  <div class="form-check form-check-inline">
 				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeM" value="M">
-				<label class="form-check-label" for="sizeM">M</label>
+				<label class="form-check-label" for="sizeM">m</label>
 			  </div>
 			  <div class="form-check form-check-inline">
 				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeL" value="L">
-				<label class="form-check-label" for="sizeL">L</label>
+				<label class="form-check-label" for="sizeL">l</label>
 			  </div>
 			</div>
 		  </div>
-  
+
+
+		  <div class="mb-3 d-flex align-items-center">
+			<label for="modal-quantity" class="form-label me-2 mb-0">quantidade:</label>
+			<div class="input-group input-group-sm flex-nowrap" style="width: 120px;">
+			  <button class="btn btn-outline-secondary border-0" type="button" id="qty-decrease">−</button>
+			  <input
+				type="number"
+				class="form-control text-center border-0"
+				id="modal-quantity"
+				value="1"
+				min="1"
+				style="max-width: 50px;"
+			  >
+			  <button class="btn btn-outline-secondary border-0" type="button" id="qty-increase">＋</button>
+			</div>
+		  </div>
 		  <!-- Botões de ação -->
 		  <div class="text-end">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
 			<button class="btn btn-primary add-to-cart-btn mt-2">
-			  Adicionar ao Carrinho
+			  adicionar ao carrinho
 			</button>
 		  </div>
 		</div>
@@ -131,11 +151,11 @@
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
       <header class="modal__header">
-        <h2 class="modal__title" id="modal-1-title">Mensagem enviada</h2>
+        <h2 class="modal__title" id="modal-1-title">mensagem enviada</h2>
         <button class="modal__close" aria-label="Fechar modal" data-micromodal-close>X</button>
       </header>
       <main class="modal__content">
-        <p>Obrigado pelo seu contacto. Responderemos em breve.</p>
+        <p>obrigado pelo seu contacto. responderemos em breve.</p>
       </main>
     </div>
   </div>

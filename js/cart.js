@@ -66,32 +66,36 @@ function renderCart() {
   container.empty();
 
   cartItems.forEach(item => {
-    const productRow = $(`
-      <div class="product" data-id="${item.id}">
-        <div class="product-image">
-          <img src="${item.image}">
-        </div>
-        <div class="product-details">
-          <div class="product-title">${item.title}</div>
-          <p class="product-description">
-            ${item.description}${item.size ? ' - Tamanho: ' + item.size : ''}
-          </p>
-          <div class="product-actions">
-            <div class="quantity-selector">
-              <button class="qty-btn decrease">-</button>
-              <span class="qty-value">${item.quantity}</span>
-              <button class="qty-btn increase">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="product-price" style="display:none;">${item.price.toFixed(2)}</div>
-        <div class="product-line-price"></div>
-        <button class="remove-product" title="Remover produto">
-          <img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
-        </button>
-      </div>
-    `);
-    container.append(productRow);
+	const productRow = $(`
+	  <div class="product" data-id="${item.id}">
+		<div class="product-image">
+		  <img src="${item.image}">
+		</div>
+		<div class="product-details">
+		  <div class="product-title">${item.title}</div>
+		  <p class="product-description">
+			${item.description}${item.size ? ' - Tamanho: ' + item.size : ''}
+		  </p>
+		  <!-- nova linha com o SKU -->
+		  <p class="product-sku text-muted small">
+			${item.id}
+		  </p>
+		  <div class="product-actions">
+			<div class="quantity-selector">
+			  <button class="qty-btn decrease">-</button>
+			  <span class="qty-value">${item.quantity}</span>
+			  <button class="qty-btn increase">+</button>
+			</div>
+		  </div>
+		</div>
+		<div class="product-price" style="display:none;">${item.price.toFixed(2)}</div>
+		<div class="product-line-price"></div>
+		<button class="remove-product" title="Remover produto">
+		  <img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
+		</button>
+	  </div>
+	`);
+	container.append(productRow);
   });
 
   container.find('.product').each(function () {

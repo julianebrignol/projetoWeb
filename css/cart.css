@@ -72,7 +72,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .product-image {
-	width: 80px;
+	width: 120px;
 	flex-shrink: 0;
 }
 

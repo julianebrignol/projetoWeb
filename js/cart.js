@@ -158,36 +158,41 @@ $(document).on('show.bs.modal', '#sizeModal', function(event) {
 });
 
 $(document).on('click', '.add-to-cart-btn', function() {
-  const modal = $(this).closest('.modal');
-  const product = modal.data('product');
-  const size = modal.find('input[name="sizeOptions"]:checked').val();
+	const modal    = $(this).closest('.modal');
+	const product  = modal.data('product');
+	const size     = modal.find('input[name="sizeOptions"]:checked').val();
+	// lê a quantidade do input
+	const quantity = parseInt(modal.find('#modal-quantity').val(), 10) || 1;
+  
+	const newItem = {
+	  ...product,
+	  size,
+	  quantity      // usa aqui a quantidade selecionada
+	};
+  
+	addToCart(newItem);
+	modal.modal('hide');
+  });
 
-  const newItem = {
-    ...product,
-    quantity: 1,
-    size
-  };
-
-  addToCart(newItem);
-  modal.modal('hide');
-});
-
-$(document).on('click', '.qty-btn', function () {
-  const btn = $(this);
-  const row = btn.closest('.product');
-  const id = row.data('id');
-  const desc = row.find('.product-description').text();
-  const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
-  const item = cartItems.find(p => p.id === id && p.size === size);
-  if (!item) return;
-
-  if (btn.hasClass('increase')) item.quantity++;
-  else if (item.quantity > 1) item.quantity--;
-
-  saveCart();
-  row.find('.qty-value').text(item.quantity);
-  updateLineTotal(row, item.quantity);
-});
+  $(document).on('click', '.qty-btn', function () {
+	const btn = $(this);
+	const row = btn.closest('.product');
+	const id = row.data('id');
+	const desc = row.find('.product-description').text();
+	const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
+	const item = cartItems.find(p => p.id === id && p.size === size);
+	if (!item) return;
+  
+	if (btn.hasClass('increase')) item.quantity++;
+	else if (item.quantity > 1) item.quantity--;
+  
+	saveCart();
+	row.find('.qty-value').text(item.quantity);
+	updateLineTotal(row, item.quantity);
+  
+	// ← Atualiza o contador no ícone do carrinho
+	updateCartCount();
+  });
 
 $(document).on('click', '.remove-product', function () {
   const row = $(this).closest('.product');

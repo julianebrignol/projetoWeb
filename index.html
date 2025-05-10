@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="/css/checkout.css" />
   <link rel="stylesheet" href="/css/confirmation.css" />
   <link rel="stylesheet" href="/css/woman.css" />
+  <link rel="stylesheet" href="/css/men.css" />
+  <link rel="stylesheet" href="/css/kids.css" />
   <link rel="stylesheet" href="/css/contact.css" />
 
   <!-- Font Awesome -->
@@ -74,8 +76,68 @@
     </div>
   </footer>
 
-  <!-- EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://unpkg.com/micromodal@0.6.1/dist/micromodal.js"></script>
+
+
+<!-- Modal de seleção de tamanho -->
+<div class="modal fade" id="sizeModal" tabindex="-1" aria-labelledby="sizeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="sizeModalLabel">Escolha o tamanho</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+		</div>
+		<div class="modal-body">
+		  <!-- Título do produto -->
+		  <p id="modal-product-title" class="h5"></p>
+		  <!-- Descrição vinda do data-description -->
+		  <p id="modal-product-description" class="mb-3 text-muted"></p>
+  
+		  <!-- Opções de tamanho -->
+		  <div class="mb-3">
+			<label class="form-label">Tamanho:</label>
+			<div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeS" value="S" checked>
+				<label class="form-check-label" for="sizeS">S</label>
+			  </div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeM" value="M">
+				<label class="form-check-label" for="sizeM">M</label>
+			  </div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeL" value="L">
+				<label class="form-check-label" for="sizeL">L</label>
+			  </div>
+			</div>
+		  </div>
+  
+		  <!-- Botões de ação -->
+		  <div class="text-end">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+			<button class="btn btn-primary add-to-cart-btn mt-2">
+			  Adicionar ao Carrinho
+			</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+<!-- Modal de contacto -->
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+      <header class="modal__header">
+        <h2 class="modal__title" id="modal-1-title">Mensagem enviada</h2>
+        <button class="modal__close" aria-label="Fechar modal" data-micromodal-close>X</button>
+      </header>
+      <main class="modal__content">
+        <p>Obrigado pelo seu contacto. Responderemos em breve.</p>
+      </main>
+    </div>
+  </div>
+</div>
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -83,6 +145,7 @@
   <script src="/js/product.js"></script>
   <script src="/js/cart.js"></script>
   <script src="/js/contact.js"></script>
+  <script src="/js/modalToBuy.js"></script>
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

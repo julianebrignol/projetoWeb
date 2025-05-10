@@ -1,23 +1,38 @@
-document.addEventListener('submit', function (e) {
-	if (e.target && e.target.id === "form-contacto") {
-	  e.preventDefault();
+// document.getElementById('content-container').innerHTML = `
+//   ... // aqui vai o teu HTML do formulário + modais
+// `;
+
+// // Só depois de injetar, inicializa:
+// MicroModal.init();
+
+// // Agora podes adicionar os listeners de submissão:
+// addContactFormListener(); // função que definimos abaixo
+
+// function addContactFormListener() {
+// 	const form = document.getElementById("form-contacto");
+// 	if (!form) return;
   
-	  const form = e.target;
-	  const nome = form.querySelector('[name="user_name"]').value;
-	  const email = form.querySelector('[name="user_email"]').value;
-	  const mensagem = form.querySelector('[name="message"]').value;
+// 	form.addEventListener("submit", function (e) {
+// 	  e.preventDefault();
   
-	  if (nome === "" || email === "" || mensagem === "") {
-		alert("Por favor, preencha todos os campos.");
-		return;
-	  }
+// 	  const nome = form.querySelector('[name="user_name"]').value.trim();
+// 	  const email = form.querySelector('[name="user_email"]').value.trim();
+// 	  const mensagem = form.querySelector('[name="message"]').value.trim();
   
-	  if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-		alert("Email inválido.");
-		return;
-	  }
+// 	  if (!nome || !email || !mensagem) {
+// 		alert("Por favor, preencha todos os campos.");
+// 		return;
+// 	  }
   
-	  alert("Mensagem registada com sucesso!");
-	  form.reset();
-	}
-  });
+// 	  if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+// 		alert("Email inválido.");
+// 		return;
+// 	  }
+  
+// 	  form.reset();
+  
+// 	  // Mostrar o modal
+// 	  MicroModal.show('modal-1');
+// 	});
+//   }
+  

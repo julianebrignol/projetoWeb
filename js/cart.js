@@ -146,20 +146,32 @@ function updateLineTotal(productRow, quantity) {
 // EVENTOS DOM E MODAL
 // -----------------------------
 $(document).on('show.bs.modal', '#sizeModal', function(event) {
-  const triggerBtn = $(event.relatedTarget);
-  const modal = $(this);
-
-  const productData = {
-    id: triggerBtn.data('id'),
-    title: triggerBtn.data('title'),
-    description: triggerBtn.data('description'),
-    price: parseFloat(triggerBtn.data('price')),
-    image: triggerBtn.data('image')
-  };
-
-  modal.find('#modal-product-title').text(productData.title);
-  modal.data('product', productData);
-});
+	const triggerBtn = $(event.relatedTarget);
+	const modal      = $(this);
+  
+	// Monta o objeto produto
+	const productData = {
+	  id:          triggerBtn.data('id'),
+	  title:       triggerBtn.data('title'),
+	  description: triggerBtn.data('description'),
+	  price:       parseFloat(triggerBtn.data('price')),
+	  image:       triggerBtn.data('image')
+	};
+  
+	// Guarda-o no próprio modal
+	modal.data('product', productData);
+  
+	// Preenche todos os campos
+	modal.find('#modal-product-title').text(productData.title);
+	modal.find('#modal-product-description').text(productData.description);
+	modal.find('#modal-product-price').text(productData.price.toFixed(2) + ' EUR');
+	modal.find('#modal-product-image')
+		 .attr('src', productData.image)
+		 .attr('alt', productData.title);
+  
+	// Reseta a quantidade para 1
+	modal.find('#modal-quantity').val(1);
+  });
 
 $(document).on('click', '.add-to-cart-btn', function() {
 	const modal    = $(this).closest('.modal');

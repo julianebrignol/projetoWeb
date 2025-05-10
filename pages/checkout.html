@@ -29,19 +29,19 @@
         <h4>morada de envio</h4>
         <div class="form-row-2">
           <p>nome: * 
-            <input type="text" placeholder="Nome" name="First Name" required>
+            <input type="text" placeholder="nome" name="First Name" required>
           </p>
           <p>apelido: 
-            <input type="text" placeholder="Apelido" name="Last Name">
+            <input type="text" placeholder="apelido" name="Last Name">
           </p>
         </div>
 
         <div class="form-row-2">
-          <p>morada: 
-            <textarea name="Morada" placeholder="Insira a sua morada" id="Address" cols="40" rows="1"></textarea>
+          <p>morada: *
+            <textarea name="Morada" placeholder="insira a sua morada" id="Address" cols="40" rows="1" required></textarea>
           </p>
           <p>apartamento, andar, etc. (opcional): 
-            <textarea name="MoradaPlus" placeholder="Insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
+            <textarea name="MoradaPlus" placeholder="insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
           </p>
         </div>
 
@@ -93,7 +93,7 @@
         </div>
 
         <div class="form-row-2">
-          <p>CVV: * 
+          <p>cvv: * 
             <input type="password" placeholder="123" name="CVV" id="CVV" required>
           </p>
           <p>data de validade: * 
@@ -104,19 +104,19 @@
         <!-- Bloco: Morada de faturação -->
         <div class="form-row-2">
           <p>morada e faturação: 
-            <textarea name="Morada" placeholder="Insira a sua morada de faturacao" id="Address" cols="40" rows="1"></textarea>
+            <textarea name="Morada" placeholder="insira a sua morada de faturacao" id="Address" cols="40" rows="1"></textarea>
           </p>
           <p>apartamento, andar, etc. (opcional): 
-            <textarea name="MoradaPlus" placeholder="Insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
+            <textarea name="MoradaPlus" placeholder="insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
           </p>
         </div>
 
         <div class="form-row-2">
-          <p>código postal: * 
-            <input type="text" placeholder="0000-000" name="BillingCode" id="BillingCode" required>
+          <p>código postal:
+            <input type="text" placeholder="0000-000" name="BillingCode" id="BillingCode">
           </p>
-          <p>distrito: * 
-            <select name="City" id="City" required>
+          <p>distrito: 
+            <select name="City" id="City">
               <option value="">--selecione o seu distrito--</option>
               <!-- Lista completa de distritos -->
               <option value="Aveiro">Aveiro</option>
@@ -145,8 +145,8 @@
 
         <!-- Botões de ação do formulário -->
         <div class="form-buttons">
-          <button id="btn-cart" type="button">voltar ao Carrinho</button>
-          <button type="submit" id="btn-finish-order">finalizar Pedido</button>
+          <button id="btn-cart" type="button">voltar ao carrinho</button>
+		  <button type="submit" id="btn-finish-order" disabled>finalizar pedido</button>
         </div>
       </form>
     </div>

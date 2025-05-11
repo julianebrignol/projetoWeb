@@ -236,27 +236,6 @@ function isCartEmpty() {
   return cartItems.length === 0;
 }
 
-function showEmptyCartModal() {
-	$('#modal-empty-cart').fadeIn(150);
-  }
-  
-  function hideEmptyCartModal() {
-	$('#modal-empty-cart').fadeOut(150);
-  }
-  
-  $(document).on('click', '#btn-checkout', () => {
-	if (isCartEmpty()) {
-	  showEmptyCartModal();
-	  return;
-	}
-	loadPage('pages/checkout.html', initCheckout);
-  });
-  
-  // fecha ao clicar no botão ou no backdrop
-  $(document).on('click', '#modal-close-btn, .custom-modal__backdrop', () => {
-	hideEmptyCartModal();
-  });
-  
 // -----------------------------
 // EXPORTAÇÃO (ES MODULE)
 // -----------------------------

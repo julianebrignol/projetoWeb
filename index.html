@@ -61,7 +61,7 @@
 		<h2>junte-se à nossa newsletter</h2>
 		<div class="newsletter-form">
 		  <input class="email-input" placeholder="o seu email" />
-		  <button class="newsletter-btn">Subscrever</button>
+		  <button id="btn-subscribe" class="newsletter-btn">Subscrever</button>
 		</div>
 	  </div>
     <div class="footer-row">
@@ -78,6 +78,25 @@
 
   <script src="https://unpkg.com/micromodal@0.6.1/dist/micromodal.js"></script>
 
+<!-- Modal para e-mail vazio (reaproveita seu CSS de modal) -->
+<div id="modal-empty-email" class="custom-modal">
+	<div class="custom-modal__backdrop"></div>
+	<div class="custom-modal__content">
+	  <p>🚨 email obrigatório 🚨</p>
+	  <p>por favor, insira o seu email antes de subscrever.</p>
+	  <button id="modal-email-close" class="checkout">OK</button>
+	</div>
+  </div>
+
+<!-- Modal para e-mail Correto (reaproveita seu CSS de modal) -->
+<div id="modal-success-sub" class="custom-modal">
+	<div class="custom-modal__backdrop"></div>
+	<div class="custom-modal__content">
+	  <p>✅ subscrição efetuada com sucesso ✅</p>
+	  <p>obrigado por subscrever a nossa newsletter</p>
+	  <button id="modal-success-close" class="checkout">ok</button>
+	</div>
+  </div>
 
 <!-- Modal de seleção de tamanho -->
 <div class="modal fade" id="sizeModal" tabindex="-1" aria-labelledby="sizeModalLabel" aria-hidden="true">
@@ -151,7 +170,7 @@
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
       <header class="modal__header">
-        <h2 class="modal__title" id="modal-1-title">mensagem enviada</h2>
+        <h2 class="modal__title" id="modal-1-title">✅ mensagem enviada ✅</h2>
         <button class="modal__close" aria-label="Fechar modal" data-micromodal-close>X</button>
       </header>
       <main class="modal__content">

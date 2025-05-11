@@ -110,3 +110,51 @@ $(document).ready(function() {
       });
   }
 });
+
+// funções de modal (reaproveitando classe .show)
+function showEmptyEmailModal() {
+	$('#modal-empty-email').addClass('show');
+  }
+  function hideEmptyEmailModal() {
+	$('#modal-empty-email').removeClass('show');
+  }
+  
+
+  function showSucessSubModal() {
+	$('#modal-success-sub').addClass('show');
+  }
+  function hideSucessSubModal() {
+	$('#modal-success-sub').removeClass('show');
+	$('.email-input').val('');
+  }
+  
+  // Handler do Subscrever
+  $(document).on('click', '#btn-subscribe', () => {
+	const email = $('.email-input').val().trim();
+  
+	// Se não houver "@", mostra o modal de email inválido
+	if (!email.includes('@')) {	  
+	  $('#modal-empty-email').addClass('show');
+	  return;
+	}
+	else{
+	  // Se o email for válido, esconde o modal de email vazio
+	  hideEmptyEmailModal();
+	  // Mostra o modal de sucesso
+	  showSucessSubModal();
+	  return;
+	}
+
+	// Aqui segues com a lógica de subscrição normal...
+	console.log('Subscrever:', email);
+  });
+  
+  // Fecha o modal de email vazio
+  $(document).on('click', '#modal-email-close, .custom-modal__backdrop', () => {
+	hideEmptyEmailModal();
+  });
+
+  // Fecha o modal de sucesso
+  $(document).on('click', '#modal-success-close, .custom-modal__backdrop', () => {
+	hideSucessSubModal();
+  });

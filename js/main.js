@@ -47,12 +47,11 @@ $(document).ready(function() {
         const mensagem = form.querySelector('[name="message"]').value.trim();
 
         if (!nome || !email || !mensagem) {
-          alert("Por favor, preencha todos os campos.");
           return;
         }
         if (!email.includes("@") || !email.includes(".")) {
-          alert("Email inválido.");
-          return;
+			showEmptyEmailModal();
+			return;
         }
 
         form.reset();
@@ -133,7 +132,7 @@ function showEmptyEmailModal() {
 	const email = $('.email-input').val().trim();
   
 	// Se não houver "@", mostra o modal de email inválido
-	if (!email.includes('@')) {	  
+	if (!email.includes("@") || !email.includes(".")) {	  
 	  $('#modal-empty-email').addClass('show');
 	  return;
 	}

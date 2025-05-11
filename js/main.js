@@ -43,7 +43,6 @@ $(document).ready(function () {
   // Botão para finalizar compra
   $(document).on('click', '#btn-checkout', () => {
     if (isCartEmpty()) {
-      alert('O carrinho está vazio. Adicione produtos antes de finalizar a compra.');
       return;
     }
     loadPage('pages/checkout.html', initCheckout);

@@ -6,7 +6,7 @@ const shippingRate = 3.95;
 const fadeTime = 300;
 
 // Estado atual do carrinho (carregado do localStorage)
-let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
 // -----------------------------
 // FUNÇÕES DE UTILIDADE
@@ -14,13 +14,13 @@ let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Guarda o carrinho no localStorage
 function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cartItems));
+  localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
 // Atualiza o número de itens no ícone do carrinho
 function updateCartCount() {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  $("#header-cart span").text(totalItems);
+  $('#header-cart span').text(totalItems);
 }
 
 // Limpa o carrinho e atualiza o ecrã
@@ -34,27 +34,27 @@ function clearCart() {
 // Calcula subtotal, IVA, envio e total
 function recalculateCart() {
   let subtotal = 0;
-  cartItems.forEach((item) => {
+  cartItems.forEach(item => {
     subtotal += item.price * item.quantity;
   });
 
   const ivaValue = subtotal * iva;
-  const shipping = subtotal >= 50 ? 0 : subtotal > 0 ? shippingRate : 0;
+  const shipping = subtotal >= 50 ? 0 : (subtotal > 0 ? shippingRate : 0);
   const total = subtotal + shipping;
 
-  $(".totals-value").fadeOut(fadeTime, function () {
-    $("#cart-subtotal").text(subtotal.toFixed(2));
-    $("#cart-ivaValue").text(ivaValue.toFixed(2));
-    $("#cart-shipping").text(shipping.toFixed(2));
-    $("#cart-total").text(total.toFixed(2));
+  $('.totals-value').fadeOut(fadeTime, function () {
+    $('#cart-subtotal').text(subtotal.toFixed(2));
+    $('#cart-ivaValue').text(ivaValue.toFixed(2));
+    $('#cart-shipping').text(shipping.toFixed(2));
+    $('#cart-total').text(total.toFixed(2));
 
     if (total === 0) {
-      $(".checkout").fadeOut(fadeTime);
+      $('.checkout').fadeOut(fadeTime);
     } else {
-      $(".checkout").fadeIn(fadeTime);
+      $('.checkout').fadeIn(fadeTime);
     }
 
-    $(".totals-value").fadeIn(fadeTime);
+    $('.totals-value').fadeIn(fadeTime);
   });
 }
 
@@ -62,10 +62,10 @@ function recalculateCart() {
 // RENDERIZAÇÃO DO CARRINHO
 // -----------------------------
 function renderCart() {
-  const container = $(".cart-products");
+  const container = $('.cart-products');
   container.empty();
 
-  cartItems.forEach((item) => {
+  cartItems.forEach(item => {
     const productRow = $(`
       <div class="product" data-id="${item.id}">
         <div class="product-image">
@@ -74,7 +74,7 @@ function renderCart() {
         <div class="product-details">
           <div class="product-title">${item.title}</div>
           <p class="product-description">
-            ${item.description}${item.size ? " - Tamanho: " + item.size : ""}
+            ${item.description}${item.size ? ' - Tamanho: ' + item.size : ''}
           </p>
           <div class="product-actions">
             <div class="quantity-selector">
@@ -84,9 +84,7 @@ function renderCart() {
             </div>
           </div>
         </div>
-        <div class="product-price" style="display:none;">${item.price.toFixed(
-          2
-        )}</div>
+        <div class="product-price" style="display:none;">${item.price.toFixed(2)}</div>
         <div class="product-line-price"></div>
         <button class="remove-product" title="Remover produto">
           <img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
@@ -96,12 +94,12 @@ function renderCart() {
     container.append(productRow);
   });
 
-  container.find(".product").each(function () {
+  container.find('.product').each(function () {
     const row = $(this);
-    const price = parseFloat(row.find(".product-price").text());
-    const quantity = parseInt(row.find(".qty-value").text());
+    const price = parseFloat(row.find('.product-price').text());
+    const quantity = parseInt(row.find('.qty-value').text());
     const linePrice = price * quantity;
-    row.find(".product-line-price").text(linePrice.toFixed(2));
+    row.find('.product-line-price').text(linePrice.toFixed(2));
   });
 
   recalculateCart();
@@ -112,9 +110,7 @@ function renderCart() {
 // AÇÕES NO CARRINHO
 // -----------------------------
 function addToCart(item) {
-  const existing = cartItems.find(
-    (p) => p.id === item.id && p.size === item.size
-  );
+  const existing = cartItems.find(p => p.id === item.id && p.size === item.size);
   if (existing) {
     existing.quantity += item.quantity;
   } else {
@@ -126,18 +122,16 @@ function addToCart(item) {
 }
 
 function removeFromCart(id, size) {
-  cartItems = cartItems.filter(
-    (item) => !(item.id === id && item.size === size)
-  );
+  cartItems = cartItems.filter(item => !(item.id === id && item.size === size));
   saveCart();
   renderCart();
   updateCartCount();
 }
 
 function updateLineTotal(productRow, quantity) {
-  const price = parseFloat(productRow.find(".product-price").text());
+  const price = parseFloat(productRow.find('.product-price').text());
   const linePrice = price * quantity;
-  const lineElem = productRow.find(".product-line-price");
+  const lineElem = productRow.find('.product-line-price');
   lineElem.fadeOut(fadeTime, function () {
     $(this).text(linePrice.toFixed(2)).fadeIn(fadeTime);
     recalculateCart();
@@ -147,63 +141,71 @@ function updateLineTotal(productRow, quantity) {
 // -----------------------------
 // EVENTOS DOM E MODAL
 // -----------------------------
-$(document).on("show.bs.modal", "#sizeModal", function (event) {
+$(document).on('show.bs.modal', '#sizeModal', function(event) {
   const triggerBtn = $(event.relatedTarget);
   const modal = $(this);
 
+  // Monta o objeto produto
   const productData = {
-    id: triggerBtn.data("id"),
-    title: triggerBtn.data("title"),
-    description: triggerBtn.data("description"),
-    price: parseFloat(triggerBtn.data("price")),
-    image: triggerBtn.data("image"),
+    id:          triggerBtn.data('id'),
+    title:       triggerBtn.data('title'),
+    description: triggerBtn.data('description'),
+    price:       parseFloat(triggerBtn.data('price')),
+    image:       triggerBtn.data('image')
   };
 
-  modal.find("#modal-product-title").text(productData.title);
-  modal.data("product", productData);
+  // Guarda-o no próprio modal
+  modal.data('product', productData);
+
+  // Preenche os campos visuais
+  modal.find('#modal-product-title').text(productData.title);
+  modal.find('#modal-product-description').text(productData.description);
+  modal.find('#modal-product-price').text(productData.price.toFixed(2) + ' EUR');
+  modal.find('#modal-product-image')
+       .attr('src', productData.image)
+       .attr('alt', productData.title);
+
+  // Reseta a quantidade para 1
+  modal.find('#modal-quantity').val(1);
 });
 
-$(document).on("click", ".add-to-cart-btn", function () {
-  const modal = $(this).closest(".modal");
-  const product = modal.data("product");
+$(document).on('click', '.add-to-cart-btn', function() {
+  const modal = $(this).closest('.modal');
+  const product = modal.data('product');
   const size = modal.find('input[name="sizeOptions"]:checked').val();
 
   const newItem = {
     ...product,
     quantity: 1,
-    size,
+    size
   };
 
   addToCart(newItem);
-  modal.modal("hide");
+  modal.modal('hide');
 });
 
-$(document).on("click", ".qty-btn", function () {
+$(document).on('click', '.qty-btn', function () {
   const btn = $(this);
-  const row = btn.closest(".product");
-  const id = row.data("id");
-  const desc = row.find(".product-description").text();
-  const size = desc.includes("Tamanho:")
-    ? desc.split("Tamanho:")[1].trim()
-    : "";
-  const item = cartItems.find((p) => p.id === id && p.size === size);
+  const row = btn.closest('.product');
+  const id = row.data('id');
+  const desc = row.find('.product-description').text();
+  const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
+  const item = cartItems.find(p => p.id === id && p.size === size);
   if (!item) return;
 
-  if (btn.hasClass("increase")) item.quantity++;
+  if (btn.hasClass('increase')) item.quantity++;
   else if (item.quantity > 1) item.quantity--;
 
   saveCart();
-  row.find(".qty-value").text(item.quantity);
+  row.find('.qty-value').text(item.quantity);
   updateLineTotal(row, item.quantity);
 });
 
-$(document).on("click", ".remove-product", function () {
-  const row = $(this).closest(".product");
-  const id = row.data("id");
-  const desc = row.find(".product-description").text();
-  const size = desc.includes("Tamanho:")
-    ? desc.split("Tamanho:")[1].trim()
-    : "";
+$(document).on('click', '.remove-product', function () {
+  const row = $(this).closest('.product');
+  const id = row.data('id');
+  const desc = row.find('.product-description').text();
+  const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
 
   row.slideUp(fadeTime, function () {
     removeFromCart(id, size);
@@ -213,7 +215,7 @@ $(document).on("click", ".remove-product", function () {
 // -----------------------------
 // LOAD INICIAL
 // -----------------------------
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   renderCart();
   updateCartCount();
 });

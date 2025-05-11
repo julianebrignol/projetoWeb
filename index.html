@@ -1,99 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Rhae - Loja de roupas online com as últimas tendências em moda"
-    />
-    <title>Rhae - Loja Online de Moda</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rhae - Loja de roupas online com as últimas tendências em moda" />
+  <title>Rhae - Loja Online de Moda</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/bootstrap.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/home.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/home.css" />
-    <link rel="stylesheet" href="/css/cart.css" />
-    <link rel="stylesheet" href="/css/checkout.css" />
-    <link rel="stylesheet" href="/css/confirmation.css" />
-    <link rel="stylesheet" href="/css/contact.css" />
-    <link rel="stylesheet" href="/css/woman.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
 
-  </head>
-  <body
-    class="d-flex flex-column min-vh-100 color-text-primary text-spacing-primary gap-page-section"
-  >
-    <!-- header/navbar -->
-    <header
-      class="d-flex justify-content-between align-items-center header border-bottom border-color-primary"
-    >
-      <span
-        id="header-logo"
-        class="sora-font header-logo fw-bold cursor-pointer"
-        >rhae</span
-      >
-      <div class="d-flex align-items-center gap-4">
-        <span id="category-women" class="header-category cursor-pointer"
-          >mulher</span
-        >
-        <span id="category-men" class="header-category cursor-pointer"
-          >homem</span
-        >
-        <span id="category-kids" class="header-category cursor-pointer"
-          >criança</span
-        >
-      </div>
-      <div
-        id="header-cart"
-        class="d-flex align-items-center gap-1 cursor-pointer"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z"
-            stroke="black"
-            stroke-width="1.25"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M2.5 5H17.5"
-            stroke="black"
-            stroke-width="1.25"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M13.3333 8.33333C13.3333 9.21739 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.8841 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64297 10.6904C7.01785 10.0652 6.66666 9.21739 6.66666 8.33333"
-            stroke="black"
-            stroke-width="1.25"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <span>0</span>
-      </div>
-    </header>
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/cart.css" />
+  <link rel="stylesheet" href="/css/checkout.css" />
+  <link rel="stylesheet" href="/css/confirmation.css" />
+  <link rel="stylesheet" href="/css/woman.css" />
+  <link rel="stylesheet" href="/css/men.css" />
+  <link rel="stylesheet" href="/css/kids.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
+</head>
+
+<body class="d-flex flex-column min-vh-100 color-text-primary text-spacing-primary gap-page-section outfit-font">
+  <!-- Header/Navbar -->
+  <header class="d-flex justify-content-between align-items-center header border-bottom border-color-primary">
+    <span id="header-logo" class="sora-font header-logo fw-bold cursor-pointer">rhae</span>
+    <div class="d-flex align-items-center gap-4">
+      <span id="category-women" class="header-category cursor-pointer">mulher</span>
+      <span id="category-men" class="header-category cursor-pointer">homem</span>
+      <span id="category-kids" class="header-category cursor-pointer">criança</span>
+    </div>
+    <div id="header-cart" class="d-flex align-items-center gap-1 cursor-pointer">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.5 5H17.5" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.3333 8.33333C13.3333 9.21739 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.8841 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64297 10.6904C7.01785 10.0652 6.66666 9.21739 6.66666 8.33333" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>0</span>
+    </div>
+  </header>
 
     <!-- conteúdo Principal -->
     <main id="main" class="flex-1">
@@ -121,12 +76,84 @@
       </div>
     </footer>
 
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/product.js"></script>
-    <script src="/js/cart.js"></script>
-    <script src="/js/contact.js"></script>
-    <script type="module" src="/js/main.js"></script>
-  </body>
+  <script src="https://unpkg.com/micromodal@0.6.1/dist/micromodal.js"></script>
+
+
+<!-- Modal de seleção de tamanho -->
+<div class="modal fade" id="sizeModal" tabindex="-1" aria-labelledby="sizeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="sizeModalLabel">Escolha o tamanho</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+		</div>
+		<div class="modal-body">
+		  <!-- Título do produto -->
+		  <p id="modal-product-title" class="h5"></p>
+		  <!-- Descrição vinda do data-description -->
+		  <p id="modal-product-description" class="mb-3 text-muted"></p>
+  
+		  <!-- Opções de tamanho -->
+		  <div class="mb-3">
+			<label class="form-label">Tamanho:</label>
+			<div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeS" value="S" checked>
+				<label class="form-check-label" for="sizeS">S</label>
+			  </div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeM" value="M">
+				<label class="form-check-label" for="sizeM">M</label>
+			  </div>
+			  <div class="form-check form-check-inline">
+				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeL" value="L">
+				<label class="form-check-label" for="sizeL">L</label>
+			  </div>
+			</div>
+		  </div>
+		  <!-- Quantidade -->
+		  <div class="mb-3 d-flex align-items-center">
+			<label for="modal-quantity" class="form-label me-2 mb-0">Quantidade:</label>
+			<div class="input-group input-group-sm" style="width: 100px;">
+			  <button class="btn btn-outline-secondary" type="button" id="qty-decrease">−</button>
+			  <input type="number" class="form-control text-center" id="modal-quantity" value="1" min="1">
+			  <button class="btn btn-outline-secondary" type="button" id="qty-increase">＋</button>
+			</div>
+		  </div>
+		  <!-- Botões de ação -->
+		  <div class="text-end">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+			<button class="btn btn-primary add-to-cart-btn mt-2">
+			  Adicionar ao Carrinho
+			</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+<!-- Modal de contacto -->
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+      <header class="modal__header">
+        <h2 class="modal__title" id="modal-1-title">Mensagem enviada</h2>
+        <button class="modal__close" aria-label="Fechar modal" data-micromodal-close>X</button>
+      </header>
+      <main class="modal__content">
+        <p>Obrigado pelo seu contacto. Responderemos em breve.</p>
+      </main>
+    </div>
+  </div>
+</div>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/product.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/contact.js"></script>
+  <script src="/js/modalToBuy.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
 </html>

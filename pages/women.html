@@ -1,196 +1,313 @@
-<link rel="stylesheet" href="/css/woman.css" />
-<!-- destaques -->
-<div class="container my-4">
-  <!-- caixa cima -->
-  <div class="flex-row g3">
-    <div class="col-12 col-lg-6">
-      <img
-        src="/images/imagensTeste/img1.png"
-        class="img-fluid w-100"
-        alt="imagem1"
-      />
+<link rel="stylesheet" href="/css/woman.css">
+<!--Destaques container com duas caixas-->
+<div  class="container my-4">
 
-      <img
-        src="/images/imagensTeste/img2.png"
-        class="img-fluid w-100"
-        alt="imagem2"
-      />
-    </div>
-  </div>
+	<!--caixa com as imagens de cima-->
+	<div class="row g-3">
 
-  <!-- caixa baixo -->
-  <div class="col-12 col-lg-6">
-    <img
-      src="/images\imagensTeste\img3.png"
-      class="img-fluid w-100"
-      alt="imagem3"
-    />
-  </div>
+		<div class="col-12 col-lg-6 mb-3 mb-lg-0">
+			<img src="/assets/imagens/women01.png" class= "img-fluid w-100" alt="imagem1">
+		</div>
+		<div class="col-12 col-lg-6 mb-3 mb-lg-0">
+			<img src="/assets/imagens/women02.png" class= "img-fluid w-100" alt="imagem2">
+		</div>
+	</div>
+
+	<!--caixa com as imagens de cima-->
+	<div class=" col-12 mt-3">
+		<img src="/assets/imagens/women03.png" class= "img-fluid w-100" alt="imagem3">
+	</div>
 </div>
 
-<!-- artigos -->
-<div class="container my-4">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-    <!-- artigo 1 -->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo1"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-    <!-- artigo 2 -->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo2"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-    <!-- artigo 3 -->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo3"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-    <!-- artigo 4 -->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo4"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-  </div>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-    <!-- artigo 5 -->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo1"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-    <!-- Artigo 6 -->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo2"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-    <!--Artigo 7-->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo3"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-    <!--Artigo 8-->
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="artigo4"
-        />
-      </div>
-      <div class="card-body">
-        <h1 class="card-title">descrição</h1>
-        <p class="card-text">preço</p>
-      </div>
-    </div>
-  </div>
+<!--Container -->
+<div class="items container gap-4">
+
+	<!--divisão da pagina-->
+	<!--1 imagem com ecra pequeno e 4 imagens em row quando o ecra aumenta-->
+	<div class="row row-cols-1 row-cols-sm-1 row-cols-md-4 g-3">
+
+		<!--Artigo1-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku012"
+					data-title="t-shirt"
+					data-description="t-shirt lisa de algodão com gola redonda"
+					data-price="12.95"
+					data-image="/assets/imagens/woman04.png"
+					src="/assets/imagens/women04.png" class= "card-img-top img-fluid"alt="artigo1">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">t-shirt lisa de algodão com gola redonda</h4>
+					<h1 class="card-text">12,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo2-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku013"
+					data-title="camisa"
+					data-description="camisa oversized ás riscas"
+					data-price="20.95"
+					data-image="/assets/imagens/women05.png"
+					src="/assets/imagens/women05.png" class= "card-img-top img-fluid"alt="artigo2">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">camisa oversized ás riscas</h4>
+					<h1 class="card-text">20,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo3-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku014"
+					data-title="t-shirt"
+					data-description="t-shirt estampada"
+					data-price="15.95"
+					data-image="/assets/imagens/women06.png"
+					src="/assets/imagens/women06.png" class= "card-img-top img-fluid"alt="artigo3">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">t-shirt estampada</h4>
+					<h1 class="card-text">15,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo4-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku015"
+					data-title="calças"
+					data-description="calças largas estampadas"
+					data-price="20.95"
+					data-image="/assets/imagens/women07.png"
+					src="/assets/imagens/women07.png" class= "card-img-top img-fluid"alt="artigo4">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">calças largas estampadas</h4>
+					<h1 class="card-text">20,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo5-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku016"
+					data-title="saia"
+					data-description="saia em ganga"
+					data-price="29.95"
+					data-image="/assets/imagens/women08.png"
+					src="/assets/imagens/women08.png" class= "card-img-top img-fluid"alt="artigo5">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">saia em ganga</h4>
+					<h1 class="card-text">29,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo6-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku017"
+					data-title="blazer"
+					data-description="blazer com folhos"
+					data-price="39.95"
+					data-image="/assets/imagens/women09.png"
+					src="/assets/imagens/women09.png" class= "card-img-top img-fluid"alt="artigo6">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">blazer com folhos</h4>
+					<h1 class="card-text">39,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo7-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku018"
+					data-title="calças"
+					data-description="calças largas com estampado"
+					data-price="29.95"
+					data-image="/assets/imagens/women10.png"
+					src="/assets/imagens/women10.png" class= "card-img-top img-fluid"alt="artigo7">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">calças largas com estampado</h4>
+					<h1 class="card-text">29,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--Artigo8-->
+		<div class="col">
+
+			<!--imagem e texto descritivo-->
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku019"
+					data-title="colete"
+					data-description="colete em malha com padrão losangolos"
+					data-price="20.95"
+					data-image="/assets/imagens/women11.png"
+					src="/assets/imagens/women11.png" class= "card-img-top img-fluid"alt="artigo8">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">colete em malha com padrão losangolos</h4>
+					<h1 class="card-text">20,95 EUR</h1>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<!-- preços especiais -->
-
+<!--Preços Especiais-->
+<!--1 imagem com ecra pequeno e 3 imagens em row quando o ecra aumenta-->
 <div class="container my-4">
-  <h3 class="text-center mb-4">Preços Especiais</h3>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="promoção1"
-        />
-        <div class="card-body">
-          <h4 class="card-title">Descrição</h4>
-          <p class="card-text">Preco</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="promoção2"
-        />
-        <div class="card-body">
-          <h4 class="card-title">Descrição</h4>
-          <p class="card-text">Preco</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="/images/imagensTeste/delete.png"
-          class="icard-img-top img-fluid"
-          alt="promoção3"
-        />
-        <div class="card-body">
-          <h4 class="card-title">Descrição</h4>
-          <p class="card-text">Preco</p>
-        </div>
-      </div>
-    </div>
-  </div>
+	<h3 class="text-center mb-4">Preços Especiais</h3>
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+
+		<!--primeiro arigo em promoção-->
+		<div class="col">
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku020"
+					data-title="casaco"
+					data-description="casaco curto em pêlo sintético com gola larga"
+					data-price="41.95"
+					data-image="/assets/imagens/women12.png"
+					src="/assets/imagens/women12.png" class= "card-img-top img-fluid"alt="promoção1">
+					<div class="desconto position-absolute top-0 end-0 p-2">
+							<h2>menos 30%</h2>
+					</div>
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">casaco curto em pêlo sintético com gola larga</h4>
+					<p class="preços flex-row">
+						<span class="preçoNovo">41,95 EUR</span>
+						<span class="preçoOriginal">59,95 EUR</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!--segundo arigo em promoção-->
+		<div class="col">
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku021"
+					data-title="casaco"
+					data-description="casaco em pêlo sintético com corte direito"
+					data-price="27.95"
+					data-image="/assets/imagens/women13.png"
+					src="/assets/imagens/women13.png" class= "card-img-top img-fluid"alt="promoção1">
+					<div class="desconto position-absolute top-0 end-0 p-2">
+						<h2>menos 30%</h2>
+					</div>
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">casaco em pêlo sintético com corte direito</h4>
+					<p class="preços flex-row">
+						<span class="preçoNovo">27,95 EUR</span>
+						<span class="preçoOriginal">39,95 EUR</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!--terceiro arigo em promoção-->
+		<div class="col">
+			<div class="d-flex flex-column align-items-start">
+				<div class="position-relative d-flex flex-column align-items-start">
+					<img 			  
+					class="btn btn-secondary mt-2 openSizeModal"
+					data-bs-toggle="modal"
+					data-bs-target="#sizeModal"
+					data-id="sku022"
+					data-title="botas"
+					data-description="botas forradas"
+					data-price="29.95"
+					data-image="/assets/imagens/women14.png"
+					src="/assets/imagens/women14.png" class= "card-img-top img-fluid"alt="promoção1">
+					<div class="desconto position-absolute top-0 end-0 p-2">
+						<h2>menos 50%</h2>
+					</div>
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">botas forradas</h4>
+					<p class="preços flex-row">
+						<span class="preçoNovo">29,95 EUR</span>
+						<span class="preçoOriginal">59,95 EUR</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

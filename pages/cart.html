@@ -1,51 +1,53 @@
-<!-- título principal da página -->
+<!-- Título principal da página -->
 <h1 class="page-title">Carrinho de Compras</h1>
 
-<!-- contêiner principal do carrinho -->
+<!-- Contêiner principal do carrinho -->
 <div class="shopping-cart">
+
   <!-- Zona onde os produtos do carrinho serão inseridos dinamicamente por JavaScript -->
   <div class="cart-products"></div>
 
-  <!-- bloco que agrupa a tabela de totais e a nota de envio -->
+  <!-- Bloco que agrupa a tabela de totais e a nota de envio -->
   <div class="totals-wrapper">
-    <!-- bloco da tabela de totais: subtotal, IVA, envio, total final -->
+
+    <!-- Bloco da tabela de totais: subtotal, IVA, envio, total final -->
     <div class="totals">
-      <!-- linha de subtotal -->
+
+      <!-- Linha de subtotal -->
       <div class="totals-item">
         <label>Subtotal</label>
         <div class="totals-value" id="cart-subtotal">0.00</div>
       </div>
 
-      <!-- linha do IVA -->
+      <!-- Linha do IVA -->
       <div class="totals-item">
         <label>IVA (23%)</label>
         <div class="totals-value" id="cart-ivaValue">0.00</div>
       </div>
 
-      <!-- linha dos custos de envio -->
+      <!-- Linha dos custos de envio -->
       <div class="totals-item">
         <label>Envio</label>
         <div class="totals-value" id="cart-shipping">0.00</div>
       </div>
 
-      <!-- separador visual entre totais parciais e total geral -->
+      <!-- Separador visual entre totais parciais e total geral -->
       <div class="totals-separator"></div>
 
-      <!-- linha do total final -->
+      <!-- Linha do total final -->
       <div class="totals-item totals-item-total">
         <label>Total</label>
         <div class="totals-value" id="cart-total">0.00</div>
       </div>
 
-      <!-- botão para finalizar a compra -->
+      <!-- Botão para finalizar a compra -->
       <button id="btn-checkout" class="btn btn-outline-primary mt-3">
         Finalizar Compra
       </button>
     </div>
 
-    <!-- nota informativa sobre portes grátis -->
-    <p class="shipping-note">
-      * Portes grátis em compras iguais ou superiores a 50€.
-    </p>
+    <!-- Nota informativa sobre portes grátis -->
+    <p class="shipping-note">* Portes grátis em compras iguais ou superiores a 50€.</p>
+
   </div>
 </div>

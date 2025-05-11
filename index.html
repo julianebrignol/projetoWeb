@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="/css/woman.css" />
   <link rel="stylesheet" href="/css/men.css" />
   <link rel="stylesheet" href="/css/kids.css" />
+  <link rel="stylesheet" href="/css/woman.css" />
+  <link rel="stylesheet" href="/css/men.css" />
+  <link rel="stylesheet" href="/css/kids.css" />
   <link rel="stylesheet" href="/css/contact.css" />
 
   <!-- Font Awesome -->
@@ -55,76 +58,109 @@
       <!-- conteúdo principal será adicionado dinamicamente com JS -->
     </main>
 
-    <!-- footer -->
-    <footer class="footer-container">
-      <div class="newsletter">
-        <h2>junte-se à nossa newsletter</h2>
-        <div class="newsletter-form">
-          <input class="email-input" placeholder="" />
-          <button class="newsletter-btn">Subscrever</button>
-        </div>
-      </div>
-      <div class="footer-row">
-        <div class="footer-left">
-          <span>&copy;2025 rhae. All rights reserved</span>
-          <a href="instagram">instagram</a>
-          <a href="tiktok">tiktok</a>
-          <a href="x">x</a>
-          <a href="pinterest">pinterest</a>
-        </div>
-        <button id="btn-contacts" class="contact-btn">Contact</button>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer-container">
+	<div class="newsletter">
+		<h2>junte-se à nossa newsletter</h2>
+		<div class="newsletter-form">
+		  <input class="email-input" placeholder="o seu email" />
+		  <button id="btn-subscribe" class="newsletter-btn">Subscrever</button>
+		</div>
+	  </div>
+    <div class="footer-row">
+            <div class="footer-left">
+                <span>&copy;2025 rhae. All rights reserved</span>
+                <a href="instagram">instagram</a>
+                <a href="tiktok">tiktok</a>
+                <a href="x">x</a>
+                <a href="pinterest">pinterest</a>
+            </div>
+            <button id = "btn-contacts" class="contact-btn">Contact</button>
+    </div>
+  </footer>
 
   <script src="https://unpkg.com/micromodal@0.6.1/dist/micromodal.js"></script>
 
+<!-- Modal para e-mail vazio (reaproveita seu CSS de modal) -->
+<div id="modal-empty-email" class="custom-modal">
+	<div class="custom-modal__backdrop"></div>
+	<div class="custom-modal__content">
+	  <p>🚨 email obrigatório 🚨</p>
+	  <p>por favor, insira um email válido.</p>
+	  <button id="modal-email-close" class="checkout">OK</button>
+	</div>
+  </div>
+
+<!-- Modal para e-mail Correto (reaproveita seu CSS de modal) -->
+<div id="modal-success-sub" class="custom-modal">
+	<div class="custom-modal__backdrop"></div>
+	<div class="custom-modal__content">
+	  <p>✅ subscrição efetuada com sucesso ✅</p>
+	  <p>obrigado por subscrever a nossa newsletter</p>
+	  <button id="modal-success-close" class="checkout">ok</button>
+	</div>
+  </div>
 
 <!-- Modal de seleção de tamanho -->
 <div class="modal fade" id="sizeModal" tabindex="-1" aria-labelledby="sizeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="sizeModalLabel">Escolha o tamanho</h5>
+		  <h5 class="modal-title" id="sizeModalLabel">escolha o tamanho</h5>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
 		</div>
 		<div class="modal-body">
 		  <!-- Título do produto -->
 		  <p id="modal-product-title" class="h5"></p>
+		  <!-- Imagem do produto -->
+		  <img id="modal-product-image" class="img-fluid mb-3" />
+		  <!-- Preço do produto -->
+		  <p id="modal-product-price" class="h5"></p>
 		  <!-- Descrição vinda do data-description -->
 		  <p id="modal-product-description" class="mb-3 text-muted"></p>
+		  <!-- Descrição vinda do data-description -->
+		  <p id="modal-product-id" class="mb-3 text-muted"></p>
   
 		  <!-- Opções de tamanho -->
 		  <div class="mb-3">
-			<label class="form-label">Tamanho:</label>
+			<label class="form-label">tamanho:</label>
 			<div>
 			  <div class="form-check form-check-inline">
 				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeS" value="S" checked>
-				<label class="form-check-label" for="sizeS">S</label>
+				<label class="form-check-label" for="sizeS">s</label>
 			  </div>
 			  <div class="form-check form-check-inline">
 				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeM" value="M">
-				<label class="form-check-label" for="sizeM">M</label>
+				<label class="form-check-label" for="sizeM">m</label>
 			  </div>
 			  <div class="form-check form-check-inline">
 				<input class="form-check-input size-option" type="radio" name="sizeOptions" id="sizeL" value="L">
-				<label class="form-check-label" for="sizeL">L</label>
+				<label class="form-check-label" for="sizeL">l</label>
 			  </div>
 			</div>
 		  </div>
-		  <!-- Quantidade -->
+
+
 		  <div class="mb-3 d-flex align-items-center">
-			<label for="modal-quantity" class="form-label me-2 mb-0">Quantidade:</label>
-			<div class="input-group input-group-sm" style="width: 100px;">
-			  <button class="btn btn-outline-secondary" type="button" id="qty-decrease">−</button>
-			  <input type="number" class="form-control text-center" id="modal-quantity" value="1" min="1">
-			  <button class="btn btn-outline-secondary" type="button" id="qty-increase">＋</button>
+			<label for="modal-quantity" class="form-label me-2 mb-0">quantidade:</label>
+			<div class="input-group input-group-sm flex-nowrap" style="width: 120px;">
+			  <button class="btn btn-outline-secondary border-0" type="button" id="qty-decrease">−</button>
+			  <input
+				type="number"
+				class="form-control text-center border-0"
+				id="modal-quantity"
+				value="1"
+				min="1"
+				style="max-width: 50px;"
+			  >
+			  <button class="btn btn-outline-secondary border-0" type="button" id="qty-increase">＋</button>
 			</div>
 		  </div>
 		  <!-- Botões de ação -->
 		  <div class="text-end">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
 			<button class="btn btn-primary add-to-cart-btn mt-2">
-			  Adicionar ao Carrinho
+			  adicionar ao carrinho
 			</button>
 		  </div>
 		</div>
@@ -137,15 +173,25 @@
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
       <header class="modal__header">
-        <h2 class="modal__title" id="modal-1-title">Mensagem enviada</h2>
-        <button class="modal__close" aria-label="Fechar modal" data-micromodal-close>X</button>
+		<p class="modal__title" id="modal-1-title"> mensagem enviada </p>
+		<img src="/images/imagensTeste/check.png" alt="Confirmado" width="64" height="64">
       </header>
       <main class="modal__content">
-        <p>Obrigado pelo seu contacto. Responderemos em breve.</p>
+        <p>obrigado pelo seu contacto.<br> responderemos em breve.</p>
       </main>
     </div>
   </div>
 </div>
+
+<!-- Modal de erro do carrinho -->
+<div id="modal-empty-cart" class="custom-modal">
+	<div class="custom-modal__backdrop"></div>
+	<div class="custom-modal__content">
+	  <h1>🚨 carrinho vazio 🚨</h1>
+	  <p>adicione produtos<br>antes de finalizar a compra.</p>
+	  <button id="modal-close-btn">ok</button>
+	</div>
+  </div>
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -154,6 +200,7 @@
   <script src="/js/cart.js"></script>
   <script src="/js/contact.js"></script>
   <script src="/js/modalToBuy.js"></script>
+  <script src="/js/checkout.js"></script>
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

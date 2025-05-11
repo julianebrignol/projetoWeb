@@ -66,32 +66,36 @@ function renderCart() {
   container.empty();
 
   cartItems.forEach(item => {
-    const productRow = $(`
-      <div class="product" data-id="${item.id}">
-        <div class="product-image">
-          <img src="${item.image}">
-        </div>
-        <div class="product-details">
-          <div class="product-title">${item.title}</div>
-          <p class="product-description">
-            ${item.description}${item.size ? ' - Tamanho: ' + item.size : ''}
-          </p>
-          <div class="product-actions">
-            <div class="quantity-selector">
-              <button class="qty-btn decrease">-</button>
-              <span class="qty-value">${item.quantity}</span>
-              <button class="qty-btn increase">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="product-price" style="display:none;">${item.price.toFixed(2)}</div>
-        <div class="product-line-price"></div>
-        <button class="remove-product" title="Remover produto">
-          <img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
-        </button>
-      </div>
-    `);
-    container.append(productRow);
+	const productRow = $(`
+	  <div class="product" data-id="${item.id}">
+		<div class="product-image">
+		  <img src="${item.image}">
+		</div>
+		<div class="product-details">
+		  <div class="product-title">${item.title}</div>
+		  <p class="product-description">
+			${item.description}${item.size ? ' - Tamanho: ' + item.size : ''}
+		  </p>
+		  <!-- nova linha com o SKU -->
+		  <p class="product-sku text-muted small">
+			${item.id}
+		  </p>
+		  <div class="product-actions">
+			<div class="quantity-selector">
+			  <button class="qty-btn decrease">-</button>
+			  <span class="qty-value">${item.quantity}</span>
+			  <button class="qty-btn increase">+</button>
+			</div>
+		  </div>
+		</div>
+		<div class="product-price" style="display:none;">${item.price.toFixed(2)}</div>
+		<div class="product-line-price"></div>
+		<button class="remove-product" title="Remover produto">
+		  <img src="/images/imagensTeste/delete.png" alt="Remover" class="remove-icon">
+		</button>
+	  </div>
+	`);
+	container.append(productRow);
   });
 
   container.find('.product').each(function () {
@@ -142,64 +146,69 @@ function updateLineTotal(productRow, quantity) {
 // EVENTOS DOM E MODAL
 // -----------------------------
 $(document).on('show.bs.modal', '#sizeModal', function(event) {
-  const triggerBtn = $(event.relatedTarget);
-  const modal = $(this);
-
-  // Monta o objeto produto
-  const productData = {
-    id:          triggerBtn.data('id'),
-    title:       triggerBtn.data('title'),
-    description: triggerBtn.data('description'),
-    price:       parseFloat(triggerBtn.data('price')),
-    image:       triggerBtn.data('image')
-  };
-
-  // Guarda-o no próprio modal
-  modal.data('product', productData);
-
-  // Preenche os campos visuais
-  modal.find('#modal-product-title').text(productData.title);
-  modal.find('#modal-product-description').text(productData.description);
-  modal.find('#modal-product-price').text(productData.price.toFixed(2) + ' EUR');
-  modal.find('#modal-product-image')
-       .attr('src', productData.image)
-       .attr('alt', productData.title);
-
-  // Reseta a quantidade para 1
-  modal.find('#modal-quantity').val(1);
-});
+	const triggerBtn = $(event.relatedTarget);
+	const modal      = $(this);
+  
+	// Monta o objeto produto
+	const productData = {
+	  id:          triggerBtn.data('id'),
+	  title:       triggerBtn.data('title'),
+	  description: triggerBtn.data('description'),
+	  price:       parseFloat(triggerBtn.data('price')),
+	  image:       triggerBtn.data('image')
+	};
+  
+	// Guarda-o no próprio modal
+	modal.data('product', productData);
+  
+	// Preenche todos os campos
+	modal.find('#modal-product-title').text(productData.title);
+	modal.find('#modal-product-description').text(productData.description);
+	modal.find('#modal-product-price').text(productData.price.toFixed(2) + ' EUR');
+	modal.find('#modal-product-image')
+		 .attr('src', productData.image)
+		 .attr('alt', productData.title);
+  
+	// Reseta a quantidade para 1
+	modal.find('#modal-quantity').val(1);
+  });
 
 $(document).on('click', '.add-to-cart-btn', function() {
-  const modal = $(this).closest('.modal');
-  const product = modal.data('product');
-  const size = modal.find('input[name="sizeOptions"]:checked').val();
+	const modal    = $(this).closest('.modal');
+	const product  = modal.data('product');
+	const size     = modal.find('input[name="sizeOptions"]:checked').val();
+	// lê a quantidade do input
+	const quantity = parseInt(modal.find('#modal-quantity').val(), 10) || 1;
+  
+	const newItem = {
+	  ...product,
+	  size,
+	  quantity      // usa aqui a quantidade selecionada
+	};
+  
+	addToCart(newItem);
+	modal.modal('hide');
+  });
 
-  const newItem = {
-    ...product,
-    quantity: 1,
-    size
-  };
-
-  addToCart(newItem);
-  modal.modal('hide');
-});
-
-$(document).on('click', '.qty-btn', function () {
-  const btn = $(this);
-  const row = btn.closest('.product');
-  const id = row.data('id');
-  const desc = row.find('.product-description').text();
-  const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
-  const item = cartItems.find(p => p.id === id && p.size === size);
-  if (!item) return;
-
-  if (btn.hasClass('increase')) item.quantity++;
-  else if (item.quantity > 1) item.quantity--;
-
-  saveCart();
-  row.find('.qty-value').text(item.quantity);
-  updateLineTotal(row, item.quantity);
-});
+  $(document).on('click', '.qty-btn', function () {
+	const btn = $(this);
+	const row = btn.closest('.product');
+	const id = row.data('id');
+	const desc = row.find('.product-description').text();
+	const size = desc.includes('Tamanho:') ? desc.split('Tamanho:')[1].trim() : '';
+	const item = cartItems.find(p => p.id === id && p.size === size);
+	if (!item) return;
+  
+	if (btn.hasClass('increase')) item.quantity++;
+	else if (item.quantity > 1) item.quantity--;
+  
+	saveCart();
+	row.find('.qty-value').text(item.quantity);
+	updateLineTotal(row, item.quantity);
+  
+	// ← Atualiza o contador no ícone do carrinho
+	updateCartCount();
+  });
 
 $(document).on('click', '.remove-product', function () {
   const row = $(this).closest('.product');

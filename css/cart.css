@@ -21,6 +21,13 @@ body {
 	padding: 0 20px;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* -----------------------------
    TÍTULOS E CABEÇALHOS
 ----------------------------- */
@@ -65,7 +72,7 @@ body {
 }
 
 .product-image {
-	width: 80px;
+	width: 120px;
 	flex-shrink: 0;
 }
 
@@ -245,6 +252,69 @@ body {
 #btn-checkout:hover {
 	background-color: #333;
 }
+
+/* -----------------------------
+   MODAL DE ERRO
+----------------------------- */
+
+/* -----------------------------
+   MODAL DE ERRO
+----------------------------- */
+/* escondido por padrão: nem ocupa espaço, nem bloqueia cliques */
+.custom-modal {
+  display: none;
+  pointer-events: none;
+}
+
+/* quando tiver classe .show, aparece e intercepta cliques */
+.custom-modal.show {
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 500px;            /* ajuste esse valor para subir/ descer */
+	pointer-events: auto;
+	z-index: 1000;
+  }
+
+/* backdrop deve bloquear clique só quando visível */
+.custom-modal__backdrop {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  pointer-events: auto;       /* garante que o backdrop pegue o clique */
+}
+
+/* conteúdo do modal só bloqueia clique dentro dele quando visível */
+.custom-modal__content {
+	position: relative;
+	width: 20%;          /* ou combine com percentual para responsividade */
+	margin: auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 8px;
+	text-align: center;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	pointer-events: auto;
+  }
+
+/* botão do modal (mesmo estilo do checkout) */
+.custom-modal__content button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.custom-modal__content button:hover {
+  background-color: #333;
+}
+  
 
 /* -----------------------------
    NOTA DE PORTES GRÁTIS

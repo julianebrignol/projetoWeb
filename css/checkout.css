@@ -132,6 +132,10 @@ input[type="submit"]:hover {
 	flex: 1;
 }
 
+input:invalid, textarea:invalid, select:invalid {
+	outline: 1px solid #ff19001f;
+  }
+
 /* -----------------------------
    SIDEBAR DE RESUMO DO PEDIDO
 ----------------------------- */

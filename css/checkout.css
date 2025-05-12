@@ -38,6 +38,12 @@
 
 .checkout-sidebar {
   width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 @media (min-width: 992px) {

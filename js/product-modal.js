@@ -106,15 +106,21 @@ function handleProductModal() {
 
     // check if size is selected
     if (!selectedSize) {
-      alert("Por favor, selecione um tamanho.");
-
-      // return and do nothing if size is not selected
+      // Add validation class to show the select in red
+      sizeSelect.classList.add('is-invalid');
+      
+      // Focus on the size select to draw attention
+      sizeSelect.focus();
+  
       return;
     }
+    
+    // Remove validation class if size is selected
+    sizeSelect.classList.remove('is-invalid');
 
     // create cart item object with product details, selected size and quantity
     const modalItem = {
-      ...currentProduct, // get all product properties (spread operator)
+      ...currentProduct,
       size: selectedSize,
       quantity: quantity,
     };
@@ -141,6 +147,13 @@ function handleProductModal() {
     // close the modal after successful add to cart item
     const modalInstance = bootstrap.Modal.getInstance(productModal);
     modalInstance.hide();
+  });
+
+  // Add event listener to remove validation styling when user selects a size
+  sizeSelect.addEventListener('change', function() {
+    if (this.value) {
+      this.classList.remove('is-invalid');
+    }
   });
 }
 

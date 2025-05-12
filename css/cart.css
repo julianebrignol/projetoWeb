@@ -1,6 +1,6 @@
 /* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -9,63 +9,64 @@ input[type=number]::-webkit-inner-spin-button {
    CARRINHO DE COMPRAS
 ----------------------------- */
 .shopping-cart {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 20px;
-	flex-wrap: wrap;
-	width: 100%;
-	max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
 }
 
 .cart-products {
-	flex: 1;
-	min-width: 40%;
+  flex: 1;
+  min-width: 40%;
 }
 
 /* -----------------------------
    PRODUTOS NO CARRINHO
 ----------------------------- */
 .product {
-	position: relative;
-	display: flex;
-	gap: 20px;
-	align-items: flex-start;
-	padding: 20px 0;
-	border-bottom: 1px solid #eee;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
 }
 
 .product-image {
-	width: 120px;
-	height: 168px;
-	flex-shrink: 0;
+  width: 120px;
+  height: 168px;
+  flex-shrink: 0;
 }
 
 .product-image img {
-	width: 100%;
+  width: 100%;
 }
 
 .product-details {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	height: 168px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 168px;
 }
 
-.product-title {}
+.product-title {
+}
 
 .product-description {
-	font-size: 12px;
-	color: #666;
-	text-transform: lowercase;
-	flex: 1;
+  font-size: 12px;
+  color: #666;
+  text-transform: lowercase;
+  flex: 1;
 }
 
 .product-line-price::after {
-	content: " EUR";
-	font-size: 14px;
-	color: #555;
-	margin-left: 4px;
+  content: " EUR";
+  font-size: 14px;
+  color: #555;
+  margin-left: 4px;
 }
 
 /* -----------------------------
@@ -113,164 +114,163 @@ input[type=number]::-webkit-inner-spin-button {
   box-shadow: none;
 }
 
-
 /* -----------------------------
    REMOVER PRODUTO
 ----------------------------- */
 .remove-product {
-	position: absolute;
-	bottom: 24px;
-	right: 0px;
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 5px;
-	border-radius: 5px;
-	transition: filter 0.2s;
-	width: 24px;
-	height: 24px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  position: absolute;
+  bottom: 24px;
+  right: 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: filter 0.2s;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .remove-product:hover {
-	filter: brightness(0.7);
+  filter: brightness(0.7);
 }
 
 .remove-icon {
-	width: 20px;
-	height: 20px;
-	object-fit: contain;
-	pointer-events: none;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 /* -----------------------------
    TOTAIS DO CARRINHO
 ----------------------------- */
 .totals-wrapper {
-	display: flex;
-	flex-direction: column;
-	padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
 }
 
 .totals {
-	margin-top: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-	padding: 15px;
-	border: 1px solid var(--border-primary);
-	box-sizing: border-box;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 15px;
+  border: 1px solid var(--border-primary);
+  box-sizing: border-box;
 }
 
 .totals-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: var(--text-small);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-small);
 }
 
 .totals-item label {
-	margin: 0;
+  margin: 0;
 }
 
 .totals-value::after {
-	content: " EUR";
-	font-size: 12px;
-	color: #555;
-	margin-left: 4px;
+  content: " EUR";
+  font-size: 12px;
+  color: #555;
+  margin-left: 4px;
 }
 
 .totals-item-total .totals-value {
-	font-size: 16px;
-	color: #000;
+  font-size: 16px;
+  color: #000;
 }
 
 .totals-separator {
-	border-top: 1px solid var(--border-primary);
-	margin: 10px 0;
+  border-top: 1px solid var(--border-primary);
+  margin: 10px 0;
 }
 
 /* -----------------------------
    BOTÕES DE FINALIZAÇÃO
 ----------------------------- */
 .checkout {
-	width: 100%;
-	margin-top: 20px;
-	padding: 12px;
-	background-color: #000;
-	color: #fff;
-	font-size: 18px;
-	border: none;
-	cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
 }
 
 .checkout:hover {
-	background-color: #4d4d4d;
+  background-color: #4d4d4d;
 }
 
 #btn-checkout {
-	background-color: black;
-	color: white;
-	border: none;
-	width: 100%;
-	font-size: 14px;
-	border-radius: 0;
-	cursor: pointer;
-	margin-bottom: 0;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 0;
+  cursor: pointer;
+  margin-bottom: 0;
 }
 
 #btn-checkout:hover {
-	background-color: #333;
+  background-color: #333;
 }
 
 /* -----------------------------
    NOTA DE PORTES GRÁTIS
 ----------------------------- */
 .shipping-note {
-	margin-top: 5px;
-	padding-top: 0;
-	font-size: 12px;
-	color: #666;
-	text-align: right;
-	max-width: 100%;
+  margin-top: 5px;
+  padding-top: 0;
+  font-size: 12px;
+  color: #666;
+  text-align: right;
+  max-width: 100%;
 }
 
 /* -----------------------------
    RESPONSIVIDADE
 ----------------------------- */
 @media screen and (max-width: 768px) {
-	.shopping-cart {
-		flex-direction: column;
-	}
+  .shopping-cart {
+    flex-direction: column;
+  }
 
-	.product {
-		flex-direction: column;
-		align-items: flex-start;
-	}
+  .product {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-	.product-image,
-	.product-details,
-	.product-line-price {
-		width: 100%;
-		text-align: left;
-		margin-bottom: 10px;
-	}
+  .product-image,
+  .product-details,
+  .product-line-price {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+  }
 
-	.product-line-price {
-		text-align: right;
-	}
+  .product-line-price {
+    text-align: right;
+  }
 
-	.remove-product {
-		position: static;
-		align-self: flex-end;
-		margin-top: 10px;
-	}
+  .remove-product {
+    position: static;
+    align-self: flex-end;
+    margin-top: 10px;
+  }
 
-	.totals {
-		flex: 1 1 auto;
-		width: 100%;
-		max-width: 100%;
-	}
+  .totals {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
 }

@@ -97,7 +97,7 @@ function renderCart() {
 		<div class="product-price" style="display:none;">${item.price.toFixed(2)}</div>
 		<div class="product-line-price"></div>
 		<button class="remove-product" title="Remover produto">
-		  <img src="/assets/images/cart/delete.png" alt="Remover" class="remove-icon">
+		  <img src="../assets/images/cart/delete.png" alt="Remover" class="remove-icon">
 		</button>
 	  </div>
 	`);

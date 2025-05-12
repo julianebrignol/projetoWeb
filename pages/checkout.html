@@ -94,7 +94,7 @@
 
         <div class="form-row-2">
           <p>cvv: * 
-            <input type="password" placeholder="123" name="CVV" id="CVV" required>
+            <input type="password" placeholder="123" name="CVV" id="CVV" autocomplete="123" required>
           </p>
           <p>data de validade: * 
             <input type="date" name="Exp_Date" id="Exp_Date" required>
@@ -104,19 +104,19 @@
         <!-- Bloco: Morada de faturação -->
         <div class="form-row-2">
           <p>morada e faturação: 
-            <textarea name="Morada" placeholder="insira a sua morada de faturacao" id="Address" cols="40" rows="1"></textarea>
+            <textarea name="Morada" placeholder="insira a sua morada de faturacao" id="AddressInvoice" cols="40" rows="1"></textarea>
           </p>
           <p>apartamento, andar, etc. (opcional): 
-            <textarea name="MoradaPlus" placeholder="insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
+            <textarea name="MoradaPlus" placeholder="insira o seu apartamento, andar, etc." id="AddressplusInvoice" cols="40" rows="1"></textarea>
           </p>
         </div>
 
         <div class="form-row-2">
           <p>código postal:
-            <input type="text" placeholder="0000-000" name="BillingCode" id="BillingCode">
+            <input type="text" placeholder="0000-000" name="BillingCode" id="BillingCodeInvoice">
           </p>
           <p>distrito: 
-            <select name="City" id="City">
+            <select name="City" id="CityInvoice">
               <option value="">--selecione o seu distrito--</option>
               <!-- Lista completa de distritos -->
               <option value="Aveiro">Aveiro</option>

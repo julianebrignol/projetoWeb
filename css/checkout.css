@@ -133,7 +133,7 @@ input[type="submit"]:hover {
 }
 
 input:invalid, textarea:invalid, select:invalid {
-	outline: 1px solid #ff19001f;
+	outline: 1px solid #00000094;
   }
 
 /* -----------------------------

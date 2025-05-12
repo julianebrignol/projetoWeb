@@ -1,6 +1,6 @@
 /* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -59,7 +59,8 @@ input[type=number]::-webkit-inner-spin-button {
   height: 168px;
 }
 
-.product-title {}
+.product-title {
+}
 
 .product-description {
   font-size: 12px;

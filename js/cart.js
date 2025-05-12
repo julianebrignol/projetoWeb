@@ -135,7 +135,8 @@ function addToCart(item) {
 
 function removeFromCart(id, size) {
   cartItems = cartItems.filter(
-    (item) => !(item.id === id && item.size.toLowerCase() === size.toLowerCase())
+    (item) =>
+      !(item.id === id && item.size.toLowerCase() === size.toLowerCase())
   );
   saveCart();
   renderCart();

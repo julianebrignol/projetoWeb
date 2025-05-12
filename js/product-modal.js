@@ -12,6 +12,14 @@ function handleProductModal() {
   const sizeSelect = document.getElementById("sizeSelect");
   const addToCartBtn = document.getElementById("addToCartBtn");
 
+  // Remove existing event listeners before adding new ones
+  // when change page and new products are loaded
+  const oldButtons = document.querySelectorAll(".modal-product");
+  oldButtons.forEach(button => {
+    const newButton = button.cloneNode(true);
+    button.parentNode.replaceChild(newButton, button);
+  });
+
   // instantiate current product object
   let currentProduct = null;
 
@@ -84,20 +92,26 @@ function handleProductModal() {
     });
   });
 
-  // decrease quantity on click button
-  decreaseBtn.addEventListener("click", function () {
+  // Create a single instance of the quantity handlers
+  const handleDecrease = function () {
     const currentValue = parseInt(quantityInput.value);
-
     if (currentValue > 1) {
       quantityInput.value = currentValue - 1;
     }
-  });
+  };
 
-  // increase quantity on click button
-  increaseBtn.addEventListener("click", function () {
+  const handleIncrease = function () {
     const currentValue = parseInt(quantityInput.value);
     quantityInput.value = currentValue + 1;
-  });
+  };
+
+  // Remove old listeners and add new ones for quantity buttons
+  decreaseBtn.replaceWith(decreaseBtn.cloneNode(true));
+  increaseBtn.replaceWith(increaseBtn.cloneNode(true));
+  
+  // Get fresh references after cloning
+  document.getElementById("decreaseQuantity").addEventListener("click", handleDecrease);
+  document.getElementById("increaseQuantity").addEventListener("click", handleIncrease);
 
   // handle add to cart button click
   addToCartBtn.addEventListener("click", function () {

@@ -1,55 +1,87 @@
-<!-- Título da página de checkout -->
-<h1 class="checkout-title">finalizar Compra</h1>
-
-<!-- Contêiner geral da página -->
-<div class="container">
+<section class="d-flex flex-column gap-page-section">
+  <!-- Título da página de checkout -->
+  <h1 class="text-title text-center m-0 fw-normal">finalizar compra</h1>
 
   <!-- Layout principal dividido em duas partes: formulário (esquerda) e resumo (direita) -->
   <div class="checkout-layout">
-
     <!-- Bloco do formulário de checkout -->
     <div class="checkout-form">
       <form action="">
-
-        <!-- Nota sobre campos obrigatórios -->
-        <p>campos de preenchimento obrigatório *</p>
-
         <!-- Bloco: Informações de contacto -->
-        <h4>informações de contacto</h4>
+        <h4 class="m-0 text-normal fw-normal">informações de contacto</h4>
         <div class="form-row-2">
-          <p>email: * 
-            <input type="email" placeholder="abc@gmail.com" name="email" id="email" required>
+          <p>
+            email: *
+            <input
+              type="email"
+              placeholder="oseuemail@gmail.com"
+              name="email"
+              id="email"
+              required
+            />
           </p>
-          <p>telemóvel: * 
-            <input type="number" placeholder="123456789" name="number" id="number" required>
+          <p>
+            telemóvel: *
+            <input
+              type="number"
+              placeholder="123456789"
+              name="number"
+              id="number"
+              required
+            />
           </p>
         </div>
 
         <!-- Bloco: Morada de envio -->
-        <h4>morada de envio</h4>
+        <h4 class="m-0 text-normal fw-normal">morada de envio</h4>
         <div class="form-row-2">
-          <p>nome: * 
-            <input type="text" placeholder="nome" name="First Name" required>
+          <p>
+            nome: *
+            <input type="text" placeholder="nome" name="First Name" required />
           </p>
-          <p>apelido: 
-            <input type="text" placeholder="apelido" name="Last Name">
+          <p>
+            apelido:
+            <input type="text" placeholder="apelido" name="Last Name" />
           </p>
         </div>
 
         <div class="form-row-2">
-          <p>morada: *
-            <textarea name="Morada" placeholder="insira a sua morada" id="Address" cols="40" rows="1" required></textarea>
+          <p>
+            morada: *
+            <textarea
+              name="Morada"
+              placeholder="insira a sua morada"
+              id="Address"
+              cols="40"
+              rows="1"
+              required
+            ></textarea>
           </p>
-          <p>apartamento, andar, etc. (opcional): 
-            <textarea name="MoradaPlus" placeholder="insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
+          <p>
+            apartamento, andar, etc. (opcional):
+            <textarea
+              name="MoradaPlus"
+              placeholder="insira o seu apartamento, andar, etc."
+              id="Addressplus"
+              cols="40"
+              rows="1"
+            ></textarea>
           </p>
         </div>
 
         <div class="form-row-2">
-          <p>código postal: * 
-            <input type="text" placeholder="0000-000" name="Code" id="Code" required>
+          <p>
+            código postal: *
+            <input
+              type="text"
+              placeholder="0000-000"
+              name="Code"
+              id="Code"
+              required
+            />
           </p>
-          <p>distrito: * 
+          <p>
+            distrito: *
             <select name="City" id="City" required>
               <option value="">--selecione o seu distrito--</option>
               <!-- Lista completa de distritos -->
@@ -78,44 +110,81 @@
         </div>
 
         <!-- Bloco: Informações de pagamento -->
-        <h4>informações de pagamento</h4>
+        <h4 class="m-0 text-normal fw-normal">informações de pagamento</h4>
         <div class="form-row-2">
-          <p>tipo de cartão: * 
+          <p>
+            tipo de cartão: *
             <select name="Card_Type" id="Card_Type" required>
               <option value="">--selecione o tipo de cartão--</option>
               <option value="Master Card">MasterCard</option>
               <option value="VISA">VISA</option>
             </select>
           </p>
-          <p>número do cartão: * 
-            <input type="text" placeholder="1111-2222-3333-4444" name="Card number" id="Card number" required>
+          <p>
+            número do cartão: *
+            <input
+              type="text"
+              placeholder="1111-2222-3333-4444"
+              name="Card number"
+              id="Card number"
+              required
+            />
           </p>
         </div>
 
         <div class="form-row-2">
-          <p>cvv: * 
-            <input type="password" placeholder="123" name="CVV" id="CVV" required>
+          <p>
+            cvv: *
+            <input
+              type="password"
+              placeholder="123"
+              name="CVV"
+              id="CVV"
+              required
+            />
           </p>
-          <p>data de validade: * 
-            <input type="date" name="Exp_Date" id="Exp_Date" required>
+          <p>
+            data de validade: *
+            <input type="date" name="Exp_Date" id="Exp_Date" required />
           </p>
         </div>
 
         <!-- Bloco: Morada de faturação -->
         <div class="form-row-2">
-          <p>morada e faturação: 
-            <textarea name="Morada" placeholder="insira a sua morada de faturacao" id="Address" cols="40" rows="1"></textarea>
+          <p>
+            morada e faturação:
+            <textarea
+              name="Morada"
+              placeholder="insira a sua morada de faturacao"
+              id="Address"
+              cols="40"
+              rows="1"
+            ></textarea>
           </p>
-          <p>apartamento, andar, etc. (opcional): 
-            <textarea name="MoradaPlus" placeholder="insira o seu apartamento, andar, etc." id="Addressplus" cols="40" rows="1"></textarea>
+          <p>
+            apartamento, andar, etc. (opcional):
+            <textarea
+              name="MoradaPlus"
+              placeholder="insira o seu apartamento, andar, etc."
+              id="Addressplus"
+              cols="40"
+              rows="1"
+            ></textarea>
           </p>
         </div>
 
         <div class="form-row-2">
-          <p>código postal:
-            <input type="text" placeholder="0000-000" name="BillingCode" id="BillingCode">
+          <p>
+            código postal:
+            <input
+              type="text"
+              placeholder="0000-000"
+              name="BillingCode"
+              id="BillingCode"
+            />
           </p>
-          <p>distrito: 
+          <p>
+            distrito:
             <select name="City" id="City">
               <option value="">--selecione o seu distrito--</option>
               <!-- Lista completa de distritos -->
@@ -143,10 +212,15 @@
           </p>
         </div>
 
+        <!-- Nota sobre campos obrigatórios -->
+        <span class="text-small">*campos de preenchimento obrigatório</span>
+
         <!-- Botões de ação do formulário -->
         <div class="form-buttons">
           <button id="btn-cart" type="button">voltar ao carrinho</button>
-		  <button type="submit" id="btn-finish-order" disabled>finalizar pedido</button>
+          <button type="submit" id="btn-finish-order" disabled>
+            finalizar pedido
+          </button>
         </div>
       </form>
     </div>
@@ -154,7 +228,7 @@
     <!-- Sidebar: Resumo da compra (lado direito) -->
     <div class="checkout-sidebar">
       <div class="totals">
-        <div class="totals-item">
+        <div class="totals-item text-normal mb-2">
           <label>resumo do pedido</label>
         </div>
         <div class="totals-item">
@@ -174,8 +248,16 @@
           <label>total</label>
           <div class="totals-value" id="cart-total">0.00</div>
         </div>
+
+        <!-- Botão para finalizar a compra -->
+        <button
+          id="btn-finish-order"
+          class="btn mt-3 rounded-0 text-normal outfit-font border-0"
+          disabled
+        >
+          finalizar pedido
+        </button>
       </div>
     </div>
-
   </div>
-</div>
+</section>

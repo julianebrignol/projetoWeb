@@ -5,7 +5,8 @@
   display: flex;                    /* Centraliza horizontalmente o conteúdo */
   justify-content: center;
   align-items: center;             /* Centraliza verticalmente */
-  text-align: center;              /* Centraliza o texto dentro do conteúdo */
+  text-align: center;   
+  margin-top: 16px;           /* Centraliza o texto dentro do conteúdo */
 }
 
 /* -----------------------------
@@ -49,4 +50,9 @@
 ----------------------------- */
 .thx-quote {
   font-weight: bold;              /* Destaque no texto de agradecimento */
+}
+
+.thx-quote,
+.order-status {
+  font-size: 16px;
 }

@@ -34,7 +34,7 @@
       <!-- imagem carousel -->
       <div class="carousel-item active">
         <img
-          src="../assets/images/carousel1.jpg"
+          src="/assets/images/carousel/carousel1.jpg"
           class="d-block w-100"
           alt="New Collection 1"
         />
@@ -48,7 +48,7 @@
       <!-- imagem carousel -->
       <div class="carousel-item">
         <img
-          src="../assets/images/carousel1.jpg"
+          src="/assets/images/carousel/carousel2.jpg"
           class="d-block w-100"
           alt="New Collection 2"
         />
@@ -62,7 +62,7 @@
       <!-- imagem carousel -->
       <div class="carousel-item">
         <img
-          src="../assets/images/carousel1.jpg"
+          src="/assets/images/carousel/carousel3.jpg"
           class="d-block w-100"
           alt="New Collection 3"
         />
@@ -98,24 +98,48 @@
   </div>
 
   <!-- destaques -->
-  <div class="d-flex flex-column align-items-center gap-small">
-    <div class="text-title padding-top-title padding-bottom-title">
+  <div class="d-flex flex-column gap-small">
+    <div class="text-title text-center padding-top-title padding-bottom-title">
       destaques
     </div>
 
     <div class="d-flex align-items-center flex-wrap gap-3">
       <!-- produto -->
       <div
-        class="d-flex flex-column flex-1 gap-small highlights-product modal-product"
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
         data-product-title="t-shirt oversize com estampado no peito"
         data-product-price="20.95"
         data-product-description="t-shirt elegante com corte reto. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
+        data-product-image="/assets/images/women/women1.jpg"
+        data-product-id="women1"
       >
         <img
-          src="../assets/images/carousel1.jpg"
+          src="/assets/images/women/women1.jpg"
+          alt="t-shirt oversize com estampado no peito"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>t-shirt oversize com estampado no peito</span>
+          <span>20,95 EUR</span>
+        </div>
+      </div>
+
+      <!-- produto -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="t-shirt oversize com estampado no peito"
+        data-product-price="20.95"
+        data-product-description="t-shirt elegante com corte reto. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/men/men4.jpg"
+        data-product-id="men4"
+      >
+        <img
+          src="/assets/images/men/men4.jpg"
           alt="T-shirt básica de algodão regular fit"
           class="highlights-product-image"
           loading="lazy"
@@ -128,16 +152,17 @@
 
       <!-- produto -->
       <div
-        class="d-flex flex-column flex-1 gap-small highlights-product modal-product"
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
         data-product-title="t-shirt oversize com estampado no peito"
         data-product-price="20.95"
         data-product-description="t-shirt elegante com corte reto. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
+        data-product-image="/assets/images/kids/kids2.jpg"
+        data-product-id="kids2"
       >
         <img
-          src="../assets/images/carousel1.jpg"
+          src="/assets/images/kids/kids2.jpg"
           alt="T-shirt básica de algodão regular fit"
           class="highlights-product-image"
           loading="lazy"
@@ -150,38 +175,17 @@
 
       <!-- produto -->
       <div
-        class="d-flex flex-column flex-1 gap-small highlights-product modal-product"
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
         data-product-title="t-shirt oversize com estampado no peito"
         data-product-price="20.95"
         data-product-description="t-shirt elegante com corte reto. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
+        data-product-image="/assets/images/kids/kids8.jpg"
+        data-product-id="kids8"
       >
         <img
-          src="../assets/images/carousel1.jpg"
-          alt="T-shirt básica de algodão regular fit"
-          class="highlights-product-image"
-          loading="lazy"
-        />
-        <div class="d-flex flex-column gap-extra-small">
-          <span>t-shirt oversize com estampado no peito</span>
-          <span>20,95 EUR</span>
-        </div>
-      </div>
-
-      <!-- produto -->
-      <div
-        class="d-flex flex-column flex-1 gap-small highlights-product modal-product"
-        data-bs-toggle="modal"
-        data-bs-target="#productModal"
-        data-product-title="t-shirt oversize com estampado no peito"
-        data-product-price="20.95"
-        data-product-description="t-shirt elegante com corte reto. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
-      >
-        <img
-          src="../assets/images/carousel1.jpg"
+          src="/assets/images/kids/kids8.jpg"
           alt="T-shirt básica de algodão regular fit"
           class="highlights-product-image"
           loading="lazy"
@@ -203,7 +207,7 @@
     <div class="d-flex align-items-center flex-wrap gap-3">
       <!-- produto preços especiais -->
       <div
-        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product"
+        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product cursor-pointer"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
         data-product-title="t-shirt básica de algodão regular fit"
@@ -211,11 +215,12 @@
         data-product-price-old="20.95"
         data-product-discount="30"
         data-product-description="t-shirt básica de algodão regular fit. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
+        data-product-image="/assets/images/women/women_sp2.jpg"
+        data-product-id="women_sp2"
       >
         <div class="position-relative">
           <img
-            src="../assets/images/carousel1.jpg"
+            src="/assets/images/women/women_sp2.jpg"
             alt="T-shirt básica de algodão regular fit"
             class="special-prices-product-image"
             loading="lazy"
@@ -239,7 +244,7 @@
 
       <!-- produto preços especiais -->
       <div
-        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product"
+        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product cursor-pointer"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
         data-product-title="t-shirt básica de algodão regular fit"
@@ -247,11 +252,12 @@
         data-product-price-old="20.95"
         data-product-discount="30"
         data-product-description="t-shirt básica de algodão regular fit. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
+        data-product-image="/assets/images/men/men_sp2.jpg"
+        data-product-id="men_sp2"
       >
         <div class="position-relative">
           <img
-            src="../assets/images/carousel1.jpg"
+            src="/assets/images/men/men_sp2.jpg"
             alt="T-shirt básica de algodão regular fit"
             class="special-prices-product-image"
             loading="lazy"
@@ -275,7 +281,7 @@
 
       <!-- produto preços especiais -->
       <div
-        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product"
+        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product cursor-pointer"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
         data-product-title="t-shirt básica de algodão regular fit"
@@ -283,11 +289,12 @@
         data-product-price-old="20.95"
         data-product-discount="30"
         data-product-description="t-shirt básica de algodão regular fit. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
-        data-product-image="../assets/images/carousel1.jpg"
+        data-product-image="/assets/images/kids/kids_sp2.jpg"
+        data-product-id="kids_sp2"
       >
         <div class="position-relative">
           <img
-            src="../assets/images/carousel1.jpg"
+            src="/assets/images/kids/kids_sp2.jpg"
             alt="T-shirt básica de algodão regular fit"
             class="special-prices-product-image"
             loading="lazy"
@@ -305,123 +312,6 @@
             ><span class="text-special-old-price text-decoration-line-through"
               >20,95 EUR</span
             >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal produto -->
-  <div
-    class="modal fade"
-    id="productModal"
-    tabindex="-1"
-    aria-labelledby="productModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-title" id="productModalLabel"></h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <!-- imagem produto -->
-            <div class="col-md-6">
-              <div class="position-relative">
-                <img
-                  src="../assets/images/carousel1.jpg"
-                  class="img-fluid"
-                  alt="Product Image"
-                />
-                <div
-                  class="position-absolute top-0 end-0 special-prices-product-discount d-none"
-                  id="productModalDiscount"
-                ></div>
-              </div>
-            </div>
-            <!-- detalhes produto -->
-            <div class="col-md-6">
-              <div class="d-flex align-items-center gap-2 mb-4">
-                <span class="h4 mb-0 text-title" id="productModalPrice"></span>
-                <span
-                  class="text-decoration-line-through text-muted"
-                  id="productModalOldPrice"
-                ></span>
-              </div>
-
-              <div class="mb-4">
-                <label for="sizeSelect" class="form-label">tamanho</label>
-                <select class="form-select" id="sizeSelect">
-                  <option value="" selected>selecionar tamanho</option>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                </select>
-              </div>
-
-              <div class="mb-4">
-                <label class="form-label">quantidade</label>
-                <div class="input-group">
-                  <button
-                    class="btn btn-outline-dark"
-                    type="button"
-                    id="decreaseQuantity"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    class="form-control text-center"
-                    id="quantityInput"
-                    value="1"
-                    readonly
-                  />
-                  <button
-                    class="btn btn-outline-dark"
-                    type="button"
-                    id="increaseQuantity"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <button
-                id="addToCartBtn"
-                type="button"
-                class="btn btn-dark w-100 outfit-font text-spacing-primary"
-              >
-                adicionar ao carrinho
-              </button>
-
-              <div class="d-flex flex-column gap-small">
-                <label class="text-small">descrição</label>
-                <p class="text-small mb-4" id="productModalDescription"></p>
-              </div>
-
-              <div class="d-flex flex-column gap-small">
-                <label class="text-small">detalhes</label>
-                <div class="d-flex flex-column gap-extra-small">
-                  <span class="text-extra-small"
-                    >materiais de alta qualidade</span
-                  >
-                  <span class="text-extra-small">ajuste confortável</span>
-                  <span class="text-extra-small"
-                    >instruções de cuidado fáceis</span
-                  >
-                  <span class="text-extra-small">fabricado eticamente</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

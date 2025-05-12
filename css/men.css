@@ -1,82 +1,9 @@
-
-img{
-    height: 100%;
-    width: 100%;
-}
-.desconto{
-    background: black;
-    font-size: 0.9rem;
-    width: 102px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    gap: 10px;
-    padding: 10px;
-    justify-content: top;
-    align-items: center;
+.men-product-highlight {
+    max-height: 90vh;
+    object-fit: cover;
 }
 
-/* preço dos artigos principais */
-h1{
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 10%;
-    margin-top: 10px;
-    margin-bottom: 32px;
-}
-
-/* descrição dos artigos principais */
-h4{
-    margin-top: 10px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 10%;
-}
-
-/* percentagem dos artigos em promoção  */
-h2{
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 10%;
-    color: white;
-    margin: 0;
-    white-space: nowrap;
-}
-
-/*  Título Preços Especiais*/
-h3{
-    margin-top: 32px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 10%;
-}
-
-/*  preço artigos em promoção*/
-p{
-    margin-top: 10px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 10%;
-}
-
-.preçoNovo{
-    color: #C80000; 
-}
-
-.preçoOriginal{
-    text-decoration: line-through;
-    color: #4E4E4E;
-    margin-left: 10px;
+.men-product-highlight-row {
+    max-height: 50vh;
+    object-fit: cover;
 }

@@ -1,3 +1,5 @@
+import { addToCart } from "./cart.js";
+
 function handleProductModal() {
   // get modal elements
   const productModal = document.getElementById("productModal");
@@ -20,6 +22,7 @@ function handleProductModal() {
       // update current product object properties
       currentProduct = {
         title: this.dataset.productTitle,
+        id: this.dataset.productId, // unique product ID for cart operations
         price: this.dataset.productPrice,
         description: this.dataset.productDescription,
         image: this.dataset.productImage,
@@ -49,7 +52,7 @@ function handleProductModal() {
       // if old price exists, show it and update color
       if (currentProduct.oldPrice) {
         modalOldPrice.textContent = `${currentProduct.oldPrice} EUR`;
-        
+
         // show old price
         modalOldPrice.classList.add("d-block");
         modalOldPrice.classList.remove("d-none");
@@ -110,15 +113,30 @@ function handleProductModal() {
     }
 
     // create cart item object with product details, selected size and quantity
-    const cartItem = {
+    const modalItem = {
       ...currentProduct, // get all product properties (spread operator)
       size: selectedSize,
       quantity: quantity,
     };
 
-    console.log("Adding to cart:", cartItem);
-    
-    // here we should add the cartItem to the cart (addToCart from cart.js)
+    // map cartItem to match expected format
+    const cartItem = {
+      id: modalItem.id,
+      title: modalItem.title,
+      description: modalItem.title,
+      price: parseFloat(modalItem.price), // convert string price to number
+      image: modalItem.image.replace("../", "/"), // remove the first two dots from the path
+      size: modalItem.size,
+      quantity: modalItem.quantity,
+    };
+
+    // add item to cart
+    addToCart(cartItem);
+
+    // reset modal values
+    sizeSelect.value = ""; // reset size select
+    quantityInput.value = "1"; // reset quantity
+    currentProduct = null; // reset current product
 
     // close the modal after successful add to cart item
     const modalInstance = bootstrap.Modal.getInstance(productModal);

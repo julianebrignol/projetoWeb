@@ -8,13 +8,14 @@
 
 .highlights-product {
   /*max-width: 356px;*/
-  min-width: 300px;
+  min-width: 328px;
 }
 
 .highlights-product-image {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .special-prices-product {
@@ -25,7 +26,8 @@
 .special-prices-product-image {
   width: 100%;
   height: 656px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .special-prices-product-discount {

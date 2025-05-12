@@ -42,25 +42,47 @@ $(document).ready(function () {
 
   loadPage("pages/home.html", initHome);
 
+  // Função para atualizar categoria ativa
+  function updateActiveCategory(categoryId) {
+    // remove class 'active' de todos os elementos de categorias
+    document.querySelectorAll(".header-category").forEach((element) => {
+      element.classList.remove("active");
+    });
+
+    // adiciona class 'active' ao elemento de categoria selecionada
+    if (categoryId) {
+      const selectedCategory = document.getElementById(categoryId);
+      if (selectedCategory) {
+        selectedCategory.classList.add("active");
+      }
+    }
+  }
+
   // Eventos de navegação
-  $("#header-cart").on("click", () =>
-    loadPage("pages/cart.html", initCart)
-  );
-  $(document).on("click", "#btn-contacts", () =>
-    loadPage("pages/contact.html", initContacts)
-  );
-  $(document).on("click", "#category-women", () =>
-    loadPage("pages/women.html", initProducts)
-  );
-  $(document).on("click", "#category-men", () =>
-    loadPage("pages/men.html", initProducts)
-  );
-  $(document).on("click", "#category-kids", () =>
-    loadPage("pages/kids.html", initProducts)
-  );
-  $(document).on("click", "#header-logo", () =>
-    loadPage("pages/home.html", initProducts)
-  );
+  $("#header-cart").on("click", () => {
+    updateActiveCategory(); // remove a categoria ativa
+    loadPage("pages/cart.html", initCart);
+  });
+  $(document).on("click", "#btn-contacts", () => {
+    updateActiveCategory(); // remove a categoria ativa
+    loadPage("pages/contact.html", initContacts);
+  });
+  $(document).on("click", "#category-women", () => {
+    updateActiveCategory("category-women");
+    loadPage("pages/women.html", initProducts);
+  });
+  $(document).on("click", "#category-men", () => {
+    updateActiveCategory("category-men");
+    loadPage("pages/men.html", initProducts);
+  });
+  $(document).on("click", "#category-kids", () => {
+    updateActiveCategory("category-kids");
+    loadPage("pages/kids.html", initProducts);
+  });
+  $(document).on("click", "#header-logo", () => {
+    updateActiveCategory(); // remove a categoria ativa
+    loadPage("pages/home.html", initProducts);
+  });
 
   // Inicializadores de página
   function initProducts() {
@@ -209,6 +231,10 @@ $(document).on("click", "#modal-success-close, .custom-modal__backdrop", () => {
 });
 
 // Fecha o modal de sucesso
-$(document).on("click", "#modal-close-success-contact-btn, .custom-modal__backdrop", () => {
-  $("#modal-success-contact").removeClass("show");
-});
+$(document).on(
+  "click",
+  "#modal-close-success-contact-btn, .custom-modal__backdrop",
+  () => {
+    $("#modal-success-contact").removeClass("show");
+  }
+);

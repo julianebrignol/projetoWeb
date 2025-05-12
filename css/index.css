@@ -105,6 +105,12 @@ select:focus-visible {
 
 .header-category {
   font-size: var(--header-category-size);
+  position: relative;
+}
+
+.header-category.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 /* Footer */

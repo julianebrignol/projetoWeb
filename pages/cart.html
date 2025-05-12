@@ -1,53 +1,57 @@
-<!-- Título principal da página -->
-<h1 class="page-title">Carrinho de Compras</h1>
+<section class="d-flex flex-column gap-page-section">
+  <!-- Título principal da página -->
+  <h1 class="text-title text-center m-0 fw-normal">carrinho de compras</h1>
 
-<!-- Contêiner principal do carrinho -->
-<div class="shopping-cart">
+  <!-- Container principal do carrinho -->
+  <div class="shopping-cart">
+    <!-- Zona onde os produtos do carrinho serão inseridos dinamicamente por JavaScript -->
+    <div class="cart-products"></div>
 
-  <!-- Zona onde os produtos do carrinho serão inseridos dinamicamente por JavaScript -->
-  <div class="cart-products"></div>
+    <!-- Bloco que agrupa a tabela de totais e a nota de envio -->
+    <div class="totals-wrapper">
+      <!-- Bloco da tabela de totais: subtotal, IVA, envio, total final -->
+      <div class="totals">
+        <div class="totals-item text-normal mb-2">
+          <label>resumo do pedido</label>
+        </div>
 
-  <!-- Bloco que agrupa a tabela de totais e a nota de envio -->
-  <div class="totals-wrapper">
+        <!-- Linha de subtotal -->
+        <div class="totals-item">
+          <label>subtotal</label>
+          <div class="totals-value" id="cart-subtotal">0.00</div>
+        </div>
 
-    <!-- Bloco da tabela de totais: subtotal, IVA, envio, total final -->
-    <div class="totals">
+        <!-- Linha do IVA -->
+        <div class="totals-item">
+          <label>iva (23%)</label>
+          <div class="totals-value" id="cart-ivaValue">0.00</div>
+        </div>
 
-      <!-- Linha de subtotal -->
-      <div class="totals-item">
-        <label>Subtotal</label>
-        <div class="totals-value" id="cart-subtotal">0.00</div>
+        <!-- Linha dos custos de envio -->
+        <div class="totals-item">
+          <label>envio</label>
+          <div class="totals-value" id="cart-shipping">0.00</div>
+        </div>
+
+        <!-- Separador visual entre totais parciais e total geral -->
+        <div class="totals-separator"></div>
+
+        <!-- Linha do total final -->
+        <div class="totals-item totals-item-total">
+          <label>total</label>
+          <div class="totals-value" id="cart-total">0.00</div>
+        </div>
+
+        <!-- Botão para finalizar a compra -->
+        <button id="btn-checkout" class="btn btn-outline-primary mt-3">
+          finalizar compra
+        </button>
       </div>
 
-      <!-- Linha do IVA -->
-      <div class="totals-item">
-        <label>IVA (23%)</label>
-        <div class="totals-value" id="cart-ivaValue">0.00</div>
-      </div>
-
-      <!-- Linha dos custos de envio -->
-      <div class="totals-item">
-        <label>Envio</label>
-        <div class="totals-value" id="cart-shipping">0.00</div>
-      </div>
-
-      <!-- Separador visual entre totais parciais e total geral -->
-      <div class="totals-separator"></div>
-
-      <!-- Linha do total final -->
-      <div class="totals-item totals-item-total">
-        <label>Total</label>
-        <div class="totals-value" id="cart-total">0.00</div>
-      </div>
-
-      <!-- Botão para finalizar a compra -->
-      <button id="btn-checkout" class="btn btn-outline-primary mt-3">
-        Finalizar Compra
-      </button>
+      <!-- Nota informativa sobre portes grátis -->
+      <p class="shipping-note">
+        * portes grátis em compras iguais ou superiores a 50€.
+      </p>
     </div>
-
-    <!-- Nota informativa sobre portes grátis -->
-    <p class="shipping-note">* Portes grátis em compras iguais ou superiores a 50€.</p>
-
   </div>
-</div>
+</section>

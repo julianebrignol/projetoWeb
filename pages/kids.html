@@ -1,313 +1,349 @@
-<link rel="stylesheet" href="/css/woman.css">
-<!--Destaques container com duas caixas-->
-<div  class="container my-4">
+<!-- Destaques container com duas caixas -->
+<div class="d-flex flex-column gap-page-section">
+  <!-- Caixa com as imagens de cima -->
+  <div class="row g-3">
+    <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+      <img
+        src="/assets/images/kids/kids_highlights2.jpg"
+        class="img-fluid w-100 kids-product-highlight"
+        alt="imagem1"
+      />
+    </div>
+    <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+      <img
+        src="/assets/images/kids/kids_highlights1.jpg"
+        class="img-fluid w-100 kids-product-highlight"
+        alt="imagem2"
+      />
+    </div>
+  </div>
 
-	<!--caixa com as imagens de cima-->
-	<div class="row g-3">
+  <!-- Caixa com as imagens de cima -->
+  <div class="col-12">
+    <img
+      src="/assets/images/kids/kids_highlights3.jpg"
+      class="img-fluid w-100 kids-product-highlight-row"
+      alt="imagem3"
+    />
+  </div>
 
-		<div class="col-12 col-lg-6 mb-3 mb-lg-0">
-			<img src="/assets/imagens/kids01.png" class= "img-fluid w-100 imagem-altura" alt="imagem1">
-		</div>
-		<div class="col-12 col-lg-6 mb-3 mb-lg-0">
-			<img src="/assets/imagens/kids02.png" class= "img-fluid w-100 imagem-altura" alt="imagem2">
-		</div>
-	</div>
+  <!-- Container -->
+  <div class="col-12">
+    <!-- Divisão da pagina -->
+    <!-- 1 imagem com ecra pequeno e 4 imagens em row quando o ecra aumenta -->
+    <div class="d-flex align-items-center flex-wrap gap-3">
+      <!-- Artigo1 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="vestido vichy com gola bordada"
+        data-product-price="15.95"
+        data-product-description="vestido vichy com gola bordada. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids1.jpg"
+        data-product-id="kids1"
+      >
+        <img
+          src="/assets/images/kids/kids1.jpg"
+          alt="vestido vichy com gola bordada"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>vestido vichy com gola bordada</span>
+          <span>15,95 EUR</span>
+        </div>
+      </div>
 
-	<!--caixa com as imagens de cima-->
-	<div class=" col-12 mt-3">
-		<img src="/assets/imagens/kids03.png" class= "img-fluid w-100" alt="imagem3">
-	</div>
-</div>
+      <!-- Artigo2 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="t-shirt em ganga de corte direito"
+        data-product-price="17.95"
+        data-product-description="t-shirt em ganga de corte direito. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids2.jpg"
+        data-product-id="kids2"
+      >
+        <img
+          src="/assets/images/kids/kids2.jpg"
+          alt="t-shirt em ganga de corte direito"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>t-shirt em ganga de corte direito</span>
+          <span>17,95 EUR</span>
+        </div>
+      </div>
 
-<!--Container -->
-<div class="items container gap-4">
+      <!-- Artigo3 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="t-shirt básica de algodão oversized"
+        data-product-price="12.95"
+        data-product-description="t-shirt básica de algodão oversized. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids3.jpg"
+        data-product-id="kids3"
+      >
+        <img
+          src="/assets/images/kids/kids3.jpg"
+          alt="t-shirt básica de algodão oversized"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>t-shirt básica de algodão oversized</span>
+          <span>12,95 EUR</span>
+        </div>
+      </div>
 
-	<!--divisão da pagina-->
-	<!--1 imagem com ecra pequeno e 4 imagens em row quando o ecra aumenta-->
-	<div class="row row-cols-1 row-cols-sm-1 row-cols-md-4 g-3">
+      <!-- Artigo4 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="conjunto t-shirt e calções em malha"
+        data-product-price="29.95"
+        data-product-description="conjunto t-shirt e calções em malha. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids4.jpg"
+        data-product-id="kids4"
+      >
+        <img
+          src="/assets/images/kids/kids4.jpg"
+          alt="conjunto t-shirt e calções em malha"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>conjunto t-shirt e calções em malha</span>
+          <span>29,95 EUR</span>
+        </div>
+      </div>
 
-		<!--Artigo1-->
-		<div class="col">
+      <!-- Artigo5 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="conjunto em ganga com fecho de pressão"
+        data-product-price="39.95"
+        data-product-description="conjunto em ganga com fecho de pressão. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids5.jpg"
+        data-product-id="kids5"
+      >
+        <img
+          src="/assets/images/kids/kids5.jpg"
+          alt="conjunto em ganga com fecho de pressão"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>conjunto em ganga com fecho de pressão</span>
+          <span>39,95 EUR</span>
+        </div>
+      </div>
 
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku023"
-					data-title="vestido"
-					data-description="vestido vichy com gola bordada"
-					data-price="15.95"
-					data-image="/assets/imagens/kids04.png"
-					src="/assets/imagens/kids04.png" class= "card-img-top img-fluid"alt="artigo1">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">vestido vichy com gola bordada</h4>
-					<h1 class="card-text">15,95 EUR</h1>
-				</div>
-			</div>
-		</div>
+      <!-- Artigo6 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="sweatshirt com estampado"
+        data-product-price="15.95"
+        data-product-description="sweatshirt com estampado. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids6.jpg"
+        data-product-id="kids6"
+      >
+        <img
+          src="/assets/images/kids/kids6.jpg"
+          alt="sweatshirt com estampado"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>sweatshirt com estampado</span>
+          <span>15,95 EUR</span>
+        </div>
+      </div>
 
-		<!--Artigo2-->
-		<div class="col">
+      <!-- Artigo7 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="camisola de malha fina às riscas"
+        data-product-price="17.95"
+        data-product-description="camisola de malha fina às riscas. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids7.jpg"
+        data-product-id="kids7"
+      >
+        <img
+          src="/assets/images/kids/kids7.jpg"
+          alt="camisola de malha fina às riscas"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>camisola de malha fina às riscas</span>
+          <span>17,95 EUR</span>
+        </div>
+      </div>
 
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku024"
-					data-title="t-shirt"
-					data-description="t-shirt em ganga de corte direito"
-					data-price="17.95"
-					data-image="/assets/imagens/kids05.png"
-					src="/assets/imagens/kids05.png" class= "card-img-top img-fluid"alt="artigo2">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">t-shirt em ganga de corte direito</h4>
-					<h1 class="card-text">17,95 EUR</h1>
-				</div>
-			</div>
-		</div>
+      <!-- Artigo8 -->
+      <!-- Imagem e texto descritivo -->
+      <div
+        class="d-flex flex-column flex-1 gap-small highlights-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="sweatshirt com capuz e estampado gráfico"
+        data-product-price="15.95"
+        data-product-description="sweatshirt com capuz e estampado gráfico. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids8.jpg"
+        data-product-id="kids8"
+      >
+        <img
+          src="/assets/images/kids/kids8.jpg"
+          alt="sweatshirt com capuz e estampado gráfico"
+          class="highlights-product-image"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column gap-extra-small">
+          <span>sweatshirt com capuz e estampado gráfico</span>
+          <span>15,95 EUR</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-		<!--Artigo3-->
-		<div class="col">
+  <!-- Preços Especiais -->
+  <!-- 1 imagem com ecra pequeno e 3 imagens em row quando o ecra aumenta -->
+  <div class="col-12">
+    <div class="text-title text-center padding-top-title padding-bottom-title">
+      preços especiais
+    </div>
 
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku0025"
-					data-title="t-shirt"
-					data-description="t-shirt básica de algodão oversized"
-					data-price="12.95"
-					data-image="/assets/imagens/kids06.png"
-					src="/assets/imagens/kids06.png" class= "card-img-top img-fluid"alt="artigo3">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">t-shirt básica de algodão oversized</h4>
-					<h1 class="card-text">12,95 EUR</h1>
-				</div>
-			</div>
-		</div>
+    <div class="d-flex align-items-center flex-wrap gap-3 mt-2">
+      <!-- Primeiro artigo em promoção -->
+      <div
+        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="casaco acolchoado com capuz"
+        data-product-price="20.95"
+        data-product-price-old="29.95"
+        data-product-discount="30"
+        data-product-description="casaco acolchoado com capuz. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids_sp1.jpg"
+        data-product-id="kids_sp1"
+      >
+        <div class="position-relative">
+          <img
+            src="/assets/images/kids/kids_sp1.jpg"
+            alt="casaco acolchoado com capuz"
+            class="special-prices-product-image"
+            loading="lazy"
+          />
+          <div
+            class="position-absolute top-0 end-0 special-prices-product-discount"
+          >
+            menos 30%
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-extra-small">
+          <span>casaco acolchoado com capuz</span>
+          <div class="d-flex align-items-center gap-small">
+            <span class="text-special-price">29,95 EUR</span
+            ><span class="text-special-old-price text-decoration-line-through"
+              >20,95 EUR</span
+            >
+          </div>
+        </div>
+      </div>
 
-		<!--Artigo4-->
-		<div class="col">
+      <!-- Segundo artigo em promoção -->
+      <div
+        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="camisola em malha com estampado smiley"
+        data-product-price="12.95"
+        data-product-price-old="17.95"
+        data-product-discount="20"
+        data-product-description="camisola em malha com estampado smiley. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids_sp2.jpg"
+        data-product-id="kids_sp2"
+      >
+        <div class="position-relative">
+          <img
+            src="/assets/images/kids/kids_sp2.jpg"
+            alt="camisola em malha com estampado smiley"
+            class="special-prices-product-image"
+            loading="lazy"
+          />
+          <div
+            class="position-absolute top-0 end-0 special-prices-product-discount"
+          >
+            menos 20%
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-extra-small">
+          <span>camisola em malha com estampado smiley</span>
+          <div class="d-flex align-items-center gap-small">
+            <span class="text-special-price">12,95 EUR</span
+            ><span class="text-special-old-price text-decoration-line-through"
+              >17,95 EUR</span
+            >
+          </div>
+        </div>
+      </div>
 
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku026"
-					data-title="conjunto"
-					data-description="conjunto t-shirt e calções em malha"
-					data-price="29.95"
-					data-image="/assets/imagens/kids07.png"
-					src="/assets/imagens/kids07.png" class= "card-img-top img-fluid"alt="artigo4">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">conjunto t-shirt e calções em malha</h4>
-					<h1 class="card-text">29,95 EUR</h1>
-				</div>
-			</div>
-		</div>
-
-		<!--Artigo5-->
-		<div class="col">
-
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku027"
-					data-title="conjunto"
-					data-description="conjunto em ganga com fecho de pressão"
-					data-price="39.95"
-					data-image="/assets/imagens/kids08.png"
-					src="/assets/imagens/kids08.png" class= "card-img-top img-fluid"alt="artigo5">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">conjunto em ganga com fecho de pressão</h4>
-					<h1 class="card-text">39,95 EUR</h1>
-				</div>
-			</div>
-		</div>
-
-		<!--Artigo6-->
-		<div class="col">
-
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku028"
-					data-title="sweatshirt"
-					data-description="sweatshirt com estampado"
-					data-price="15.95"
-					data-image="/assets/imagens/kids09.png"
-					src="/assets/imagens/kids09.png" class= "card-img-top img-fluid"alt="artigo6">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">sweatshirt com estampado</h4>
-					<h1 class="card-text">15,95 EUR</h1>
-				</div>
-			</div>
-		</div>
-
-		<!--Artigo7-->
-		<div class="col">
-
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku029"
-					data-title="camisola"
-					data-description="camisola de malha fina ás riscas"
-					data-price="17.95"
-					data-image="/assets/imagens/kids10.png"
-					src="/assets/imagens/kids10.png" class= "card-img-top img-fluid"alt="artigo7">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">camisola de malha fina ás riscas</h4>
-					<h1 class="card-text">17,95 EUR</h1>
-				</div>
-			</div>
-		</div>
-
-		<!--Artigo8-->
-		<div class="col">
-
-			<!--imagem e texto descritivo-->
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku030"
-					data-title="sweatshirt"
-					data-description="sweatshirt com capuz e estampado gráfico"
-					data-price="15.95"
-					data-image="/assets/imagens/kids11.png"
-					src="/assets/imagens/kids11.png" class= "card-img-top img-fluid"alt="artigo8">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">sweatshirt com capuz e estampado gráfico</h4>
-					<h1 class="card-text">15,95 EUR</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--Preços Especiais-->
-<!--1 imagem com ecra pequeno e 3 imagens em row quando o ecra aumenta-->
-<div class="container my-4">
-	<h3 class="text-center mb-4">Preços Especiais</h3>
-	<div class="row row-cols-1 row-cols-md-3 g-4">
-
-		<!--primeiro arigo em promoção-->
-		<div class="col">
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku031"
-					data-title="casaco"
-					data-description="casaco acolchoado com capuz"
-					data-price="20.95"
-					data-image="/assets/imagens/kids12.png"
-					src="/assets/imagens/kids12.png" class= "card-img-top img-fluid"alt="promoção1">
-					<div class="desconto position-absolute top-0 end-0 p-2">
-							<h2>menos 30%</h2>
-					</div>
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">casaco acolchoado com capuz</h4>
-					<p class="preços flex-row">
-						<span class="preçoNovo">20,95 EUR</span>
-						<span class="preçoOriginal">29,95 EUR</span>
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<!--segundo arigo em promoção-->
-		<div class="col">
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku032"
-					data-title="camisola"
-					data-description="camisola em malha com estampado smiley"
-					data-price="12.95"
-					data-image="/assets/imagens/kids13.png"
-					src="/assets/imagens/kids13.png" class= "card-img-top img-fluid"alt="promoção1">
-					<div class="desconto position-absolute top-0 end-0 p-2">
-						<h2>menos 20%</h2>
-					</div>
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">camisola em malha com estampado smiley</h4>
-					<p class="preços flex-row">
-						<span class="preçoNovo">12,95 EUR</span>
-						<span class="preçoOriginal">17,95 EUR</span>
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<!--terceiro arigo em promoção-->
-		<div class="col">
-			<div class="d-flex flex-column align-items-start">
-				<div class="position-relative d-flex flex-column align-items-start">
-					<img 			  
-					class="btn btn-secondary mt-2 openSizeModal"
-					data-bs-toggle="modal"
-					data-bs-target="#sizeModal"
-					data-id="sku033"
-					data-title="casaco"
-					data-description="casaco puff com fecho"
-					data-price="20.95"
-					data-image="/assets/imagens/kids14.png"
-					src="/assets/imagens/kids14.png" class= "card-img-top img-fluid"alt="promoção1">
-					<div class="desconto position-absolute top-0 end-0 p-2">
-						<h2>menos 30%</h2>
-					</div>
-				</div>
-				<div class="card-body">
-					<h4 class="card-title">casaco puff com fecho</h4>
-					<p class="preços flex-row">
-						<span class="preçoNovo">20,95 EUR</span>
-						<span class="preçoOriginal">29,95 EUR</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+      <!-- Terceiro artigo em promoção -->
+      <div
+        class="d-flex flex-column flex-1 gap-small special-prices-product modal-product cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+        data-product-title="casaco puff com fecho"
+        data-product-price="20.95"
+        data-product-price-old="29.95"
+        data-product-discount="30"
+        data-product-description="casaco puff com fecho. feitas de um tecido confortável e elástico que se move consigo enquanto mantém a sua forma ao longo do dia."
+        data-product-image="/assets/images/kids/kids_sp3.jpg"
+        data-product-id="kids_sp3"
+      >
+        <div class="position-relative">
+          <img
+            src="/assets/images/kids/kids_sp3.jpg"
+            alt="casaco puff com fecho"
+            class="special-prices-product-image"
+            loading="lazy"
+          />
+          <div
+            class="position-absolute top-0 end-0 special-prices-product-discount"
+          >
+            menos 30%
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-extra-small">
+          <span>casaco puff com fecho</span>
+          <div class="d-flex align-items-center gap-small">
+            <span class="text-special-price">20,95 EUR</span
+            ><span class="text-special-old-price text-decoration-line-through"
+              >29,95 EUR</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

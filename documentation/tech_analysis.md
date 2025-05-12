@@ -40,8 +40,8 @@ Refere-se às variáveis que existem enquanto o site está aberto na mesma pági
 Um armazenamento permanente no browser que guarda dados como texto (strings), mesmo após fechar ou mudar de página. Exemplo:
 
 ```js
-localStorage.setItem('cart', JSON.stringify(cart));
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+localStorage.setItem("cart", JSON.stringify(cart));
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 ```
 
 ### Comparação:
@@ -96,22 +96,22 @@ A organização do projeto segue a seguinte estrutura:
 
 ### Justificações:
 
--   `/pages`: contém os blocos ou páginas completas de conteúdo, permitindo separar a lógica visual de cada secção do site.
--   `/css`: contém os estilos separados por secção/página para facilitar a divisão de tarefas e evitar conflitos.
--   `/js`: dividido por função — `main.js` para interações globais (navbar, modais), `cart.js` para lógica do carrinho, `checkout.js` para a lógica do checkout.
--   `/images`: armazena todas as imagens.
--   `/assets`: se necessário para guardar icons, fontes, etc.
--   `/documentation`: para se adicionar documentação como planeamento, questões técnicas, etc.
+- `/pages`: contém os blocos ou páginas completas de conteúdo, permitindo separar a lógica visual de cada secção do site.
+- `/css`: contém os estilos separados por secção/página para facilitar a divisão de tarefas e evitar conflitos.
+- `/js`: dividido por função — `main.js` para interações globais (navbar, modais), `cart.js` para lógica do carrinho, `checkout.js` para a lógica do checkout.
+- `/images`: armazena todas as imagens.
+- `/assets`: se necessário para guardar icons, fontes, etc.
+- `/documentation`: para se adicionar documentação como planeamento, questões técnicas, etc.
 
 ---
 
 ## 4. Responsividade e Mobile-First
 
--   O projeto segue o princípio **Mobile-First**, ou seja, é desenhado inicialmente para ecrãs pequenos e adaptado progressivamente para tamanhos maiores.
--   A estrutura e disposição dos elementos devem adaptar-se fluidamente a diferentes dispositivos (telemóveis, tablets, desktop).
--   A implementação da responsividade pode ser feita com **qualquer técnica adequada**, como:
-    -   Flexbox
-    -   CSS Grid
-    -   Utilização de media queries
-    -   Classes utilitárias do Bootstrap
--   Elementos como a navbar, secções de produtos, formulários e modais devem ser testados em diferentes larguras de ecrã para garantir uma boa experiência de utilização.
+- O projeto segue o princípio **Mobile-First**, ou seja, é desenhado inicialmente para ecrãs pequenos e adaptado progressivamente para tamanhos maiores.
+- A estrutura e disposição dos elementos devem adaptar-se fluidamente a diferentes dispositivos (telemóveis, tablets, desktop).
+- A implementação da responsividade pode ser feita com **qualquer técnica adequada**, como:
+  - Flexbox
+  - CSS Grid
+  - Utilização de media queries
+  - Classes utilitárias do Bootstrap
+- Elementos como a navbar, secções de produtos, formulários e modais devem ser testados em diferentes larguras de ecrã para garantir uma boa experiência de utilização.

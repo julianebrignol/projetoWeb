@@ -94,10 +94,17 @@ function handleProductModal() {
   });
 
   // increase quantity on click button
-  increaseBtn.addEventListener("click", function () {
+  increaseBtn.onclick = () => {
     const currentValue = parseInt(quantityInput.value);
     quantityInput.value = currentValue + 1;
-  });
+  };
+
+  decreaseBtn.onclick = () => {
+    const currentValue = parseInt(quantityInput.value);
+    if (currentValue > 1) {
+      quantityInput.value = currentValue - 1;
+    }
+  };
 
   // handle add to cart button click
   addToCartBtn.addEventListener("click", function () {

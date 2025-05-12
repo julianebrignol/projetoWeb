@@ -123,9 +123,6 @@ input[type="submit"]:hover {
   font-size: var(--text-small);
 }
 
-.totals-item label {
-}
-
 .totals-value::after {
   content: " EUR";
   font-size: 12px;

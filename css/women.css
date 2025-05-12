@@ -1,0 +1,9 @@
+.women-product-highlight {
+  max-height: 90vh;
+  object-fit: cover;
+}
+
+.women-product-highlight-row {
+  max-height: 50vh;
+  object-fit: cover;
+}

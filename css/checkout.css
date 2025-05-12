@@ -1,92 +1,73 @@
 /* -----------------------------
-   RESET E CONFIGURAÇÃO GERAL
------------------------------ */
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	padding: 30px;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	background-color: #fff;
-	color: #333;
-}
-
-.container {
-	max-width: 1512px;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-
-/* -----------------------------
    TÍTULOS DE PÁGINA
 ----------------------------- */
 .page-title {
-	text-align: center;
-	font-size: 32px;
-	font-weight: 300;
-	color: #333;
-	margin-bottom: 30px;
-	letter-spacing: 1px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
 .checkout-title {
-	text-align: center;
-	font-size: 32px;
-	font-weight: 300;
-	color: #333;
-	margin-bottom: 90px;
-	margin-top: 30px;
-	letter-spacing: 1px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 90px;
+  margin-top: 30px;
+  letter-spacing: 1px;
 }
 
 /* -----------------------------
    LAYOUT DO CHECKOUT
 ----------------------------- */
 .checkout-layout {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 40px;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .checkout-form {
-	flex: 2;
-	min-width: 300px;
+  flex: 1;
+  width: 100%;
 }
 
 .checkout-sidebar {
-	flex: 1;
-	min-width: 300px;
-	max-width: 540px;
-	margin-top: 50px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (min-width: 992px) {
+  .checkout-sidebar {
+    flex: 1;
+    min-width: 396px;
+    max-width: 396px;
+  }
 }
 
 /* -----------------------------
    FORMULÁRIO DE CHECKOUT
 ----------------------------- */
 form {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-}
-
-h4, h2 {
-	margin-top: 20px;
-	font-size: 20px;
-	font-weight: bold;
-	color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 p {
-	display: flex;
-	flex-direction: column;
-	font-size: 14px;
-	gap: 6px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 6px;
 }
 
 input[type="text"],
@@ -96,127 +77,127 @@ input[type="password"],
 input[type="date"],
 select,
 textarea {
-	width: 100%;
-	padding: 10px;
-	border: 1px solid #ccc;
-	font-size: 14px;
-	background-color: #f9f9f900;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-primary);
+  font-size: 14px;
+  background-color: #f9f9f900;
 }
 
 textarea {
-	resize: vertical;
+  resize: vertical;
 }
 
 input[type="submit"] {
-	width: 100%;
-	padding: 12px;
-	background-color: #000;
-	color: #fff;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-	transition: background 0.3s;
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 input[type="submit"]:hover {
-	background-color: #4d4d4d;
+  background-color: #4d4d4d;
 }
 
 .form-row-2 {
-	display: flex;
-	gap: 20px;
-	flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .form-row-2 > p {
-	flex: 1;
+  flex: 1;
 }
-
-input:invalid, textarea:invalid, select:invalid {
-	outline: 1px solid #00000094;
-  }
 
 /* -----------------------------
    SIDEBAR DE RESUMO DO PEDIDO
 ----------------------------- */
 .totals {
-	padding: 20px;
-	border: 1px solid #ccc;
-	background-color: #fafafa00;
+  padding: 20px;
+  border: 1px solid var(--border-primary);
+  background-color: #fafafa00;
 }
 
 .totals-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-small);
 }
 
 .totals-item label {
-	font-weight: bold;
 }
 
 .totals-value::after {
-	content: " EUR";
-	font-size: 14px;
-	color: #555;
-	margin-left: 4px;
+  content: " EUR";
+  font-size: 12px;
+  color: #555;
+  margin-left: 4px;
 }
 
 .totals-item-total .totals-value {
-	font-size: 20px;
-	font-weight: bold;
-	color: #000;
+  font-size: 16px;
+  color: #000;
 }
 
 /* -----------------------------
    BOTÕES DE AÇÃO DO FORMULÁRIO
 ----------------------------- */
 .form-buttons {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 20px;
-	width: 100%;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .form-buttons button {
-	padding: 12px 24px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-	min-width: 120px;
-	margin-bottom: 200px;
+  padding: 6px 12px;
+  border: none;
+  min-width: 120px;
+}
+
+#btn-cart {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
 }
 
 #btn-back-to-cart {
-	background-color: #ffffff00;
-	color: #000;
-	border: #000 solid 1px;
+  background-color: #ffffff00;
+  color: #000;
+  border: #000 solid 1px;
 }
 
 #btn-back-to-cart:hover {
-	background-color: #d3d3d333;
+  background-color: #d3d3d333;
 }
 
 #btn-finish-order {
-	background-color: #000;
-	color: #fff;
+  background-color: #000;
+  color: #fff;
+}
+
+#btn-finish-order[disabled] {
+  opacity: 0.5;
 }
 
 #btn-finish-order:hover {
-	background-color: #444;
+  background-color: #444;
 }
 
 /* -----------------------------
    RESPONSIVIDADE (ecrãs pequenos)
 ----------------------------- */
 @media screen and (max-width: 768px) {
-	.checkout-layout {
-		flex-direction: column;
-	}
+  .checkout-layout {
+    flex-direction: column;
+  }
 
-	.form-row-2 {
-		flex-direction: column;
-	}
+  .form-row-2 {
+    flex-direction: column;
+  }
 }

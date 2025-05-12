@@ -1,159 +1,441 @@
 :root {
-    --primary-color: #000000;
-    --secondary-color: #ffffff;
-    --accent-color: #e5e5e5;
-    --text-color: #333333;
-    --header-logo-color: #66645e;
-    --header-logo-size: 24px;
-    --header-category-size: 20px;
-    --text-primary-color: #000000;
-    --text-spacing-primary: 2px;
-    --page-padding-sides: 20px;
-    --border-primary: #e3e3e3;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    padding-left: var(--page-padding-sides);
-    padding-right: var(--page-padding-sides);
-  }
-  
-  /* Tipografia personalizada */
-  .outfit-font {
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .sora-font {
-    font-family: "Sora", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .color-text-primary {
-    color: var(--text-primary-color);
-  }
-  
-  .text-spacing-primary {
-    letter-spacing: var(--text-spacing-primary);
-  }
-  
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  
-  .border-color-primary {
-    border-color: var(--border-primary);
-  }
-  
-  /* Header */
-  .header {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-  
-  .header-logo {
-    font-size: var(--header-logo-size);
-    color: var(--header-logo-color);
-  }
-  
-  .header-category {
-    font-size: var(--header-category-size);
-  }
-  
-  /* Footer */
-  .footer-container {
-    padding: 32px 0;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    border-top: 1px solid var(--accent-color);
-  }
-  
-  .newsletter {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  
-  .newsletter-h2 {
-    font-size: 16px;
-    margin-bottom: 16px;
-    letter-spacing: 0.5px;
-    text-transform: lowercase;
-  }
-  
-  .newsletter-form {
-    margin-top: 10px;
-    gap: 5px;
-    max-width: 600px;
-    display: inline-block;
-  }
-  
-  .email-input {
-    height: 30px;
-    outline: none;
-    padding: 8px;
-    width: 250px;
-  }
-  
-  .newsletter-btn {
-    height: 30px;
-    padding: 0 20px;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
-    font-size: 12px;
-  }
-  
-  .footer-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 16px;
-    border-top: 1px solid #eeeeee;
-  }
-  
-  .footer-left {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .footer-left a {
-    color: var(--text-color);
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-  
-  .contact-btn {
-    background: var(--secondary-color);
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-    padding: 0;
-    font-size: 13px;
-  }
-  
-  .footer-left.contact-btn {
-    margin-left: auto;
-  }
-  
+  /* Colors */
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --accent-color: #e5e5e5;
+  --text-color: #333333;
+  --text-primary-color: #000000;
+  --header-logo-color: #66645e;
+  --border-primary: #e3e3e3;
+  --text-special-price: #c80000;
+  --text-special-old-price: #4e4e4e;
+  --shadow-primary: 0 0 0 0.25rem #00000024;
+
+  /* Typography */
+  --header-logo-size: 24px;
+  --header-category-size: 20px;
+  --text-spacing-primary: 2px;
+  --text-title: 20px;
+  --text-normal: 14px;
+  --text-small: 12px;
+  --text-extra-small: 10px;
+  --carousel-caption-size: 42px;
+
+  /* Spacing */
+  --page-padding-sides: 20px;
+  --gap-page-section: 32px;
+  --gap-normal: 16px;
+  --gap-small: 10px;
+  --gap-extra-small: 4px;
+  --maring-page-section: 32px;
+  --padding-title: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  padding-left: var(--page-padding-sides);
+  padding-right: var(--page-padding-sides);
+  font-size: var(--text-normal);
+}
+
+/* Tipografia personalizada */
+.outfit-font {
+  font-family: "Outfit", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sora-font {
+  font-family: "Sora", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.color-text-primary {
+  color: var(--text-primary-color);
+}
+
+.text-spacing-primary {
+  letter-spacing: var(--text-spacing-primary);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.border-color-primary {
+  border-color: var(--border-primary);
+}
+
+/* Form fields */
+textarea:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: var(--primary-color) auto 1px;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+/* Header */
+.header {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.header-logo {
+  font-size: var(--header-logo-size);
+  color: var(--header-logo-color);
+}
+
+.header-category {
+  font-size: var(--header-category-size);
+  position: relative;
+}
+
+.header-category.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Footer */
+.footer-container {
+  padding: 32px 0;
+  border-top: 1px solid var(--accent-color);
+}
+
+.newsletter {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.newsletter-form {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.email-input {
+  max-width: 258px;
+  height: 30px;
+  outline: none;
+  padding: 8px;
+  width: 250px;
+}
+
+.newsletter-btn {
+  height: 30px;
+  padding: 0 20px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  font-size: 12px;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-top: 1px solid var(--border-primary);
+  gap: 24px;
+}
+
+.footer-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-left span {
+  margin-right: 24px;
+}
+
+.footer-left a {
+  color: var(--text-color);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.contact-btn {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.footer-left.contact-btn {
+  margin-left: auto;
+}
+
+/* utilitários */
+.flex-1 {
+  flex: 1 !important;
+}
+
+.text-title {
+  font-size: var(--text-title) !important;
+}
+
+.text-normal {
+  font-size: var(--text-normal) !important;
+}
+
+.text-small {
+  font-size: var(--text-small) !important;
+}
+
+.text-extra-small {
+  font-size: var(--text-extra-small) !important;
+}
+
+.gap-page-section {
+  gap: var(--gap-page-section) !important;
+}
+
+.gap-normal {
+  gap: var(--gap-normal) !important;
+}
+
+.gap-small {
+  gap: var(--gap-small) !important;
+}
+
+.gap-extra-small {
+  gap: var(--gap-extra-small) !important;
+}
+
+.margin-top-page-section {
+  margin-top: var(--maring-page-section) !important;
+}
+
+.margin-bottom-page-section {
+  margin-bottom: var(--maring-page-section) !important;
+}
+
+.padding-top-title {
+  padding-top: var(--padding-title) !important;
+}
+
+.padding-bottom-title {
+  padding-bottom: var(--padding-title) !important;
+}
+
+.text-special-price {
+  color: var(--text-special-price) !important;
+}
+
+.text-special-old-price {
+  color: var(--text-special-old-price) !important;
+}
+
+.text-carousel-caption {
+  font-size: var(--carousel-caption-size) !important;
+}
+
+/* -----------------------------
+   MICRO MODAL BASE
+----------------------------- */
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start; /* gruda no topo em vez de centralizar */
+  justify-content: center;
+  padding-top: 25vh; /* sobe o modal: ajuste esse valor */
+  z-index: 9999;
+}
+
+.modal__container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative; /* para o botão fechar absoluto */
+}
+
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* -----------------------------
+	 HEADER CUSTOMIZAÇÃO
+  ----------------------------- */
+.modal__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* espaço entre título, imagem e botão fechar */
+  position: relative; /* mantém o close no topo direito */
+}
+
+.modal__header .modal__title {
+  text-align: center;
+  width: 100%;
+  margin: 0; /* remove margens padrão */
+}
+
+.modal__header img {
+  width: 64px !important;
+  height: 64px !important;
+  object-fit: contain;
+}
+
+/* -----------------------------
+	 CONTEÚDO CENTRALIZADO
+  ----------------------------- */
+.modal__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__content p {
+  margin: 1rem 0 0;
+  line-height: 1.4;
+}
+
+/* -----------------------------
+   MODAL DE ERRO
+----------------------------- */
+/* escondido por padrão: nem ocupa espaço, nem bloqueia cliques */
+.custom-modal {
+  display: none;
+  pointer-events: none;
+}
+
+/* quando tiver classe .show, aparece e intercepta cliques */
+.custom-modal.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 500px; /* ajuste esse valor para subir/ descer */
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+/* backdrop deve bloquear clique só quando visível */
+.custom-modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: auto; /* garante que o backdrop pegue o clique */
+}
+
+/* conteúdo do modal só bloqueia clique dentro dele quando visível */
+.custom-modal__content {
+  position: relative;
+  width: 20%; /* ou combine com percentual para responsividade */
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+}
+
+/* botão do modal (mesmo estilo do checkout) */
+.custom-modal__content button {
+  display: block;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.custom-modal__content button:hover {
+  background-color: #333;
+}
+
+/* Product detail modal */
+/* Product Modal Styles */
+.modal-dialog.modal-lg {
+  max-width: 900px;
+}
+
+.modal-content {
+  gap: 20px;
+  padding: 20px;
+  border-radius: 0;
+}
+
+.modal-header {
+  padding: 0;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 400;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-body img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+#sizeSelect:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+#decreaseQuantity,
+#increaseQuantity {
+  border-color: var(--border-primary);
+}
+
+#quantityInput {
+  max-width: 60px;
+  border-color: var(--border-primary);
+  box-shadow: none;
+}

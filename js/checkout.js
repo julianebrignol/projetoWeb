@@ -4,20 +4,21 @@
     const style = document.createElement("style");
     style.id = "checkout-error-style";
     style.textContent = `
-		input.error,
-		textarea.error,
-		select.error { border: 2px solid red; }
-	  `;
+      input.error,
+      textarea.error,
+      select.error {
+        border: 2px solid red;
+      }
+    `;
     document.head.appendChild(style);
   }
 
   // Função principal de validação
-  function initCheckoutValidation() {
-    const form = document.querySelector(".checkout-form form");
+  function initCheckoutValidation(form) {
     const submitButtons = document.querySelectorAll("#btn-finish-order");
-    if (!form || submitButtons.length === 0 || form.dataset.validationInit)
-      return;
-    form.dataset.validationInit = "true"; // evita múltiplos listeners
+    if (!form || submitButtons.length === 0 || form.dataset.validationInit) return;
+
+    form.dataset.validationInit = "true"; // marca como inicializado
 
     // Habilita/desabilita os botões conforme validade
     function toggleButtons() {
@@ -28,18 +29,18 @@
 
     // Ao digitar/alterar, limpa erros e atualiza botões
     form.addEventListener("input", () => {
-      form
-        .querySelectorAll(".error")
-        .forEach((el) => el.classList.remove("error"));
+      form.querySelectorAll(".error").forEach((el) => el.classList.remove("error"));
       toggleButtons();
     });
 
-    // Ao enviar, impede e sinaliza campos inválidos
+    // Ao submeter, bloqueia e marca erros se houver
     form.addEventListener("submit", (e) => {
       if (!form.checkValidity()) {
         e.preventDefault();
         form.querySelectorAll("input, textarea, select").forEach((field) => {
-          if (!field.checkValidity()) field.classList.add("error");
+          if (!field.checkValidity()) {
+            field.classList.add("error");
+          }
         });
       }
     });
@@ -48,11 +49,27 @@
     toggleButtons();
   }
 
-  // Polling: tenta inicializar até encontrar o form
-  const interval = setInterval(() => {
-    if (document.querySelector(".checkout-form form")) {
-      initCheckoutValidation();
-      clearInterval(interval);
+  // MutationObserver para detectar quando o form é adicionado dinamicamente
+  const observer = new MutationObserver(() => {
+    const form = document.querySelector(".checkout-form form");
+    if (form && !form.dataset.validationInit) {
+      initCheckoutValidation(form);
     }
-  }, 100);
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  // Caso o form já exista ao carregar
+  if (document.readyState !== "loading") {
+    const form = document.querySelector(".checkout-form form");
+    if (form) initCheckoutValidation(form);
+  } else {
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector(".checkout-form form");
+      if (form) initCheckoutValidation(form);
+    });
+  }
 })();
